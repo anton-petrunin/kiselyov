@@ -1,5 +1,5 @@
 input macros
-
+input hatching
 verbatimtex
 %&latex
 \documentclass{article}
@@ -165,6 +165,88 @@ label.urt(btex $Q$ etex, z.q);
 
 endfig;
 
+
+beginfig(6)
+save u;
+u:=1.2cm;
+
+z.o=origin;
+
+save p; path p[];
+p0=circle(z.o, 2u);
+
+z.a=point 0 of p0;
+z.b=point 0.6 of p0;
+z.c=point 1.1 of p0;
+z.d=point 2 of p0;
+z.e=point 2.8 of p0;
+z.f=point 3.7 of p0;
+
+z.m=1.2[z.f, z.e];
+z.n=1.5[z.e, z.f];
+
+p1=z.o--(cutcircle(p0, z.b, z.c))--cycle;
+p2=(cutcircle(p0, z.e, z.f))--cycle;
+
+hatchfill p1  withcolor (87, 1mm, -.5bp);
+hatchfill p2  withcolor (43, 1mm, -.5bp);
+
+
+draw p0;
+draw z.o--z.b;
+draw z.o--z.c;
+draw z.o--z.e;
+draw z.o--z.f;
+draw z.m--z.n;
+
+draw z.a--z.d;
+Dot z.o, z.a, z.b, z.c, z.d, z.e, z.f;
+
+label.rt(btex $A$ etex, z.a);
+label.urt(btex $B$ etex, z.b);
+label.top(btex $C$ etex, z.c);
+label.lft(btex $D$ etex, z.d);
+label.bot(btex $E$ etex, z.e);
+label.lrt(btex $F$ etex, z.f);
+label.llft(btex $M$ etex, z.m);
+label.urt(btex $N$ etex, z.n);
+
+label.lrt(btex $m$ etex, point 3.2 of p0);
+
+
+endfig;
+
+beginfig(21901)
+save u;
+u:=1.2cm;
+
+z.o=origin;
+
+z.a=(0, 1.5)*u;
+z.b=z.a rotatedaround (z.o, 72);
+z.c=z.b rotatedaround (z.o, 72);
+z.d=z.c rotatedaround (z.o, 72);
+z.e=z.d rotatedaround (z.o, 72);
+
+draw z.a--z.b--z.c--z.d--z.e--cycle pensemibold;
+
+endfig;
+
+beginfig(21902)
+save u;
+u:=1.2cm;
+
+z.o=origin;
+
+z.a=(0, 1.5)*u;
+z.b=z.a rotatedaround (z.o, 72);
+z.c=z.b rotatedaround (z.o, 72);
+z.d=z.c rotatedaround (z.o, 72);
+z.e=z.d rotatedaround (z.o, 72);
+
+draw z.a--z.c--z.e--z.b--z.d--cycle pensemibold;
+
+endfig;
 
 
 end
