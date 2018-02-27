@@ -68,7 +68,7 @@ save u;
 u:=1cm;
 
 z.a=origin;
-z.b=(4, 0)*u;
+z.b=(2, 0)*u;
 
 %draw ddline(z.a, z.b)(0.13, 0.13);
 draw z.a--z.b penbold;
@@ -90,7 +90,7 @@ z.b=(5, 0)*u;
 draw z.a--z.b penbold;
 Dot z.a;
 
-label.top(btex $E$ etex, z.a);
+label.top(btex $A$ etex, z.a);
 endfig;
 
 
