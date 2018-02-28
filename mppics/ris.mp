@@ -116,6 +116,40 @@ label.top(btex $D$ etex, z.d);
 
 endfig;
 
+beginfig(5)
+save u;
+u:=1cm;
+
+z.m=origin;
+z.n=z.m+(2, 0)*u;
+z.p=z.n+(3, 0)*u;
+z.q=z.p+(1.5, 0)*u;
+z.a=z.m+(-.5,1)*u;
+z.b=z.n+(-.5,1)*u;
+z.c=z.n+(.5,1)*u;
+z.d=z.p+(.5,1)*u;
+z.e=z.p+(1.5,1)*u;
+z.f=z.q+(1.5,1)*u;
+
+draw ddline(z.m, z.q)(0.13, 0.13);
+draw z.m--z.q penbold;
+draw z.a--z.b penbold;
+draw z.c--z.d penbold;
+draw z.e--z.f penbold;
+Dot z.a, z.b, z.c, z.d, z.e, z.f, z.p, z.q, z.m, z.n;
+
+label.top(btex $A$ etex, z.a);
+label.top(btex $B$ etex, z.b);
+label.top(btex $C$ etex, z.c);
+label.top(btex $D$ etex, z.d);
+label.top(btex $E$ etex, z.e);
+label.top(btex $F$ etex, z.f);
+label.top(btex $M$ etex, z.m);
+label.top(btex $N$ etex, z.n);
+label.top(btex $P$ etex, z.p);
+label.top(btex $Q$ etex, z.q);
+endfig;
+
 
 
 beginfig(12)
