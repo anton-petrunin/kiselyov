@@ -36,7 +36,7 @@ save u;
 u:=1cm;
 
 z.a=origin;
-z.b=(4, 0)*u;
+z.b=(2, 0)*u;
 
 draw ddline(z.a, z.b)(0.13, 0.13);
 draw z.a--z.b penbold;
@@ -84,7 +84,7 @@ save u;
 u:=1cm;
 
 z.a=origin;
-z.b=(5, 0)*u;
+z.b=(3, 0)*u;
 
 %draw ddline(z.a, z.b)(0.13, 0.13);
 draw z.a--z.b penbold;
@@ -146,9 +146,9 @@ arcs2(z.q, z.n, z.p, ar2);
 arcs(z.a, z.o, z.b, ar2);
 arcs2(z.a1, z.o1, z.b1, ar2);
 
-Dot z.a, z.o, z.b;
-Dot z.a1, z.o1, z.b1;
-Dot z.n, z.m, z.p, z.q;
+Dot z.o;
+Dot z.o1;
+Dot z.n;
 
 label.rt(btex $A$ etex, z.a);
 label.urt(btex $B$ etex, z.b);
@@ -216,7 +216,7 @@ label.lrt(btex $m$ etex, point 3.2 of p0);
 
 endfig;
 
-beginfig(21901)
+beginfig(2191)
 save u;
 u:=1.2cm;
 
@@ -232,7 +232,7 @@ draw z.a--z.b--z.c--z.d--z.e--cycle pensemibold;
 
 endfig;
 
-beginfig(21902)
+beginfig(2192)
 save u;
 u:=1.2cm;
 

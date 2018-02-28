@@ -12,6 +12,7 @@
 \usepackage{graphicx}
 \usepackage{gensymb}
 \usepackage{textcomp}
+\usepackage{epsfig,lpic,wrapfig}
 
 \usepackage[top=0.9in, bottom=0.9in,left=0.9in, right=0.9in, paperwidth=6in, paperheight=9in]{geometry}
 
@@ -30,6 +31,12 @@ urlcolor=black%
 \input{insbox}
 
 \renewcommand*\thesection{\arabic{section}}
+\def\punkt{\smallskip\par\textbf}
+
+\newcounter{ris}
+\renewcommand{\r}{\refstepcounter{ris}Рис. \arabic{ris}}
 
 \def\tg{\mathrm{tg}\,}
 \def\ctg{\mathrm{ctg}\,}
+
+
