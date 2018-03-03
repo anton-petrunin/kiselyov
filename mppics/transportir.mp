@@ -67,19 +67,25 @@ z.b=point 2 of p3;
 z.a1=point 0 of p4;
 z.b1=point 2 of p4;
 
-z.a2=z.a1+(0, -1.3u);
-z.b2=z.b1+(0, -1.3u);
+z.a2=z.a1+(0, -1u);
+z.b2=z.b1+(0, -1u);
 
 for i=1 upto 179:
 	draw ((r3, 0)--(r4, 0)) rotatedaround (z.o, i);
 endfor;
 
-for i=5 step 5 until 179:
+for i=5 step 10 until 179:
 	draw ((r2, 0)--(r3, 0)) rotatedaround (z.o, i);
 endfor;
 
 for i=10 step 10 until 179:
-	draw ((r1, 0)--(r2, 0)) rotatedaround (z.o, i);
+	draw ((r3, 0)--(r4, 0)) rotatedaround (z.o, i) pensemibold;
+
+	draw ((r2, 0)--(r2+0.14u, 0)) rotatedaround (z.o, i);
+	draw ((r3-0.1u, 0)--(r3, 0)) rotatedaround (z.o, i);
+
+	draw ((r1, 0)--(r1+0.14u, 0)) rotatedaround (z.o, i);
+	draw ((r2-0.1u, 0)--(r2, 0)) rotatedaround (z.o, i);
 endfor;
 
 for i=10 step 10 until 179:
@@ -94,7 +100,8 @@ endfor;
 	
 
 
-draw z.a1--z.a2--z.b2--z.b1--cycle;
+draw z.a1--z.a2--z.b2--z.b1;
+draw z.a1--z.b1 penbold;
 
 draw p1 penbold;
 draw p4 penbold;
