@@ -200,6 +200,40 @@ label.lrt(btex $m$ etex, point 3.2 of p0);
 
 endfig;
 
+beginfig(7)
+save u;
+u:=.6cm;
+
+z.o=origin;
+
+save p; path p[];
+p0=circle(z.o, 2u);
+
+z.a=point 2.5 of p0;
+z.b=point 2.9 of p0;
+z.c=point 3.4 of p0;
+z.d=point 3.8 of p0;
+z.p=point .8 of p0;
+z.m=point 1.6 of p0;
+z.n=point 1.2 of p0;
+
+
+
+draw p0;
+
+Dot z.o, z.a, z.b, z.c, z.d, z.p, z.m;
+
+label.llft(btex $A$ etex, z.a);
+label.llft(btex $B$ etex, z.b);
+label.lrt(btex $C$ etex, z.c);
+label.lrt(btex $D$ etex, z.d);
+label.urt(btex $P$ etex, z.p);
+label.top(btex $N$ etex, z.n);
+label.lft(btex $M$ etex, z.m);
+label.rt(btex $O$ etex, z.o);
+
+endfig;
+
 beginfig(12)
 save u;
 u:=0.7cm;
