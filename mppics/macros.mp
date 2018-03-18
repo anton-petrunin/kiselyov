@@ -121,6 +121,29 @@ def Bigdot text t =
 for$=t: draw $ withpen pencircle scaled 2dotlabeldiam; endfor;
 enddef;
 
+% Точка отрезочком
+vardef kisDot(expr a, b) =
+	save s; pair s;
+	2s=unitvector((b-a) rotated 90)*marksize;
+	draw (a+s)--(a-s);
+enddef;
+
+% Точка отрезочком
+vardef kisDotAng(expr a, b, c) =
+	save s; pair s;
+	2s=unitvector((b-a) rotated c)*marksize;
+	draw (a+s)--(a-s);
+enddef;
+
+% Точка отрезочком
+vardef kisDotAngSize(expr a, b, c, d) =
+	save s; pair s;
+	2s=unitvector((b-a) rotated c)*d;
+	draw (a+s)--(a-s);
+enddef;
+
+
+
 % Рисовать много путей
 def Draw text t = 
 for$=t: draw $; endfor
