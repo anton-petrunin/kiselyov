@@ -22,3 +22,4 @@ lib/*
 *.kilepr
 *.mps
 *.mpx
+*mptextmp.mp

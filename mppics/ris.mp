@@ -245,6 +245,54 @@ label.rt(btex $O$ etex, z.o);
 
 endfig;
 
+beginfig(8)
+save u;
+u:=.6cm;
+
+z.o=origin;
+z.o1=z.o+(5, 0)*u;
+z.o2=z.o+(10, 0)*u;
+
+save p; path p[];
+p0=circle(z.o, 2u);
+p1=circle(z.o1, 2u);
+p2=circle(z.o2, 2u);
+
+z.a=point 1.5 of p0;
+z.a2=point 1.5 of p2;
+z.m=point 2.9 of p0;
+z.b=point .3 of p0;
+z.c=point .3 of p1;
+z.bc=point .3 of p2;
+z.d=point 2.3 of p1;
+z.n=point 1.3 of p1;
+z.d2=point 2.3 of p2;
+
+draw p0 penhair;
+draw p1 penhair;
+draw p2 pensemibold;
+draw cutcircle(p0, z.a, z.b) pensemibold;
+draw cutcircle(p1, z.c, z.d) pensemibold;
+draw cutcircle(p2, z.a2, z.d2) penextrabold;
+kisDotAng(z.a, z.o, 0);
+kisDotAng(z.b, z.o, 0);
+kisDotAng(z.c, z.o1, 0);
+kisDotAng(z.d, z.o1, 0);
+kisDotAng(z.a2, z.o2, 0);
+kisDotAng(z.bc, z.o2, 0);
+kisDotAng(z.d2, z.o2, 0);
+
+label.ulft(btex $A$ etex, z.a);
+label.ulft(btex $A$ etex, z.a2);
+label.urt(btex $B$ etex, z.b);
+label.lrt(btex $C$ etex, z.c);
+label.llft(btex $D$ etex, z.d);
+label.urt(btex $BC$ etex, z.bc);
+label.llft(btex $D$ etex, z.d2);
+label.bot(btex $m$ etex, z.m);
+label.top(btex $n$ etex, z.n);
+endfig;
+
 beginfig(12)
 save u;
 u:=0.7cm;
