@@ -38,6 +38,7 @@ u:=1cm;
 z.a=origin;
 z.b=(2, 0)*u;
 
+kisDot(z.a, z.b);
 draw ddline(z.a, z.b)(0.13, 0.13);
 draw z.a--z.b penbold;
 Dot z.a, z.b;
