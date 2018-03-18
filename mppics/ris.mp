@@ -39,30 +39,15 @@ z.a=origin;
 z.b=(2, 0)*u;
 
 kisDot(z.a, z.b);
-draw ddline(z.a, z.b)(0.13, 0.13);
-draw z.a--z.b penbold;
-Dot z.a, z.b;
+draw ddline(z.a, z.b)(0.2, 0.2) penbold;
+kisDot(z.a,z.b);
+kisDot(z.b,z.a);
 
 label.top(btex $A$ etex, z.a);
 label.top(btex $B$ etex, z.b);
 label.top(btex $a$ etex, 0.5[z.a, z.b]);
 endfig;
 
-beginfig(2)
-save u;
-u:=1cm;
-
-z.a=origin;
-z.b=(4, 0)*u;
-
-%draw ddline(z.a, z.b)(0.13, 0.13);
-draw z.a--z.b penbold;
-Dot z.a, z.b;
-
-label.top(btex $C$ etex, z.a);
-label.top(btex $D$ etex, z.b);
-label.top(btex $b$ etex, 0.5[z.a, z.b]);
-endfig;
 
 beginfig(2)
 save u;
@@ -71,9 +56,9 @@ u:=1cm;
 z.a=origin;
 z.b=(2, 0)*u;
 
-%draw ddline(z.a, z.b)(0.13, 0.13);
 draw z.a--z.b penbold;
-Dot z.a, z.b;
+kisDot(z.a,z.b);
+kisDot(z.b,z.a);
 
 label.top(btex $C$ etex, z.a);
 label.top(btex $D$ etex, z.b);
@@ -89,7 +74,7 @@ z.b=(3, 0)*u;
 
 %draw ddline(z.a, z.b)(0.13, 0.13);
 draw z.a--z.b penbold;
-Dot z.a;
+kisDot(z.a,z.b);
 
 label.top(btex $A$ etex, z.a);
 endfig;
@@ -107,7 +92,11 @@ z.d=z.b+(4, 0)*u;
 %draw ddline(z.a, z.b)(0.13, 0.13);
 draw z.a--z.b penbold;
 draw z.c--z.d penbold;
-Dot z.a, z.b, z.c, z.d;
+kisDot(z.a,z.b);
+kisDot(z.b,z.a);
+kisDot(z.c,z.d);
+kisDot(z.d,z.c);
+
 
 label.top(btex $A$ etex, z.a);
 label.top(btex $B$ etex, z.b);
@@ -137,7 +126,16 @@ draw z.m--z.q penbold;
 draw z.a--z.b penbold;
 draw z.c--z.d penbold;
 draw z.e--z.f penbold;
-Dot z.a, z.b, z.c, z.d, z.e, z.f, z.p, z.q, z.m, z.n;
+kisDot(z.a,z.b);
+kisDot(z.b,z.a);
+kisDot(z.c,z.d);
+kisDot(z.d,z.c);
+kisDot(z.e,z.f);
+kisDot(z.f,z.e);
+kisDot(z.m,z.n);
+kisDot(z.n,z.m);
+kisDot(z.p,z.m);
+kisDot(z.q,z.m);
 
 label.top(btex $A$ etex, z.a);
 label.top(btex $B$ etex, z.b);
@@ -185,7 +183,7 @@ draw z.o--z.f;
 draw z.m--z.n;
 
 draw z.a--z.d;
-Dot z.o, z.a, z.b, z.c, z.d, z.e, z.f;
+%Dot z.o, z.a, z.b, z.c, z.d, z.e, z.f;
 
 label.rt(btex $A$ etex, z.a);
 label.urt(btex $B$ etex, z.b);
@@ -195,7 +193,7 @@ label.bot(btex $E$ etex, z.e);
 label.lrt(btex $F$ etex, z.f);
 label.lft(btex $M$ etex, z.m);
 label.rt(btex $N$ etex, z.n);
-label.llft(btex $O$ etex, z.o);
+label.llft(btex $O\,$ etex, z.o);
 label.lrt(btex $m$ etex, point 3.2 of p0);
 
 
@@ -221,8 +219,20 @@ z.n=point 1.2 of p0;
 
 
 draw p0;
+draw cutcircle(p0, z.a, z.b) penbold;
+draw cutcircle(p0, z.c, z.d) penbold;
+draw cutcircle(p0, z.p, z.m) penbold;
 
-Dot z.o, z.a, z.b, z.c, z.d, z.p, z.m;
+
+Dot z.o; 
+%z.a, z.b, z.c, z.d, z.p, z.m;
+kisDotAng(z.a, z.o, 0);
+kisDotAng(z.b, z.o, 0);
+kisDotAng(z.c, z.o, 0);
+kisDotAng(z.d, z.o, 0);
+kisDotAng(z.m, z.o, 0);
+kisDotAng(z.n, z.o, 0);
+kisDotAng(z.p, z.o, 0);
 
 label.llft(btex $A$ etex, z.a);
 label.llft(btex $B$ etex, z.b);
