@@ -286,11 +286,37 @@ label.ulft(btex $A$ etex, z.a);
 label.ulft(btex $A$ etex, z.a2);
 label.urt(btex $B$ etex, z.b);
 label.lrt(btex $C$ etex, z.c);
-label.llft(btex $D$ etex, z.d);
+label.urt(btex $D$ etex, z.d);
 label.urt(btex $BC$ etex, z.bc);
 label.llft(btex $D$ etex, z.d2);
 label.bot(btex $m$ etex, z.m);
 label.top(btex $n$ etex, z.n);
+endfig;
+
+beginfig(9)
+save u;
+u:=.6cm;
+
+z.o=origin;
+z.a=z.o+(5, 0)*u;
+z.b=z.a rotatedaround (z.o, 48);
+z.x=z.o+(6, 0)*u;
+z.y=z.x rotatedaround (z.o, 48);
+z.e=z.x rotatedaround (z.o, 16);
+z.d=z.e rotatedaround (z.o, 16);
+
+
+draw z.o--z.x;
+draw z.o--z.y;
+draw z.o--z.e;
+draw z.o--z.d;
+
+label.llft(btex $O$ etex, z.o);
+label.ulft(btex $A$ etex, z.b);
+label.bot(btex $B$ etex, z.a);
+label.urt(btex $D$ etex, z.d);
+label.urt(btex $E$ etex, z.e);
+
 endfig;
 
 beginfig(12)
