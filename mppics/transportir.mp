@@ -1,4 +1,3 @@
-
 input TEX
 
 input macros
@@ -67,8 +66,16 @@ z.b=point 2 of p3;
 z.a1=point 0 of p4;
 z.b1=point 2 of p4;
 
+
+
 z.a2=z.a1+(0, -1u);
 z.b2=z.b1+(0, -1u);
+
+z.e=z.a1+(.5, 0)*u;
+z.d=z.e rotatedaround (z.o, 55);
+
+z.o1=z.o-(0,.5)*u;
+z.o2=z.o+(.25,0)*u;
 
 for i=1 upto 179:
 	draw ((r3, 0)--(r4, 0)) rotatedaround (z.o, i);
@@ -100,11 +107,14 @@ endfor;
 	
 
 
-draw z.a1--z.a2--z.b2--z.b1;
-draw z.a1--z.b1 penbold;
+draw z.a1--z.a2--z.b2--z.b1 pensemibold;
+draw z.a1--z.b1 pensemibold;
+draw z.o--z.o1--z.o2;
 
-draw p1 penbold;
-draw p4 penbold;
+draw z.e--z.o--z.d penextrabold;
+
+draw p1 pensemibold;
+draw p4 pensemibold;
 draw p2; draw p3;
 
 endfig;

@@ -354,6 +354,28 @@ label.top(btex $B$ etex, z.a1);
 
 endfig;
 
+beginfig(11)
+save u;
+u:=1cm;
+
+z.o=origin;
+z.b=z.o+(2,0)*u;
+z.a=z.b rotatedaround (z.o, 48);
+
+z.o1=z.o+(3,0)*u;
+z.a1=z.a+(3,0)*u;
+z.b1=z.b+(3,0)*u;
+z.x1=z.a1 rotatedaround (z.o1, 8);
+z.y1=z.a1 rotatedaround (z.o1, -8);
+
+draw z.o--z.a penbold;
+draw z.o--z.b penbold;
+draw z.o1--z.a1 penbold;
+draw z.o1--z.b1 penbold;
+draw z.o1--z.x1;
+draw z.o1--z.y1;
+endfig;
+
 
 beginfig(12)
 save u;
@@ -369,7 +391,7 @@ z.b1=z.a1 rotatedaround (z.o1, 32);
 
 z.n=z.a1+(2, 0)*u;
 z.m=z.n+(3, 0)*u;
-z.p=z.m rotatedaround (z.n, 32);
+z.p=z.m rotatedaround (z.n, 48);
 z.q=z.p rotatedaround (z.n, 32);
 
 
@@ -383,10 +405,6 @@ arcs2(z.q, z.n, z.p, ar2);
 arcs(z.a, z.o, z.b, ar2);
 arcs2(z.a1, z.o1, z.b1, ar2);
 
-Dot z.o;
-Dot z.o1;
-Dot z.n;
-
 label.rt(btex $A$ etex, z.a);
 label.urt(btex $B$ etex, z.b);
 label.llft(btex $O$ etex, z.o);
@@ -399,6 +417,73 @@ label.rt(btex $Q$ etex, z.m);
 label.urt(btex $P$ etex, z.p);
 label.llft(btex $N$ etex, z.n);
 label.urt(btex $Q$ etex, z.q);
+
+endfig;
+
+beginfig(13)
+save u;
+u:=1cm;
+
+z.o=origin;
+z.a=z.o+(4,0)*u;
+z.b=z.a rotatedaround (z.o, 24);
+z.c=z.b rotatedaround (z.o, 24);
+
+draw z.o--z.a;
+draw z.o--z.c;
+draw z.o--z.b penbold;
+endfig;
+
+
+beginfig(14)
+save u;
+u:=1cm;
+
+z.o=origin;
+z.a=(1.5, 0)*u;
+z.b=z.a rotatedaround (z.o, 72);
+z.c=z.a rotatedaround (z.o, 135);
+z.d=z.a rotatedaround (z.o, 180);
+
+draw z.d--z.a;
+draw z.o--z.b;
+draw z.o--z.c;
+
+endfig;
+
+beginfig(15)
+save u;
+u:=1cm;
+
+z.o=origin;
+z.a=(1.5, 0)*u;
+z.b=z.a rotatedaround (z.o, 72);
+z.c=z.a rotatedaround (z.o, 145);
+z.d=z.a rotatedaround (z.o, 225);
+z.e=z.a rotatedaround (z.o, 265);
+
+draw z.o--z.a;
+draw z.o--z.b;
+draw z.o--z.c;
+draw z.o--z.d;
+draw z.o--z.e;
+
+endfig;
+
+beginfig(16)
+save u;
+u:=.6cm;
+
+z.o=origin;
+
+save p; path p[];
+p0=circle(z.o, 2u);
+
+z.a=point 2.7 of p0;
+z.b=point 3.3 of p0;
+
+draw p0;
+draw z.a--z.o--z.b;
 
 endfig;
 
