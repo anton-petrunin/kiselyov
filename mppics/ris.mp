@@ -295,7 +295,7 @@ endfig;
 
 beginfig(9)
 save u;
-u:=.6cm;
+u:=.4cm;
 
 z.o=origin;
 z.a=z.o+(5, 0)*u;
