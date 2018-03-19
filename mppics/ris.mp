@@ -319,6 +319,42 @@ label.urt(btex $E$ etex, z.e);
 
 endfig;
 
+beginfig(10)
+save u;
+u:=.4cm;
+
+z.o=origin;
+z.a=z.o+(5, 4)*u;
+z.b=z.o+(6, 0)*u;
+
+draw z.o--z.a penbold;
+draw z.o--z.b penbold;
+
+hatchfill z.b--z.o--z.a..(1.05[z.o, 0.5[z.a, z.b]])..cycle  withcolor (127, 2mm, -.5bp);
+
+label.llft(btex $O$ etex, z.o);
+label.bot(btex $A$ etex, z.b);
+label.top(btex $B$ etex, z.a);
+
+z.v=(9, 0)*u;
+z.o1=z.o+z.v;
+z.a1=z.a+z.v;
+z.b1=z.b+z.v;
+
+
+
+draw z.o1--z.a1 penbold;
+draw z.o1--z.b1 penbold;
+
+hatchfill z.b1--z.o1--z.a1{dir 110}..(1.2[z.b1, 0.6[z.o1, z.a1]])..(1.2[0.5[z.a1, z.b1], z.o1])..(1.2[z.a1, 0.5[z.o1, z.b1]])..{dir 90}cycle withcolor (127, 2mm, -.5bp);
+
+whitelabel.llft(btex $O$ etex, z.o1);
+label.bot(btex $A$ etex, z.b1);
+label.top(btex $B$ etex, z.a1);
+
+endfig;
+
+
 beginfig(12)
 save u;
 u:=0.7cm;
