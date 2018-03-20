@@ -487,6 +487,100 @@ draw z.a--z.o--z.b;
 
 endfig;
 
+beginfig(17)
+save u;
+u:=.6cm;
+
+z.o=origin;
+
+save p; path p[];
+p0=circle(z.o, 2u);
+
+z.a=point 1.1 of p0;
+z.b=point .5 of p0;
+z.c=point 0 of p0;
+z.d=point 3.4 of p0;
+
+draw p0;
+draw z.a--z.o--z.b;
+draw z.c--z.o--z.d;
+
+endfig;
+
+beginfig(18)
+save u;
+u:=1cm;
+w:=6;
+
+z.o=origin;
+
+save p; path p[];
+p0=circle(z.o, 2.5u);
+z.d=z.o+(3,0)*u;
+z.1=z.d rotatedaround (z.o, w);
+z.2=z.d rotatedaround (z.o, 2*w);
+z.3=z.d rotatedaround (z.o, 3*w);
+z.4=z.d rotatedaround (z.o, 4*w);
+z.5=z.d rotatedaround (z.o, 5*w);
+z.6=z.d rotatedaround (z.o, 6*w);
+z.7=z.d rotatedaround (z.o, 7*w);
+
+z.s=point 0 of p0;
+z.e=z.s rotatedaround (z.o, 7*w);
+
+draw ddline(z.o, z.d)(0, 0.13);
+draw ddline(z.o, z.7)(0, 0.13);
+draw z.o--z.1;
+draw z.o--z.2;
+draw z.o--z.3;
+draw z.o--z.4;
+draw z.o--z.5;
+draw z.o--z.6;
+draw cutcircle(p0, z.s, z.e);
+endfig;
+
+beginfig(20)
+save u;
+u:=1cm;
+
+z.o=origin;
+z.o1=z.o+(3,0)*u;
+z.o2=z.o+(6,0)*u;
+
+save p; path p[];
+p0=circle(z.o, 2u);
+p1=circle(z.o1, 2u);
+p2=circle(z.o2, 2u);
+
+z.x0=point 0 of p0;
+z.x=point 2 of p0;
+z.x1=point 0 of p1;
+z.w1=point .7 of p1;
+z.x2=point 0 of p2;
+
+z.y0=point 1 of p0;
+z.y1=point 1 of p1;
+z.y2=point 1 of p2;
+z.w2=point 1.4 of p2;
+
+draw cutcircle(p0, z.x0, z.x);
+draw cutcircle(p1, z.x1, z.y1);
+draw cutcircle(p2, z.x2, z.w2);
+
+draw ddline(z.o, z.x0)(0, 0.13) penbold;
+draw ddline(z.o, z.x)(0, 0);
+draw ddline(z.o, z.y0)(0, 0.13) penbold;
+draw ddline(z.o1, z.x1)(0, 0.13) penbold;
+draw ddline(z.o1, z.y1)(0, 0.13);
+draw ddline(z.o1, z.w1)(0, 0.13) penbold;
+draw ddline(z.o2, z.w2)(0, 0.13) penbold;
+draw ddline(z.o, z.x0)(0, 0.13) penbold;
+draw ddline(z.o, z.y0)(0, 0.13) penbold;
+draw ddline(z.o2, z.x2)(0, 0.13) penbold;
+draw ddline(z.o2, z.y2)(0, 0.13);
+
+endfig;
+
 beginfig(2191)
 save u;
 u:=1.2cm;
