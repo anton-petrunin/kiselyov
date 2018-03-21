@@ -501,7 +501,12 @@ z.b=point .5 of p0;
 z.c=point 0 of p0;
 z.d=point 3.4 of p0;
 
+p1=circle(z.o, 1.5u);
+z.x=point .4 of p1;
+z.y=point .1 of p1;
+
 draw p0;
+drawarrow  reverse cutcircle(p1, z.y, z.x);
 draw z.a--z.o--z.b;
 draw z.c--z.o--z.d;
 
@@ -541,7 +546,7 @@ endfig;
 
 beginfig(20)
 save u;
-u:=1cm;
+u:=.8cm;
 
 z.o=origin;
 z.o1=z.o+(3,0)*u;
@@ -580,6 +585,160 @@ draw ddline(z.o2, z.x2)(0, 0.13) penbold;
 draw ddline(z.o2, z.y2)(0, 0.13);
 
 endfig;
+
+beginfig(21)
+save u;
+u:=.7cm;
+
+z.o=origin;
+z.a=z.o-(2,0)*u;
+z.b=z.o+(1.5,1.5)*u;
+z.c=z.o+(2,0)*u;
+
+draw z.a--z.c;
+draw z.o--z.b;
+
+arcs(z.c, z.o, z.b, ar2);
+arcs2(z.b, z.o, z.a, ar2);
+
+endfig;
+
+beginfig(22)
+save u;
+u:=.8cm;
+
+z.o=origin;
+z.a=z.o+(2,0)*u;
+z.b=z.o+(1.4,1.4)*u;
+
+draw ddline(z.o, z.a)(0.67, 0);
+draw ddline(z.o, z.b)(0.67, 0);
+draw z.o--z.a penbold;
+draw z.o--z.b penbold;
+
+endfig;
+
+beginfig(23)
+save u;
+u:=1.1cm;
+
+z.o=origin;
+
+save p; path p[];
+p0=circle(z.o, u);
+
+z.a=z.o+(1,0)*u;
+z.b=z.o+(0,1)*u;
+
+draw ddline(z.o, z.a)(1.13, .13);
+draw ddline(z.o, z.b)(1.13, .13);
+draw p0;
+
+endfig;
+
+beginfig(24)
+save u;
+u:=.7cm;
+
+z.o=origin;
+z.a=z.o-(2,0)*u;
+z.b=z.o+(1.5,1.5)*u;
+z.c=z.o+(2,0)*u;
+
+draw z.a--z.c;
+draw z.o--z.b;
+
+endfig;
+
+beginfig(25)
+save u;
+u:=.7cm;
+
+z.o=origin;
+z.a=z.o-(2,0)*u;
+z.b=z.o+(0,1.5)*u;
+z.c=z.o+(2,0)*u;
+
+draw z.a--z.c;
+draw z.o--z.b;
+
+endfig;
+
+beginfig(26)
+save u;
+u:=1cm;
+
+z.a=origin;
+z.b=z.a+(3,0)*u;
+z.c=.5[z.a,z.b];
+z.d=.5[z.a,z.c];
+z.m= z.b rotatedaround (z.c, 90);
+z.n= z.m reflectedabout (z.a,z.b);
+
+draw z.a--z.b;
+draw z.m--z.n;
+draw z.m--z.d--z.n;
+
+mark_angle(z.b, z.c, z.m, ar2);
+mark_angle(z.n, z.c, z.b, 1.1*ar2);
+
+arcs(z.b, z.d, z.m, ar2);
+arcs(z.n, z.d, z.b, 1.1*ar2);
+endfig;
+
+%27 > ../geogebra/ugolnik.png
+
+beginfig(28)
+save u;
+u:=1cm;
+
+z.a=origin;
+z.b=z.a+(1*u,-3*u);
+z.c=z.a+(0,-3)*u;
+z.d=z.a+(1,0)*u;
+
+draw z.a--z.b;
+draw z.c--z.d;
+endfig;
+
+beginfig(29)
+save u;
+u:=1cm;
+
+z.o=origin;
+z.a=z.o-(1.5,0)*u;
+z.b=z.a rotatedaround (z.o, -45);
+z.c=z.a rotatedaround (z.o, -70);
+z.d=z.a rotatedaround (z.o, -120);
+z.e=z.a rotatedaround (z.o, -180);
+
+draw z.o--z.a;
+draw z.o--z.b;
+draw z.o--z.c;
+draw z.o--z.d;
+draw z.o--z.e;
+
+endfig;
+
+beginfig(30)
+save u;
+u:=1cm;
+
+z.o=origin;
+z.a=z.o-(1.2,.9)*u;
+z.b=z.a rotatedaround (z.o, -65);
+z.c=z.a rotatedaround (z.o, -160);
+z.d=z.a rotatedaround (z.o, 120);
+z.e=z.a rotatedaround (z.o, 90);
+
+draw z.o--z.a;
+draw z.o--z.b;
+draw z.o--z.c;
+draw z.o--z.d;
+draw z.o--z.e;
+
+endfig;
+
 
 beginfig(2191)
 save u;
