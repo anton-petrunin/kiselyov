@@ -706,11 +706,11 @@ save u;
 u:=1cm;
 
 z.o=origin;
-z.a=z.o-(1.5,0)*u;
-z.b=z.a rotatedaround (z.o, -45);
-z.c=z.a rotatedaround (z.o, -70);
-z.d=z.a rotatedaround (z.o, -120);
-z.e=z.a rotatedaround (z.o, -180);
+z.a=z.o+(-1.5,0)*u;
+z.b=z.o+(-1.5,1)*u;
+z.c=z.o+(-.5,2)*u;
+z.d=z.o+(1,2)*u;
+z.e=z.o+(1.5,0)*u;
 
 draw z.o--z.a;
 draw z.o--z.b;
@@ -725,11 +725,11 @@ save u;
 u:=1cm;
 
 z.o=origin;
-z.a=z.o-(1.2,.9)*u;
-z.b=z.a rotatedaround (z.o, -65);
-z.c=z.a rotatedaround (z.o, -160);
-z.d=z.a rotatedaround (z.o, 120);
-z.e=z.a rotatedaround (z.o, 90);
+z.a=z.o+(-1.5,-.9)*u;
+z.b=z.o+(-1.5,1)*u;
+z.c=z.o+(1,1)*u;
+z.d=z.o+(1.5,0)*u;
+z.e=z.o+(0.9,-1)*u;
 
 draw z.o--z.a;
 draw z.o--z.b;
@@ -737,6 +737,111 @@ draw z.o--z.c;
 draw z.o--z.d;
 draw z.o--z.e;
 
+endfig;
+
+beginfig(31)
+save u;
+u:=1cm;
+
+z.a=origin;
+z.b=z.a+(.5,1)*u;
+z.c=z.a+(1.2,1.5)*u;
+z.d=z.a+(2.5,1)*u;
+z.e=z.a+(3,0)*u;
+
+draw z.a--z.b--z.c--z.d--z.e penbold;
+draw ddline(z.b, z.c)(.4, .4);
+draw ddline(z.c, z.d)(.4, .4);
+endfig;
+
+beginfig(32)
+save u;
+u:=1cm;
+
+z.a=origin;
+z.b=z.a+(1,1.5)*u;
+z.c=z.a+(1.7,0)*u;
+z.d=z.a+(2.5,0)*u;
+z.e=z.a+(3,1)*u;
+
+draw z.a--z.a--z.b--z.c--z.d--z.e penbold;
+endfig;
+
+beginfig(33)
+save u;
+u:=1cm;
+
+z.a=origin;
+z.b=z.a+(-.5,.7)*u;
+z.c=z.a+(1,2)*u;
+z.d=z.a+(2.5,1.2)*u;
+z.e=z.a+(2,0)*u;
+
+z.m=z.a+(4,0)*u;
+z.n=z.m+(-.5,1.5)*u;
+z.p=z.m+(.5,1.2)*u;
+z.q=z.m+(1,2)*u;
+z.r=z.m+(2.5,1)*u;
+z.s=z.m+(2,0)*u;
+
+save p; path p[];
+p1=z.a--z.b--z.c--z.d--z.e--cycle;
+p2=z.m--z.n--z.p--z.q--z.r--z.s--cycle;
+
+draw p1 penbold;
+draw z.a--z.d;
+draw z.b--z.e;
+
+draw p2 penbold;
+draw z.m--z.r;
+hatchfill p2  withcolor (87, 1mm, -.5bp);
+endfig;
+
+beginfig(34)
+save u;
+u:=1cm;
+
+z.a=origin;
+z.b=z.a+(.5,2)*u;
+z.c=z.a+(2.5,0)*u;
+
+save p; path p[];
+p1=z.a--z.b--z.c--cycle;
+
+draw p1 penbold;
+endfig;
+
+beginfig(35)
+save u;
+u:=1cm;
+
+z.a=origin;
+z.b=z.a+(.7,2)*u;
+z.c=z.a+(1.4,0)*u;
+
+save p; path p[];
+p1=z.a--z.b--z.c--cycle;
+
+draw p1 penbold;
+rimmark(z.a--z.b);
+rimmark(z.c--z.b);
+endfig;
+
+beginfig(36)
+save u;
+u:=1cm;
+
+z.a=origin;
+z.b=z.a+(-1.15470053838,-2)*u;
+z.c=z.a+(1.15470053838,-2)*u;
+
+save p; path p[];
+p1=z.a--z.b--z.c--cycle;
+
+draw p1 penbold;
+rimmark(z.a--z.b);
+rimmark(z.a--z.c);
+rimmark(z.c--z.b);
 endfig;
 
 
