@@ -223,6 +223,7 @@ if known __mult@#: n:=__mult@# else: n:=1 fi;
 	p = unitvector(a-b)..unitvector(bisector(a,b,c)-b)..unitvector(c-b);
 	s = rad;
 	if s < 1: s:=angle_radius; fi
+	filldraw b--(p scaled (s+((n-1)/2)*(angle_radius2-angle_radius)*2+l) shifted b)--cycle withcolor white;
 				 for i=-(n-1)/2 upto (n-1)/2:
 					draw p scaled (s+i*(angle_radius2-angle_radius)*2+l) shifted b;
 				 endfor
