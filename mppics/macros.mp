@@ -73,13 +73,13 @@ enddef;
 
 % Нормальные точки
 def Dot text t=
-for $=t: draw $ withpen pencircle scaled dotlabeldiam; endfor;
+for $=t: fill ((fullcircle scaled dotlabeldiam) shifted $); endfor;
 enddef;
 
 % Выколотые точки
 def dOt text t=
 for $=t: draw $ withpen pencircle scaled (dotlabeldiam+0.5);
-								 draw $ withpen pencircle scaled (dotlabeldiam-0.5) withcolor white; endfor;
+draw $ withpen pencircle scaled (dotlabeldiam-0.5) withcolor white; endfor;
 enddef;
 								 
 % Серая точка
