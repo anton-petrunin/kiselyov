@@ -8,10 +8,10 @@ verbatimtex
 \begin{document}
 etex
 
-
 filenametemplate "%j-%1c.mps";
 prologues:=3;
-
+linecap:=butt;
+linejoin:=mitered;
 
 color Greencolor, Bluecolor, Lilacolor, Orangecolor, Pinkcolor;
 

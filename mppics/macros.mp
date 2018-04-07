@@ -7,7 +7,6 @@
 %
 
 
-
 marksize:=4pt;
 angle_radius:=8pt;
 angle_radius2:=9pt;
@@ -1796,11 +1795,12 @@ enddef;
 vardef rimmarkS(expr a, b) =
 	save s; pair s;
 	2s=unitvector(b-a);
-	draw (.5[a,b]+ s zscaled (10,5))..(.5[a,b]+ s zscaled (5,-5))..(.5[a,b]+ s zscaled (-5,5))..(.5[a,b]+ s zscaled (-10,-5));
+	draw (.5[a,b]+ s zscaled (6,3))..(.5[a,b]+ s zscaled (3,-3))..(.5[a,b]+ s zscaled (-3,3))..(.5[a,b]+ s zscaled (-6,-3));
 enddef;
 
 vardef smallarc(expr a, b) =
 	draw arc(b rotatedaround(a,10),b,b rotatedaround(a,-10));
 enddef;
 
-def dashdot = draw dashpattern(on 3 off 2 on 0 off 2) dashed evenly enddef;
+%штрих-пунктир
+def lpdashed =  dashed dashpattern(on 3 off 2 on 0 off 2) enddef;
