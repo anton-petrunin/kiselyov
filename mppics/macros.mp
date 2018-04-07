@@ -7,7 +7,6 @@
 %
 
 
-
 marksize:=4pt;
 angle_radius:=8pt;
 angle_radius2:=9pt;
@@ -34,6 +33,11 @@ def penextrabold = withpen pencircle scaled 1.6 enddef;
 pen leftpen,rightpen;
 leftpen = makepen((-1,0)--(0,0)--cycle);
 rightpen = makepen((0,0)--(1,0)--cycle);
+
+%Штрихованные пунктиры
+def linedot =  dashpattern(on 3 off 2 on 0 off 2) enddef;
+def lpdashed =  dashed dashpattern(on 3 off 2 on 0 off 2) enddef;
+
 
 %=========================================================================
 %
@@ -1796,12 +1800,11 @@ enddef;
 vardef rimmarkS(expr a, b) =
 	save s; pair s;
 	2s=unitvector(b-a);
-	draw (.5[a,b]+ s zscaled (10,5))..(.5[a,b]+ s zscaled (5,-5))..(.5[a,b]+ s zscaled (-5,5))..(.5[a,b]+ s zscaled (-10,-5));
+	draw (.5[a,b]+ s zscaled (6,3))..(.5[a,b]+ s zscaled (3,-3))..(.5[a,b]+ s zscaled (-3,3))..(.5[a,b]+ s zscaled (-6,-3));
 enddef;
 
 vardef smallarc(expr a, b) =
 	draw arc(b rotatedaround(a,10),b,b rotatedaround(a,-10));
 enddef;
 
-def linedot =  dashpattern(on 3 off 2 on 0 off 2) enddef;
 
