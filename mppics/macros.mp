@@ -34,6 +34,11 @@ pen leftpen,rightpen;
 leftpen = makepen((-1,0)--(0,0)--cycle);
 rightpen = makepen((0,0)--(1,0)--cycle);
 
+%Штрихованные пунктиры
+def linedot =  dashpattern(on 3 off 2 on 0 off 2) enddef;
+def lpdashed =  dashed dashpattern(on 3 off 2 on 0 off 2) enddef;
+
+
 %=========================================================================
 %
 % Отметки букв
@@ -77,8 +82,8 @@ enddef;
 
 % Выколотые точки
 def dOt text t=
-for $=t: draw $ withpen pencircle scaled (dotlabeldiam+0.5);
-draw $ withpen pencircle scaled (dotlabeldiam-0.5) withcolor white; endfor;
+for $=t: fill ((fullcircle scaled (dotlabeldiam +0.5)) shifted $); 
+fill ((fullcircle scaled (dotlabeldiam -0.5)) shifted $) withcolor 1; endfor;
 enddef;
 								 
 % Серая точка
@@ -1802,9 +1807,4 @@ vardef smallarc(expr a, b) =
 	draw arc(b rotatedaround(a,10),b,b rotatedaround(a,-10));
 enddef;
 
-%<<<<<<< HEAD
-%штрих-пунктир
-def lpdashed =  dashed dashpattern(on 3 off 2 on 0 off 2) enddef;
-%=======
-def dashdot = draw dashpattern(on 3 off 2 on 0 off 2) dashed evenly enddef;
-%>>>>>>> c44d39d94d8fe6cec080ed3c6fe9f908cc6044da
+
