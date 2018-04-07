@@ -5471,6 +5471,46 @@ label.lft(btex $S$ etex, z.s);
 
 endfig;
 
+beginfig(186);
+save u;
+u:=.5cm;
+x.k=2.2;
+
+z.e=origin;
+z.o1=(4,0)*u;
+z.a1=z.o1+(-.8,.6)*u;
+
+z.o2=x.k*z.o1;
+z.a2=x.k*z.a1;
+
+z.i=(2*x.k/(1+x.k))*z.o1;
+
+z.t=cross.top(circle(z.o2,z.a2-z.o2),circle(.5*z.o2,.5*z.o2));
+z.t1=z.t reflectedabout(z.e,z.o1);
+
+z.l1=cross.bot(circle(z.o1,z.a1-z.o1),circle(.5[z.i,z.o1],.5(z.i-z.o1)));
+z.r1=z.l1 reflectedabout(z.e,z.o1);
+z.l2=cross.top(circle(z.o2,z.a2-z.o2),circle(.5[z.i,z.o2],.5(z.i-z.o2)));
+z.r2=z.l2 reflectedabout(z.e,z.o1);
+
+draw circle(z.o1,z.a1-z.o1);
+draw circle(z.o2,z.a2-z.o2);
+draw z.e--z.a2--z.o2--cycle;
+draw z.a1--z.o1;
+draw ddline(z.e,z.t)(0,.2);
+draw ddline(z.e,z.t1)(0,.2);
+draw ddline(z.r1,z.r2)(.2,.2);
+draw ddline(z.l1,z.l2)(.2,.2);
+
+dOt z.i,z.e,z.o1,z.o2;
+
+label.top(btex $A_1$ etex, z.a1);
+label.top(btex $A_2$ etex, z.a2);
+label.top(btex $O_1$ etex, z.o1);
+label.top(btex $O_2$ etex, z.o2);
+label.bot(btex $I$ etex, z.i);
+label.top(btex $E$ etex, z.e);
+endfig;
 end
 
 
