@@ -72,13 +72,13 @@ enddef;
 
 % Нормальные точки
 def Dot text t=
-for $=t: draw $ withpen pencircle scaled dotlabeldiam; endfor;
+for $=t: fill ((fullcircle scaled dotlabeldiam) shifted $); endfor;
 enddef;
 
 % Выколотые точки
 def dOt text t=
 for $=t: draw $ withpen pencircle scaled (dotlabeldiam+0.5);
-								 draw $ withpen pencircle scaled (dotlabeldiam-0.5) withcolor white; endfor;
+draw $ withpen pencircle scaled (dotlabeldiam-0.5) withcolor white; endfor;
 enddef;
 								 
 % Серая точка
@@ -1802,5 +1802,9 @@ vardef smallarc(expr a, b) =
 	draw arc(b rotatedaround(a,10),b,b rotatedaround(a,-10));
 enddef;
 
+%<<<<<<< HEAD
 %штрих-пунктир
 def lpdashed =  dashed dashpattern(on 3 off 2 on 0 off 2) enddef;
+%=======
+def dashdot = draw dashpattern(on 3 off 2 on 0 off 2) dashed evenly enddef;
+%>>>>>>> c44d39d94d8fe6cec080ed3c6fe9f908cc6044da

@@ -5416,8 +5416,8 @@ z.p1=x.k*z.p;
 z.q1=x.k*z.q;
 
 
-hatchfill z.m..z.n..z.p..z.q..cycle  withcolor (43, 1mm, -.5bp);
-hatchfill z.m1..z.n1..z.p1..z.q1..cycle  withcolor (43, 1mm, -.5bp);
+hatchfill z.m..z.n..z.p..z.q..cycle  withcolor (73, 1mm, -.5bp);
+hatchfill z.m1..z.n1..z.p1..z.q1..cycle  withcolor (73, 1mm, -.5bp);
 draw z.m..z.n..z.p..z.q..cycle;
 draw z.m1..z.n1..z.p1..z.q1..cycle;
 
@@ -5443,6 +5443,34 @@ label.top(btex $P_1$ etex, z.p1);
 label.llft(btex $Q_1$ etex, z.q1);
 
 endfig;
+
+beginfig(185);
+save u;
+u:=1.5cm;
+x.k=.4;
+
+z.s=origin;
+z.o=(4,1)*u;
+z.m=z.o+(-1,.5)*u;
+
+z.o1=x.k*z.o;
+z.m1=x.k*z.m;
+
+draw circle(z.o,z.m-z.o);
+draw circle(z.o1,z.m1-z.o1);
+draw z.m--z.o--z.s--(1.2*z.m);
+draw z.m1--z.o1;
+
+label.ulft(btex $M$ etex, z.m);
+label.ulft(btex $M_1$ etex, z.m1);
+
+label.lrt(btex $O$ etex, z.o);
+label.lrt(btex $O_1$ etex, z.o1);
+
+label.lft(btex $S$ etex, z.s);
+
+endfig;
+
 end
 
 
