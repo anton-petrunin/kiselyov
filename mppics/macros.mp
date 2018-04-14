@@ -34,9 +34,9 @@ pen leftpen,rightpen;
 leftpen = makepen((-1,0)--(0,0)--cycle);
 rightpen = makepen((0,0)--(1,0)--cycle);
 
-%Штрихованные пунктиры
-def linedot =  dashpattern(on 3 off 2 on 0 off 2) enddef;
-def lpdashed =  dashed dashpattern(on 3 off 2 on 0 off 2) enddef;
+%Штрихпунктир
+def linedot =  dashpattern(on 3 off 2 on .5 off 2) enddef;
+def lpdashed =  dashed dashpattern(on 3 off 2 on 1 off 2) enddef;
 
 
 %=========================================================================
@@ -49,7 +49,7 @@ vardef thewhitelabel@#(expr s,z) =	% Position s near z
 	save p; picture p;
 	if picture s:	p=nullpicture;
 		for n = 0 upto 63:
-			addto p also s shifted (point (n/8) of fullcircle scaled 1) withcolor white;
+			addto p also s shifted (point (n/8) of fullcircle scaled 2) withcolor white;
 		endfor
 		addto p also s
 	else:		p = s infont defaultfont scaled defaultscale
@@ -1808,3 +1808,13 @@ vardef smallarc(expr a, b) =
 enddef;
 
 
+% отметка стрелкой
+vardef arrowmark(expr a, b, c, d) =
+	save s; pair s;
+	2s=unitvector((b-a) rotated 90)*d;
+	drawarrow (.6[a,b]+s)--(b+s);
+	drawarrow (.4[a,b]+s)--(a+s);
+	kisDot(a+s,b+s);
+	kisDot(b+s,a+s);
+	label(c rotated angle(b-a),.5[a+s,b+s]+2*unitvector(d*s));
+enddef;

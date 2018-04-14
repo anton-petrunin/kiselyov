@@ -12,8 +12,8 @@ etex
 filenametemplate "%j-%1c.mps";
 prologues:=3;
 setarrows(barbedsharp);
-%linecap:=butt;
-linejoin:=mitered;
+linecap:=butt;
+%linejoin:=mitered;
 
 %outputformat := "svg";
 
@@ -2329,7 +2329,7 @@ z.o=origin;
 z.a=(1.5,1.5)*u;
 z.a1=-z.a;
 
-draw z.a--z.a1 lpdashed;
+draw z.a--z.a1 dashed linedot;
 dOt z.a,z.a1,z.o;
 
 label.top(btex $A$ etex, z.a);
@@ -2356,9 +2356,9 @@ labelarcsprof(z.a1, z.o, z.d1, 16, 3, btex \small{$4$} etex);
 
 draw z.a--z.b;
 draw z.a1--z.b1;
-draw z.a--z.a1 lpdashed;
-draw z.b--z.b1 lpdashed;
-draw z.d--z.d1 lpdashed;
+draw z.a--z.a1 dashed linedot;
+draw z.b--z.b1 dashed linedot;
+draw z.d--z.d1 dashed linedot;
 
 dOt z.a,z.a1,z.b,z.b1,z.d,z.d1,z.o;
 
@@ -2391,9 +2391,9 @@ labelarcsprof2(z.c1, z.o, z.a1, 20, 9, btex \small{$3$} etex);
 
 draw z.a--z.b--z.c--cycle penbold;
 draw z.a1--z.b1--z.c1--cycle penbold;
-draw z.a--z.a1 lpdashed;
-draw z.b--z.b1 lpdashed;
-draw z.c--z.c1 lpdashed;
+draw z.a--z.a1 dashed linedot;
+draw z.b--z.b1 dashed linedot;
+draw z.c--z.c1 dashed linedot;
 
 dOt z.o;
 
@@ -2612,8 +2612,8 @@ z.m=(1.2)[.5[z.a,z.d],.5[z.b,z.c]];
 draw z.a--z.b--z.c--z.d--cycle;
 draw z.a--z.c;
 draw z.b--z.d;
-draw z.m--z.n lpdashed;
-draw z.p--z.q lpdashed;
+draw z.m--z.n dashed linedot;
+draw z.p--z.q dashed linedot;
 
 label.llft(btex $A$ etex, z.a);
 label.ulft(btex $B$ etex, z.b);
@@ -2672,8 +2672,8 @@ z.c=-z.a;
 z.d=-z.b;
 
 draw z.a--z.b--z.c--z.d--cycle penbold;
-draw z.a--z.c lpdashed;
-draw z.b--z.d lpdashed;
+draw z.a--z.c dashed linedot;
+draw z.b--z.d dashed linedot;
 
 dOt z.o;
 
@@ -2695,10 +2695,10 @@ z.c=-z.a;
 z.d=-z.b;
 
 draw z.a--z.b--z.c--z.d--cycle penbold;
-draw ddline(z.a,z.c)(.2,.2) lpdashed;
-draw ddline(z.b,z.d)(.2,.2) lpdashed;
-draw ddline(.5[z.a,z.b],.5[z.c,z.d])(.2,.2) lpdashed;
-draw ddline(.5[z.a,z.d],.5[z.c,z.b])(.2,.2) lpdashed;
+draw ddline(z.a,z.c)(.2,.2) dashed linedot;
+draw ddline(z.b,z.d)(.2,.2) dashed linedot;
+draw ddline(.5[z.a,z.b],.5[z.c,z.d])(.2,.2) dashed linedot;
+draw ddline(.5[z.a,z.d],.5[z.c,z.b])(.2,.2) dashed linedot;
 
 dOt z.o;
 
@@ -2958,7 +2958,7 @@ draw circle(z.o1,z.o1-z.a) penbold;
 draw circle(z.o2,z.o2-z.a) penbold;
 draw circle(z.o3,z.o3-z.a) penbold;
 
-draw z.m--z.n lpdashed;
+draw z.m--z.n dashed linedot;
 
 dOt z.a, z.b;
 
@@ -3455,11 +3455,11 @@ z.o1= circumcenter(z.a,z.a1,z.r);
 z.o10 = circumcenter(z.a10,z.a11,z.l1);
 z.o11= circumcenter(z.a10,z.a11,z.r1);
 
-draw ddline(z.l,z.r)(.1,.1) lpdashed;
+draw ddline(z.l,z.r)(.1,.1) dashed linedot;
 draw circle(z.o,z.a-z.o) penbold;
 draw circle(z.o1,z.a-z.o1) penbold;
 
-draw ddline(z.l1,z.r1)(.1,.1) lpdashed;
+draw ddline(z.l1,z.r1)(.1,.1) dashed linedot;
 draw circle(z.o10,z.a10-z.o10) penbold;
 draw circle(z.o11,z.a10-z.o11) penbold;
 draw z.a--z.a1;
@@ -3489,7 +3489,7 @@ z.r=2*z.o1;
 z.m=z.o zscaled(0,-1.1);
 z.n=-z.m;
 
-draw ddline(z.l,z.r)(.1,.1) lpdashed;
+draw ddline(z.l,z.r)(.1,.1) dashed linedot;
 draw circle(z.o,z.o) penbold;
 draw circle(z.o1,z.o1) penbold;
 draw z.m--z.n;
@@ -3515,7 +3515,7 @@ z.r=2*z.o1;
 z.m=z.o zscaled(0,1.1);
 z.n=-z.m;
 
-draw ddline(z.a,z.l)(.1,.1) lpdashed;
+draw ddline(z.a,z.l)(.1,.1) dashed linedot;
 draw circle(z.o,z.o) penbold;
 draw circle(z.o1,z.o1) penbold;
 draw z.m--z.n;
@@ -3586,7 +3586,7 @@ z.o1=.3[z.o,z.x];
 
 draw circle(z.o,z.x) penbold;
 draw circle(z.o1,1*u) penbold;
-draw (-z.x)--z.x lpdashed;
+draw (-z.x)--z.x dashed linedot;
 
 z.o2=z.o+(w,0);
 
@@ -4181,9 +4181,9 @@ draw z.o--z.p;
 draw z.o--z.q;
 draw z.o--z.r;
 
-draw ddline(z.a,z.m)(0,.2) lpdashed;
-draw ddline(z.b,z.n)(0,.2) lpdashed;
-draw ddline(z.c,z.k)(0,.2) lpdashed;
+draw ddline(z.a,z.m)(0,.2) dashed linedot;
+draw ddline(z.b,z.n)(0,.2) dashed linedot;
+draw ddline(z.c,z.k)(0,.2) dashed linedot;
 draw circle(z.o,z.q-z.o);
 
 label.lft(btex $A$ etex, z.a);
@@ -4247,7 +4247,7 @@ draw z.oc--z.bbc;
 draw ddarc(z.cca,z.bc,z.abb)(20,20);
 draw circle(z.ob,z.ca-z.ob);
 draw ddarc(z.caa,z.ab,z.bbc)(20,20);
-draw z.oa--z.ob--z.oc--cycle lpdashed;
+draw z.oa--z.ob--z.oc--cycle dashed linedot;
 
 draw z.a--z.b--z.c--cycle penbold;
 
@@ -5473,15 +5473,17 @@ endfig;
 
 beginfig(186);
 save u;
-u:=.5cm;
+u:=.8cm;
 x.k=2.2;
 
 z.e=origin;
 z.o1=(4,0)*u;
-z.a1=z.o1+(-.8,.6)*u;
+z.a1=z.o1+(-.9,.4)*u;
+z.m1=z.a1 rotatedabout(z.o1,70);
 
 z.o2=x.k*z.o1;
 z.a2=x.k*z.a1;
+z.m2=2*z.o2 - x.k*z.m1;
 
 z.i=(2*x.k/(1+x.k))*z.o1;
 
@@ -5497,19 +5499,2201 @@ draw circle(z.o1,z.a1-z.o1);
 draw circle(z.o2,z.a2-z.o2);
 draw z.e--z.a2--z.o2--cycle;
 draw z.a1--z.o1;
+draw z.m1--z.o1;
+draw z.m2--z.o2;
+draw z.m1--z.m2;
 draw ddline(z.e,z.t)(0,.2);
 draw ddline(z.e,z.t1)(0,.2);
 draw ddline(z.r1,z.r2)(.2,.2);
 draw ddline(z.l1,z.l2)(.2,.2);
 
-dOt z.i,z.e,z.o1,z.o2;
+dOt z.o1,z.o2,z.i,z.e,z.m1,z.m2,z.a1,z.a2;
 
-label.top(btex $A_1$ etex, z.a1);
-label.top(btex $A_2$ etex, z.a2);
-label.top(btex $O_1$ etex, z.o1);
-label.top(btex $O_2$ etex, z.o2);
+whitelabel.top(btex $A_1$ etex, z.a1);
+whitelabel.urt(btex $A_2$ etex, z.a2);
+label.llft(btex $M_1$ etex, z.m1);
+label.urt(btex $M_2$ etex, z.m2);
+whitelabel.urt(btex $O_1$ etex, z.o1);
+whitelabel.lrt(btex $O_2$ etex, z.o2);
 label.bot(btex $I$ etex, z.i);
+label.lft(btex $E$ etex, z.e);
+endfig;
+
+beginfig(187);
+save u;
+u:=1cm;
+x.k=1.9;
+
+z.a=origin;
+z.b=(1,2)*u;
+z.d=(3,0)*u;
+z.b1=z.b rotated -30;
+z.d1=z.d rotated -50;
+
+z.c=z.b+z.d;
+z.e=z.b+x.k*z.d;
+z.f=(1/x.k)*z.e;
+
+z.c1=z.b1+z.d1;
+z.e1=z.b1+x.k*z.d1;
+z.f1=(1/x.k)*z.e1;
+
+z.f2=(3,.5)*u;
+z.f3=(4,.5)*u;
+z.f4=(4,1)*u;
+
+z.e2=x.k*z.f2;
+z.e3=x.k*z.f3;
+z.e4=x.k*z.f4;
+
+draw z.e--z.b--z.a--z.d--z.c;
+draw z.e1--z.b1--z.a--z.d1--z.c1;
+draw z.a--z.e dashed evenly;
+draw z.a--z.e1 dashed evenly;
+
+draw z.e..z.e4..z.e3..z.e2..z.e1 penbold;
+draw z.f..z.f4..z.f3..z.f2..z.f1 penbold;
+
+dOt z.a,z.b,z.c,z.d,z.e,z.f,z.b1,z.c1,z.d1,z.e1,z.f1;
+
+label.lft(btex $A$ etex, z.a);
+label.top(btex $B$ etex, z.b);
+label.top(btex $C$ etex, z.c);
+label.rt(btex $D$ etex, z.d);
 label.top(btex $E$ etex, z.e);
+label.ulft(btex $F$ etex, z.f);
+
+label.top(btex $B'$ etex, z.b1);
+label.urt(btex $C'$ etex, z.c1);
+label.bot(btex $D'$ etex, z.d1);
+label.rt(btex $E'$ etex, z.e1);
+label.top(btex $F'$ etex, z.f1);
+endfig;
+
+%188 пантограф
+
+beginfig(189);
+save u;
+u:=1cm;
+x.k=.7;
+
+z.c=origin;
+z.a=(-.7,-2)*u;
+z.b=z.a+(2,0)*u;
+z.d=altitude(z.a,z.c,z.b);
+
+z.a1=x.k*z.a;
+z.b1=x.k*z.b;
+z.c1=x.k*z.c;
+z.d1=x.k*z.d;
+
+draw z.a--z.b--z.c--cycle penbold;
+draw z.c--z.d;
+draw z.a1--z.b1;
+
+label.lft(btex $A$ etex, z.a);
+label.rt(btex $B$ etex, z.b);
+label.top(btex $C$ etex, z.c);
+label.bot(btex $D$ etex, z.d);
+
+label.ulft(btex $A_1$ etex, z.a1);
+label.urt(btex $B_1$ etex, z.b1);
+label.urt(btex $D_1$ etex, z.d1);
+endfig;
+
+beginfig(190);
+save u,v,w;
+u:=1cm;
+v:=15;
+w=.5;
+
+z.b=origin;
+z.c=(6,0)*u;
+z.d=z.c rotated v;
+z.a=z.d rotated v;
+z.o=.585*z.d;
+z.n=altitude(z.a,z.o,z.b);
+z.m=z.n rotatedabout(z.o,-60);
+z.m1=secondpoint(z.m, z.b, z.o);
+z.l=z.m reflectedabout(z.b,z.d);
+z.o1=(abs(z.m)/abs(z.m1))*z.o;
+z.lm=z.m rotatedabout(z.o1,1);
+
+z.oo=w*z.o;
+z.nn=w*z.n;
+z.mm=w*z.m;
+z.mm1=w*z.m1;
+
+draw z.a--z.b--z.c;
+draw z.b--z.m;
+draw z.n--z.o--z.m--z.o1;
+draw z.oo--z.nn;
+draw z.oo--z.mm;
+draw z.oo--z.mm1;
+draw z.b--z.d dashed linedot; 
+draw circle(z.o,z.o-z.n);
+draw circle(z.oo,z.oo-z.nn);
+draw ddarc(z.l,z.lm,z.m)(80,80);
+
+dOt z.m,z.mm,z.mm1,z.o,z.o1,z.oo;
+
+label.urt(btex $A$ etex, z.a);
+label.lft(btex $B$ etex, z.b);
+label.rt(btex $C$ etex, z.c);
+label.rt(btex $D$ etex, z.d);
+
+label.lrt(btex $O$ etex, z.o);
+label.lrt(btex $O_1$ etex, z.o1);
+
+whitelabel.urt(btex $M$ etex, z.m);
+label.top(btex $N$ etex, z.n);
+
+label.lrt(btex $o$ etex, z.oo);
+whitelabel.top(btex $m$ etex, z.mm);
+whitelabel.ulft(btex $m_1$ etex, z.mm1);
+label.top(btex $n$ etex, z.nn);
+endfig;
+
+beginfig(191);
+save u,v,w;
+u:=1cm;
+v:=.45;
+w:=.7;
+
+z.a=origin;
+z.b=(3,0)*u;
+z.c=(1,2)*u;
+z.xx=v[z.c,z.b];
+z.yy=v[z.c,z.a];
+z.zz=cross.rt(circle(z.yy,z.xx-z.yy),z.a--z.b);
+z.uu=z.zz+z.xx-z.yy;
+
+z.m=w*z.yy;
+z.n=w*z.zz;
+z.p=w*z.uu;
+z.q=w*z.xx;
+
+draw z.a--z.b--z.c--cycle;
+draw z.n--z.m--z.q--z.p;
+draw z.zz--z.yy--z.xx--z.uu;
+draw z.a--z.xx;
+
+label.lft(btex $A$ etex, z.a);
+label.rt(btex $B$ etex, z.b);
+label.top(btex $C$ etex, z.c);
+
+label.ulft(btex $M$ etex, z.m);
+label.bot(btex $N$ etex, z.n);
+label.bot(btex $P$ etex, z.p);
+label.rt(btex $Q$ etex, z.q+(0,-2));
+
+label.bot(btex $u$ etex, z.uu);
+label.urt(btex $x$ etex, z.xx);
+label.ulft(btex $y$ etex, z.yy);
+label.bot(btex $z$ etex, z.zz);
+endfig;
+
+beginfig(192);
+save u;
+u:=1.4cm;
+
+z.b=origin;
+z.a=(5,0)*u;
+z.c=(4,3)*u;
+z.d1=.35*z.a;
+z.d=.4*z.c;
+z.e=1.7*z.d;
+z.f=2.3*z.d;
+
+z.e1=(abs(z.e)/abs(z.d))*z.d1;
+z.f1=(abs(z.f)/abs(z.d))*z.d1;
+
+z.m=z.d+z.e1-z.d1;
+z.n=z.e+z.f1-z.e1;
+
+hatchfill z.b--z.d1--z.d--cycle  withcolor (23, 1mm, -.5bp);
+hatchfill z.d--z.m--z.e--cycle  withcolor (23, 1mm, -.5bp);
+hatchfill z.e--z.n--z.f--cycle  withcolor (23, 1mm, -.5bp);
+
+arcs(z.d,z.d1,z.b,10);
+arcs(z.e,z.m,z.d,10);
+arcs(z.f,z.n,z.e,10);
+arcs2(z.d1,z.b,z.d,10);
+arcs2(z.m,z.d,z.e,10);
+arcs2(z.n,z.e,z.f,10);
+arcs3(z.b,z.d,z.d1,10);
+arcs3(z.d,z.e,z.m,10);
+arcs3(z.e,z.f,z.n,10);
+
+draw z.a--z.b--z.c;
+draw z.d--z.d1;
+draw z.e--z.e1;
+draw z.f--z.f1;
+draw z.d--z.m;
+draw z.e--z.n;
+
+label.rt(btex $A$ etex, z.a);
+label.lft(btex $B$ etex, z.b);
+label.urt(btex $C$ etex, z.c);
+label.ulft(btex $D$ etex, z.d);
+label.ulft(btex $E$ etex, z.e);
+label.ulft(btex $F$ etex, z.f);
+label.bot(btex $D_1$ etex, z.d1);
+label.bot(btex $E_1$ etex, z.e1);
+label.bot(btex $F_1$ etex, z.f1);
+label.rt(btex $M$ etex, z.m);
+label.rt(btex $N$ etex, z.n);
+endfig;
+
+beginfig(193);
+save u;
+u:=1cm;
+
+z.o=origin;
+z.m1=(-3.3,-2)*u;
+z.n1=(2*u,y.m1);
+z.m=(x.m1,.5*y.m1);
+z.n=(x.n1,y.m);
+
+z.a1=(-2.5*u,y.m1);
+z.b1=(-.8*u,y.m1);
+z.c1=(0*u,y.m1);
+z.d1=(1.4*u,y.m1);
+
+z.a=(y.m/y.m1)*z.a1;
+z.b=(y.m/y.m1)*z.b1;
+z.c=(y.m/y.m1)*z.c1;
+z.d=(y.m/y.m1)*z.d1;
+
+draw z.m--z.n;
+draw z.m1--z.n1;
+draw ddline(z.o,z.a1)(0,.2);
+draw ddline(z.o,z.b1)(0,.2);
+draw ddline(z.o,z.c1)(0,.2);
+draw ddline(z.o,z.d1)(0,.2);
+
+label.top(btex $O$ etex, z.o);
+
+label.ulft(btex $A$ etex, z.a);
+label.ulft(btex $B$ etex, z.b);
+label.urt(btex $C$ etex, z.c);
+label.urt(btex $D$ etex, z.d);
+label.lft(btex $M$ etex, z.m);
+label.rt(btex $N$ etex, z.n);
+
+label.ulft(btex $A_1$ etex, z.a1);
+label.ulft(btex $B_1$ etex, z.b1);
+label.urt(btex $C_1$ etex, z.c1);
+label.urt(btex $D_1$ etex, z.d1);
+label.lft(btex $M_1$ etex, z.m1);
+label.rt(btex $N_1$ etex, z.n1);
+
+endfig;
+
+beginfig(194);
+save u;
+u:=1cm;
+
+z.SHIFT=(-1,0)*u;
+z.shift=(0,-.6)*u;
+
+z.a=origin;
+z.d=(1.4*u,y.a);
+z.e=(2.5*u,y.a);
+z.b=(4*u,y.a);
+
+z.f=(3.5,-1.5)*u;
+z.c=1.2*z.f;
+z.g=(x.d/x.b)*z.f;
+z.h=(x.e/x.b)*z.f;
+
+z.m2=z.a+z.SHIFT;
+z.m1=(x.m2-abs(z.a-z.g),y.m2);
+z.n1=z.m1+z.shift;
+z.n2=(x.n1+abs(z.g-z.h),y.n1);
+z.p1=z.n1+z.shift;
+z.p2=(x.p1+abs(z.f-z.h),y.p1);
+
+draw z.b--z.a--z.c;
+draw z.b--z.f;
+draw z.e--z.h;
+draw z.d--z.g;
+
+draw z.m1--z.m2 penbold;
+kisDot(z.m1,z.m2);
+kisDot(z.m2,z.m1);
+
+draw z.n1--z.n2 penbold;
+kisDot(z.n1,z.n2);
+kisDot(z.n2,z.n1);
+
+draw z.p1--z.p2 penbold;
+kisDot(z.p1,z.p2);
+kisDot(z.p2,z.p1);
+
+arrowmark(z.a, z.g, btex $m$ etex, -12);
+arrowmark(z.g, z.h, btex $n$ etex, -12);
+arrowmark(z.h, z.f, btex $p$ etex, -12);
+
+label.top(btex $A$ etex, z.a);
+label.urt(btex $B$ etex, z.b);
+label.rt(btex $C$ etex, z.c);
+label.urt(btex $D$ etex, z.d);
+label.urt(btex $E$ etex, z.e);
+label.urt(btex $F$ etex, z.f);
+label.urt(btex $G$ etex, z.g);
+label.urt(btex $H$ etex, z.h);
+
+label.top(btex $m$ etex, .5[z.n1,z.n2]-z.shift);
+label.top(btex $n$ etex, .5[z.n1,z.n2]);
+label.top(btex $p$ etex, .5[z.n1,z.n2]+z.shift);
+endfig;
+
+beginfig(195);
+save u;
+u:=1cm;
+
+z.SHIFT=(-1,0)*u;
+z.shift=(0,-.6)*u;
+
+z.b=origin;
+z.d=(2*u,y.b);
+z.e=(3.4*u,y.b);
+z.a=(4*u,y.b);
+
+z.f=(1.8,-1)*u;
+z.g=(x.e/x.d)*z.f;
+z.c=1.2*z.g;
+
+z.a2=z.b+z.SHIFT;
+z.a1=(x.a2-abs(z.b-z.d),y.a2);
+z.b1=z.a1+z.shift;
+z.b2=(x.b1+abs(z.b-z.f),y.b1);
+z.c1=z.b1+z.shift;
+z.c2=(x.c1+abs(z.d-z.e),y.c1);
+
+draw z.a--z.b--z.c;
+draw z.d--z.f;
+draw z.e--z.g;
+
+draw z.a1--z.a2 penbold;
+kisDot(z.a1,z.a2);
+kisDot(z.a2,z.a1);
+
+draw z.b1--z.b2 penbold;
+kisDot(z.b1,z.b2);
+kisDot(z.b2,z.b1);
+
+draw z.c1--z.c2 penbold;
+kisDot(z.c1,z.c2);
+kisDot(z.c2,z.c1);
+
+arrowmark(z.b, z.d, btex $a$ etex, 12);
+arrowmark(z.d, z.e, btex $c$ etex, 12);
+arrowmark(z.b, z.f, btex $b$ etex, -12);
+arrowmark(z.f, z.g, btex $x$ etex, -12);
+
+label.rt(btex $A$ etex, z.a);
+label.lft(btex $B$ etex, z.b);
+label.lrt(btex $C$ etex, z.c);
+label.lrt(btex $D$ etex, z.d);
+label.lrt(btex $E$ etex, z.e);
+label.urt(btex $F$ etex, z.f);
+label.urt(btex $G$ etex, z.g);
+
+label.top(btex $a$ etex, .5[z.a1,z.a2]);
+label.top(btex $b$ etex, .5[z.a1,z.a2]+z.shift);
+label.top(btex $c$ etex, .5[z.a1,z.a2]+2*z.shift);
+endfig;
+
+beginfig(196);
+save u;
+u:=.6cm;
+
+z.a=origin;
+z.b=(2,2)*u;
+z.c=(3,0)*u;
+z.d=bisector(z.a,z.b,z.c);
+z.d1=exbisector(z.a,z.b,z.c);
+z.e=z.c reflectedabout(z.b,z.d1);
+
+arcs(z.a,z.b,z.d,10);
+arcs(z.a,z.e,z.c,10);
+arcs2(z.c,z.b,z.d,10);
+arcs2(z.b,z.c,z.e,10);
+
+draw z.a--z.b--z.c--cycle penbold;
+draw z.c--z.e--z.b--z.d;
+
+label.bot(btex $A$ etex, z.a);
+label.ulft(btex $B$ etex, z.b);
+label.bot(btex $C$ etex, z.c);
+label.bot(btex $D$ etex, z.d);
+label.top(btex $E$ etex, z.e);
+endfig;
+
+beginfig(197);
+save u;
+u:=.6cm;
+
+z.a=origin;
+z.b=(3.5,2)*u;
+z.c=(3,0)*u;
+z.d=exbisector(z.a,z.b,z.c);
+z.d1=bisector(z.a,z.b,z.c);
+z.e=z.c reflectedabout(z.b,z.d1);
+z.f=1.4[z.a,z.b];
+
+arcs2(z.f,z.b,z.d,10);
+arcs2(z.f,z.e,z.c,10);
+arcs(z.c,z.b,z.d,10);
+arcs(z.b,z.c,z.e,10);
+
+draw z.a--z.b--z.c--cycle penbold;
+draw z.f--z.b--z.d--z.c--z.e;
+
+label.bot(btex $A$ etex, z.a);
+label.ulft(btex $B$ etex, z.b);
+label.bot(btex $C$ etex, z.c);
+label.bot(btex $D$ etex, z.d);
+label.top(btex $E$ etex, z.e);
+label.urt(btex $F$ etex, z.f);
+endfig;
+
+beginfig(198);
+save u,w;
+u:=.9cm;
+w:=1.4;
+
+z.d=origin;
+z.a=(0,2)*u;
+z.b=z.a zscaled(0,w);
+z.c=z.a zscaled(0,-1/w);
+
+labelarcsprof(z.b, z.a, z.d, 17, 5, btex \small{$1$} etex);
+labelarcsprof(z.d, z.a, z.c, 17, 5, btex \small{$2$} etex);
+labelarcsprof(z.c, z.b, z.a, 17, 5, btex \small{$3$} etex);
+labelarcsprof(z.a, z.c, z.b, 17, 5, btex \small{$4$} etex);
+
+draw z.a--z.b--z.c--cycle;
+draw z.a--z.d;
+
+label.top(btex $A$ etex, z.a);
+label.bot(btex $B$ etex, z.b);
+label.bot(btex $C$ etex, z.c);
+label.bot(btex $D$ etex, z.d);
+endfig;
+
+beginfig(199);
+save u,w;
+u:=1cm;
+w:=.8;
+
+z.d=origin;
+z.a=(0,2)*u;
+z.b=z.a zscaled(0,w);
+z.c=z.a zscaled(0,-1/w);
+
+draw z.a--z.b--z.c--cycle;
+draw z.a--z.d;
+draw arc(z.b,z.a,z.c);
+
+label.top(btex $A$ etex, z.a);
+label.bot(btex $B$ etex, z.b);
+label.bot(btex $C$ etex, z.c);
+label.bot(btex $D$ etex, z.d);
+endfig;
+
+beginfig(198);
+save u,w;
+u:=.9cm;
+w:=1.4;
+
+z.d=origin;
+z.a=(0,2)*u;
+z.b=z.a zscaled(0,w);
+z.c=z.a zscaled(0,-1/w);
+
+labelarcsprof(z.b, z.a, z.d, 17, 5, btex \small{$1$} etex);
+labelarcsprof(z.d, z.a, z.c, 17, 5, btex \small{$2$} etex);
+labelarcsprof(z.c, z.b, z.a, 17, 5, btex \small{$3$} etex);
+labelarcsprof(z.a, z.c, z.b, 17, 5, btex \small{$4$} etex);
+
+draw z.a--z.b--z.c--cycle;
+draw z.a--z.d;
+
+label.top(btex $A$ etex, z.a);
+label.bot(btex $B$ etex, z.b);
+label.bot(btex $C$ etex, z.c);
+label.bot(btex $D$ etex, z.d);
+endfig;
+
+beginfig(200);
+save u,w;
+u:=1cm;
+w.=.5;
+
+z.b=origin;
+z.a=(-2,0)*u;
+z.c=(-w*w*x.a,0);
+z.d=(0,-w*x.a);
+
+draw z.a--z.c;
+draw z.b--z.d;
+draw arc(z.a,z.d,z.c);
+
+arrowmark(z.a, z.b, btex $a$ etex, -18);
+arrowmark(z.b, z.c, btex $b$ etex, -18);
+
+label.lft(btex $A$ etex, z.a);
+label.ulft(btex $B$ etex, z.b);
+label.rt(btex $C$ etex, z.c);
+label.top(btex $D$ etex, z.d);
+endfig;
+
+beginfig(201);
+save u,w;
+u:=1cm;
+w.=.5;
+
+z.a=origin;
+z.b=(2,0)*u;
+z.c=(w*w*x.b,0);
+z.d=(x.c,(sqrt(1/(w*w)-1))*x.c);
+
+draw z.a--z.b;
+draw z.a--z.d;
+draw z.c--z.d;
+draw arc(z.a,z.d,z.b);
+
+arrowmark(z.a, z.b, btex $a$ etex, -36);
+arrowmark(z.a, z.c, btex $b$ etex, -18);
+
+label.lft(btex $A$ etex, z.a);
+label.rt(btex $B$ etex, z.b);
+%label.urt(btex $C$ etex, z.c);
+label.top(btex $D$ etex, z.d);
+endfig;
+
+beginfig(202);
+save u,w;
+u:=.9cm;
+w:=1.4;
+
+z.d=origin;
+z.a=(0,2)*u;
+z.b=z.a zscaled(0,w);
+z.c=z.a zscaled(0,-1/w);
+
+draw z.a--z.b--z.c--cycle;
+draw z.a--z.d;
+
+arrowmark(z.b, z.d, btex $c'$ etex, -18);
+arrowmark(z.d, z.c, btex $b'$ etex, -18);
+arrowmark(z.b, z.c, btex $a$ etex, -36);
+
+label.top(btex $A$ etex, z.a);
+label.lft(btex $B$ etex, z.b);
+label.rt(btex $C$ etex, z.c);
+label.ulft(btex $D$ etex, z.d);
+
+label.urt(btex $b$ etex, .5[z.a,z.c]);
+label.ulft(btex $c$ etex, .5[z.b,z.a]);
+label.rt(btex $h$ etex, .5[z.d,z.a]);
+endfig;
+
+beginfig(203);
+save u;
+u:=1cm;
+
+z.d=origin;
+z.a=(-2,0)*u;
+z.b=(0,2.3)*u;
+z.c=(1,0)*u;
+
+arcs(z.c,z.a,z.b,10);
+
+draw z.a--z.b--z.c--cycle;
+draw z.b--z.d;
+
+arrowmark(z.a, z.d, btex $c'$ etex, -18);
+arrowmark(z.d, z.c, btex $a'$ etex, -18);
+arrowmark(z.a, z.c, btex $b$ etex, -36);
+
+label.lft(btex $A$ etex, z.a);
+label.top(btex $B$ etex, z.b);
+label.rt(btex $C$ etex, z.c);
+label.ulft(btex $D$ etex, z.d);
+
+label.urt(btex $a$ etex, .5[z.b,z.c]);
+label.ulft(btex $c$ etex, .5[z.b,z.a]);
+label.rt(btex $h$ etex, .5[z.b,z.d]);
+endfig;
+
+beginfig(204);
+save u;
+u:=1cm;
+
+z.a=(-2,0)*u;
+z.b=(1,2.3)*u;
+z.c=(0,0)*u;
+z.d=altitude(z.c,z.b,z.a);
+
+arcs(z.c,z.a,z.b,10);
+
+draw z.a--z.b--z.d--cycle;
+draw z.b--z.c;
+
+arrowmark(z.a, z.d, btex $c'$ etex, -36);
+arrowmark(z.c,z.d,  btex $a'$ etex, -18);
+arrowmark(z.a, z.c, btex $b$ etex, -18);
+
+label.lft(btex $A$ etex, z.a);
+label.top(btex $B$ etex, z.b);
+label.ulft(btex $C$ etex, z.c);
+label.rt(btex $D$ etex, z.d);
+
+label.ulft(btex $a$ etex, .5[z.b,z.c]);
+label.ulft(btex $c$ etex, .5[z.b,z.a]);
+label.rt(btex $h$ etex, .5[z.b,z.d]);
+endfig;
+
+beginfig(205);
+save u;
+u:=1cm;
+
+z.a=(2,0)*u;
+z.b=(-1,2.3)*u;
+z.c=(0,0)*u;
+z.d=altitude(z.c,z.b,z.a);
+
+arcs(z.a,z.c,z.b,10);
+
+draw z.a--z.b--z.d--cycle;
+draw z.b--z.c;
+
+arrowmark( z.d,z.a, btex $c'$ etex, -36);
+arrowmark(z.d,z.c,  btex $a'$ etex, -18);
+arrowmark( z.c,z.a, btex $b$ etex, -18);
+
+label.rt(btex $A$ etex, z.a);
+label.top(btex $B$ etex, z.b);
+label.ulft(btex $C$ etex, z.c+(-3,0));
+label.lft(btex $D$ etex, z.d);
+
+label.lft(btex $a$ etex, .5[z.b,z.c]);
+label.urt(btex $c$ etex, .5[z.b,z.a]);
+label.lft(btex $h$ etex, .5[z.b,z.d]);
+endfig;
+
+beginfig(206);
+save u;
+u:=1cm;
+
+z.a=origin;
+z.b=(1,2)*u;
+z.d=(3,0)*u;
+z.c=z.d+z.b;
+z.h=.5*z.c;
+z.f=altitude(z.a,z.c,z.d);
+z.e=altitude(z.a,z.b,z.d);
+
+hatchfill z.a--z.b--z.d--cycle  withcolor (43, 1mm, -.5bp);
+hatchfill z.a--z.c--z.d--cycle  withcolor (0, 1mm, -.5bp);
+
+arcs(z.d,z.a,z.b,10);
+arcs(z.c,z.d,z.f,10);
+
+draw z.a--z.b--z.c--z.d--cycle penbold;
+draw z.b--z.e--z.f--z.c;
+draw z.b--z.d;
+draw z.a--z.c;
+
+label.llft(btex $A$ etex, z.a);
+label.ulft(btex $B$ etex, z.b);
+label.urt(btex $C$ etex, z.c);
+label.bot(btex $D$ etex, z.d);
+label.bot(btex $E$ etex, z.e);
+label.lrt(btex $F$ etex, z.f);
+label.top(btex $H$ etex, z.h+(2,0));
+
+endfig;
+
+beginfig(207);
+save u;
+u:=1cm;
+
+z.d=origin;
+z.b=(-1,0)*u;
+z.a=(0,2.3)*u;
+z.c=(2,0)*u;
+
+arcs(z.c,z.b,z.a,10);
+
+draw z.b--z.a--z.c--cycle;
+draw z.a--z.d;
+
+arrowmark(z.b, z.d, btex $c'$ etex, -18);
+arrowmark(z.d, z.c, btex $b'$ etex, -18);
+arrowmark(z.b, z.c, btex $a$ etex, -36);
+
+label.top(btex $A$ etex, z.a);
+label.lft(btex $B$ etex, z.b);
+label.rt(btex $C$ etex, z.c);
+label.ulft(btex $D$ etex, z.d);
+
+label.urt(btex $b$ etex, .5[z.a,z.c]);
+label.ulft(btex $c$ etex, .5[z.a,z.b]);
+label.rt(btex $h_a$ etex, .5[z.a,z.d]);
+endfig;
+
+beginfig(208);
+save u;
+u:=1cm;
+
+z.b=(-2,0)*u;
+z.a=(1,2.3)*u;
+z.c=(0,0)*u;
+z.d=altitude(z.c,z.a,z.b);
+
+arcs(z.c,z.b,z.a,10);
+
+draw z.b--z.a--z.d--cycle;
+draw z.a--z.c;
+
+arrowmark(z.b, z.d, btex $c'$ etex, -36);
+arrowmark(z.c,z.d,  btex $b'$ etex, -18);
+arrowmark(z.b, z.c, btex $a$ etex, -18);
+
+label.top(btex $A$ etex, z.a);
+label.lft(btex $B$ etex, z.b);
+label.ulft(btex $C$ etex, z.c);
+label.rt(btex $D$ etex, z.d);
+
+label.ulft(btex $b$ etex, .5[z.a,z.c]);
+label.ulft(btex $c$ etex, .5[z.a,z.b]);
+label.rt(btex $h_a$ etex, .5[z.a,z.d]);
+endfig;
+
+beginfig(209);
+save u;
+u:=.5cm;
+
+z.o=origin;
+z.m=(.5,.5)*u;
+z.c=5*z.m;
+z.d=-z.c;
+z.a=z.c rotated 60;
+z.e=z.a rotated 30;
+z.k=z.e rotated 30;
+
+z.b=secondpoint(z.a, z.m, z.o);
+z.f=secondpoint(z.e, z.m, z.o);
+z.l=secondpoint(z.k, z.m, z.o);
+
+hatchfill z.a--z.b--z.d--z.c--cycle  withcolor (87, 1mm, -.5bp);
+
+arcs(z.b,z.d,z.c,10);
+arcs(z.b,z.a,z.c,10);
+arcs2(z.a,z.c,z.d,10);
+arcs2(z.a,z.b,z.d,10);
+
+draw circle(z.o,z.c-z.o);
+draw z.a--z.b--z.d--z.c--cycle penbold;
+draw z.e--z.f;
+draw z.k--z.l;
+
+dOt z.o,z.m;
+
+label.ulft(btex $A$ etex, z.a);
+label.lrt(btex $B$ etex, z.b);
+label.urt(btex $C$ etex, z.c);
+label.llft(btex $D$ etex, z.d);
+label.ulft(btex $E$ etex, z.e);
+label.lrt(btex $F$ etex, z.f);
+label.lft(btex $K$ etex, z.k);
+label.rt(btex $L$ etex, z.l);
+whitelabel.rt(btex $M$ etex, z.m+(1,0));
+label.lft(btex $O$ etex, z.o);
+
+endfig;
+
+beginfig(210);
+save u;
+u:=1cm;
+
+z.o=origin;
+z.c=(x.o,2*u);
+z.m=(-4*u,y.c);
+z.a=z.c rotated -90;
+z.d= -unitvector(z.m)*abs(z.c);
+z.e=z.d rotated -50;
+
+z.b=secondpoint(z.a, z.m, z.o);
+z.f=secondpoint(z.e, z.m, z.o);
+z.h=secondpoint(z.d, z.m, z.o);
+
+hatchfill z.m--z.b--z.c--cycle  withcolor (100, 1mm, -.5bp);
+hatchfill z.m--z.a--z.c--cycle  withcolor (30, 1mm, -.5bp);
+
+draw circle(z.o,z.c) penbold;
+
+arcs(z.b,z.a,z.c,10);
+arcs(z.b,z.c,z.m,10);
+
+draw circle(z.o,z.c) penhair;
+
+draw z.m--z.c;
+draw z.m--z.a;
+draw z.m--z.d;
+draw z.m--z.e;
+draw z.b--z.c--z.a;
+
+dOt z.a,z.b,z.c,z.d,z.e,z.f,z.h,z.m,z.o;
+
+label.rt(btex $A$ etex, z.a);
+whitelabel.lft(btex $B$ etex, z.b);
+label.top(btex $C$ etex, z.c);
+label.lrt(btex $D$ etex, z.d);
+label.lrt(btex $E$ etex, z.e);
+%label.lft(btex $F$ etex, z.f);
+%label.lft(btex $K$ etex, z.k);
+%label.rt(btex $L$ etex, z.l);
+label.lft(btex $M$ etex, z.m+(1,0));
+label.bot(btex $O$ etex, z.o);
+endfig;
+
+beginfig(211);
+save u;
+u:=1.2cm;
+
+z.b=origin;
+z.a=(3.5,0)*u;
+z.c=z.a rotated 45;
+z.m=unitvector(z.c)*u;
+z.m1=1.6*z.m;
+z.m2=2.7*z.m;
+z.m11=unitvector(z.a)*3u;
+
+z.n=altitude(z.b,z.m,z.a);
+z.n1=altitude(z.b,z.m1,z.a);
+z.n2=altitude(z.b,z.m2,z.a);
+z.n11=altitude(z.b,z.m11,z.c);
+
+labelarcsprof(z.a, z.b, z.c, 16, 3, btex $\alpha$ etex);
+
+draw z.a--z.b--z.c;
+draw z.m--z.n;
+draw z.m1--z.n1;
+draw z.m2--z.n2;
+draw z.m11--z.n11;
+
+label.rt(btex $A$ etex, z.a);
+label.llft(btex $B$ etex, z.b);
+label.urt(btex $C$ etex, z.c);
+
+label.ulft(btex $M$ etex, z.m);
+label.ulft(btex $M'$ etex, z.m1);
+label.ulft(btex $M''$ etex, z.m2);
+label.bot(btex $M_1$ etex, z.m11);
+label.bot(btex $N$ etex, z.n);
+label.bot(btex $N'$ etex, z.n1);
+label.bot(btex $N''$ etex, z.n2);
+label.ulft(btex $N_1$ etex, z.n11);
+endfig;
+
+beginfig(212);
+save u;
+u:=1cm;
+
+z.o=origin;
+z.a=(-2,0)*u;
+z.b=-z.a;
+z.c=cross.top(circle(z.o,z.a),circle(z.b,1.5*z.b));
+
+arcs(z.b,z.a,z.c,10);
+
+draw arc(z.a,z.c,z.b);
+draw z.a--z.b--z.c--cycle;
+draw ddarc(.5*z.a,(.5*z.a) rotatedabout(z.b, -1),z.c)(0,10);
+
+kisDot(.5*z.a,z.a);
+kisDot(0*z.a,z.a);
+kisDot(-.5*z.a,z.a);
+
+label.lft(btex $A$ etex, z.a);
+label.rt(btex $B$ etex, z.b);
+label.top(btex $C$ etex, z.c);
+endfig;
+
+beginfig(213);
+save u;
+u:=1cm;
+
+z.a=origin;
+z.b=(-2,0)*u;
+z.c=(0,3)*u;
+
+labelarcsprof(z.a, z.b, z.c, 16, 3, btex $x$ etex);
+draw z.a--z.b--z.c--cycle;
+
+kisDot(.5*z.b,z.a);
+kisDot((1/3)*z.c,z.a);
+kisDot((2/3)*z.c,z.a);
+
+label.rt(btex $A$ etex, z.a);
+label.lft(btex $B$ etex, z.b);
+label.top(btex $C$ etex, z.c);
+endfig;
+
+beginfig(214);
+save u,k;
+u:=1cm;
+k=1.3;
+
+z.o=origin;
+z.a=(2,0)*u;
+z.m=z.a zscaled(0,1);
+z.b=z.a rotated 25;
+z.b1=z.a rotated 45;
+z.b2=z.a rotated 65;
+
+z.c=altitude(z.o,z.b,z.a);
+z.c1=altitude(z.o,z.b1,z.a);
+z.c2=altitude(z.o,z.b2,z.a);
+
+labelarcsprof(z.a, z.o, z.b, 18, 8, btex $\alpha$ etex);
+
+draw ddarc(z.a,z.b,z.m)(10,10);
+draw z.a--z.o--z.m;
+draw z.o--z.b--z.c;
+draw z.o--z.b1--z.c1;
+draw z.o--z.b2--z.c2;
+drawarrow k*z.b..k*z.b1..k*z.b2;
+
+label.rt(btex $A$ etex, z.a);
+label.rt(btex $B$ etex, z.b);
+label.bot(btex $C$ etex, z.c);
+label.urt(btex $B'$ etex, z.b1);
+label.bot(btex $C'$ etex, z.c1);
+label.top(btex $B''$ etex, z.b2);
+label.bot(btex $C''$ etex, z.c2);
+label.top(btex $M$ etex, z.m);
+label.llft(btex $O$ etex, z.o);
+endfig;
+
+beginfig(215);
+save u,k;
+u:=1cm;
+k=1.3;
+
+z.o=origin;
+z.a=(2,0)*u;
+z.m=z.a zscaled(0,1.7);
+z.n=z.a+z.m;
+z.b=(x.a,1*u);
+z.b1=(x.a,1.8*u);
+z.b2=(x.a,3*u);
+
+labelarcsprof(z.a, z.o, z.b, 18, 8, btex $\alpha$ etex);
+
+draw z.n--z.a--z.o--z.m;
+draw z.o--z.b;
+draw z.o--z.b1;
+draw z.o--z.b2;
+
+label.lrt(btex $A$ etex, z.a);
+label.rt(btex $B$ etex, z.b);
+label.rt(btex $B'$ etex, z.b1);
+label.rt(btex $B''$ etex, z.b2);
+label.top(btex $M$ etex, z.m);
+label.top(btex $N$ etex, z.n);
+label.llft(btex $O$ etex, z.o);
+
+endfig;
+
+beginfig(216);
+save u;
+u:=.8cm;
+
+z.a=origin;
+z.b=(-2,0)*u;
+z.c=(0,3)*u;
+
+labelarcsprof(z.a, z.b, z.c, 16, 3, btex etex);
+draw z.a--z.b--z.c--cycle;
+
+label.rt(btex $A$ etex, z.a);
+label.lft(btex $B$ etex, z.b);
+label.top(btex $C$ etex, z.c);
+label.rt(btex $b$ etex, .5[z.a,z.c]);
+label.bot(btex $c$ etex, .5[z.b,z.a]);
+label.ulft(btex $a$ etex, .5[z.c,z.b]);
+endfig;
+
+beginfig(217);
+save u;
+u:=1.8cm;
+
+z.b=origin;
+z.c=(-1,0)*u;
+z.a=2*z.c;
+z.d=z.c zscaled(0,-1);
+z.e=z.d+abs(z.c)*unitvector(z.a-z.d);
+z.g=z.a+(abs(z.a-z.e),0);
+
+draw z.a--z.b--z.d--cycle;
+kisDot(z.c,z.b);
+
+draw ddarc(z.b,z.b rotatedabout(z.d,-1),z.e)(0,20);
+draw ddarc(z.e,z.e rotatedabout(z.a,-1),z.g)(0,10);
+
+label.bot(btex $A$ etex, z.a);
+label.bot(btex $B$ etex, z.b);
+label.bot(btex $C$ etex, z.c);
+label.top(btex $D$ etex, z.d);
+whitelabel.top(btex $E$ etex, z.e);
+label.lrt(btex $G$ etex, z.g);
+endfig;
+
+beginfig(218);
+save u,v;
+u:=.9cm;
+
+z.s1=(1,0)*u;
+z.s2=(1,0)*u;
+z.S1=(1.3,0)*u;
+z.S2=(2,0)*u;
+z.S3=(2,0)*u;
+
+z.a=origin;
+z.b=z.a+(z.S1 rotated 67.5);
+z.c=z.b+(z.S1 rotated 22.5);
+z.d=z.c+(z.S1 rotated -22.5);
+z.e=z.d+(z.S1 rotated -67.5);
+
+z.m=z.e+z.s1;
+z.n=z.m+(z.S2 rotated 67.5);
+z.p=z.n+(z.S2 rotated -67.5);
+z.q=z.p+(z.S2 rotated 67.5);
+z.r=z.q+(z.S2 rotated -67.5);
+
+z.f=z.r+z.s2;
+z.g=z.f+(z.S3 rotated 72);
+z.h=z.g+(z.S3 rotated -72);
+z.k=z.h+(z.S3 rotated 144);
+z.l=z.k+z.S3;
+
+arcs(z.a,z.b,z.c,10);
+arcs(z.b,z.c,z.d,10);
+arcs(z.c,z.d,z.e,10);
+arcs(z.f,z.g,z.h,10);
+arcs(z.g,z.h,z.k,10);
+arcs(z.h,z.k,z.l,10);
+arcs(z.m,z.n,z.p,10);
+arcs(z.n,z.p,z.q,10);
+arcs(z.p,z.q,z.r,10);
+
+draw z.a--z.b--z.c--z.d--z.e penbold;
+draw z.m--z.n--z.p--z.q--z.r penbold;
+draw z.f--z.g--z.h--z.k--z.l penbold;
+
+label.bot(btex $A$ etex, z.a);
+label.ulft(btex $B$ etex, z.b);
+label.top(btex $C$ etex, z.c);
+label.urt(btex $D$ etex, z.d);
+label.bot(btex $E$ etex, z.e);
+label.bot(btex $F$ etex, z.f);
+label.top(btex $G$ etex, z.g);
+label.bot(btex $H$ etex, z.h);
+label.lft(btex $K$ etex, z.k);
+label.rt(btex $L$ etex, z.l);
+label.bot(btex $M$ etex, z.m);
+label.top(btex $N$ etex, z.n);
+label.bot(btex $P$ etex, z.p);
+label.top(btex $Q$ etex, z.q);
+label.bot(btex $R$ etex, z.r);
+endfig;
+
+beginfig(219);
+save u,v;
+u:=1cm;
+
+z.shift=(-3,0)*u;
+z.S=(2,0)*u;
+
+z.f=origin;
+z.g=z.f+(z.S rotated 72);
+z.h=z.g+(z.S rotated -72);
+z.k=z.h+(z.S rotated 144);
+z.l=z.k+z.S;
+
+z.a=z.f+z.shift;
+z.b=z.k+z.shift;
+z.c=z.g+z.shift;
+z.d=z.l+z.shift;
+z.e=z.h+z.shift;
+
+draw z.a--z.b--z.c--z.d--z.e--cycle penbold;
+draw z.f--z.g--z.h--z.k--z.l--cycle penbold;
+
+label(btex \textit{б} etex, z.S zscaled (.6,.9));
+label(btex \textit{а} etex, (z.S zscaled (.6,.9)) + z.shift);
+endfig;
+
+beginfig(220);
+save u,v;
+u:=1cm;
+
+z.o=origin;
+
+z.p=(2,0)*u;
+z.q=z.p rotated -60;
+z.r=z.q rotated -60;
+z.s=z.r rotated -60;
+z.m=z.s rotated -60;
+z.n=z.m rotated -60;
+
+z.a=.5[z.s,z.m];
+z.b=.5[z.n,z.m];
+z.c=.5[z.n,z.p];
+z.d=.5[z.q,z.p];
+z.e=.5[z.q,z.r];
+z.f=.5[z.s,z.r];
+
+draw circle(z.o,z.a);
+draw z.a--z.b--z.c--z.d--z.e--z.f--cycle;
+draw z.m--z.n--z.p--z.q--z.r--z.s--cycle;
+dOt z.o;
+
+label.ulft(btex $A$ etex, z.a);
+label.top(btex $B$ etex, z.b);
+label.urt(btex $C$ etex, z.c);
+label.lrt(btex $D$ etex, z.d);
+label.bot(btex $E$ etex, z.e);
+label.llft(btex $F$ etex, z.f);
+label.ulft(btex $M$ etex, z.m);
+label.urt(btex $N$ etex, z.n);
+label.lft(btex $O$ etex, z.o);
+label.rt(btex $P$ etex, z.p);
+label.lrt(btex $Q$ etex, z.q);
+label.llft(btex $R$ etex, z.r);
+label.lft(btex $S$ etex, z.s);
+endfig;
+
+beginfig(221);
+save u,v;
+u:=1cm;
+
+z.o=origin;
+
+z.p=(2,0)*u;
+z.q=z.p rotated -60;
+z.r=z.q rotated -60;
+z.s=z.r rotated -60;
+z.m=z.s rotated -60;
+z.n=z.m rotated -60;
+
+z.a=.5[z.s,z.m];
+z.b=.5[z.n,z.m];
+z.c=.5[z.n,z.p];
+z.d=.5[z.q,z.p];
+z.e=.5[z.q,z.r];
+z.f=.5[z.s,z.r];
+
+z.a1=z.m rotated 30;
+z.b1=z.n rotated 30;
+z.c1=z.p rotated 30;
+z.d1=z.q rotated 30;
+z.e1=z.r rotated 30;
+z.f1=z.s rotated 30;
+
+z.m1=z.a rotated -30;
+z.n1=z.b rotated -30;
+z.p1=z.c rotated -30;
+z.q1=z.d rotated -30;
+z.r1=z.e rotated -30;
+z.s1=z.f rotated -30;
+
+draw circle(z.o,z.a);
+draw z.a--z.b--z.c--z.d--z.e--z.f--cycle;
+draw z.a1--z.b1--z.c1--z.d1--z.e1--z.f1--cycle;
+draw z.a1--z.d1;
+draw z.b1--z.e1;
+draw z.c1--z.f1;
+draw z.m1--z.q1;
+draw z.n1--z.r1;
+draw z.p1--z.s1;
+
+dOt z.o;
+
+whitelabel.lrt(btex $A$ etex, z.a);
+whitelabel.bot(btex $B$ etex, z.b+(0,-1));
+whitelabel.llft(btex $C$ etex, z.c);
+whitelabel.ulft(btex $D$ etex, z.d);
+whitelabel.top(btex $E$ etex, z.e);
+whitelabel.urt(btex $F$ etex, z.f);
+
+label.ulft(btex $A_1$ etex, z.a1);
+label.top(btex $B_1$ etex, z.b1);
+label.urt(btex $C_1$ etex, z.c1);
+label.lrt(btex $D_1$ etex, z.d1);
+label.bot(btex $E_1$ etex, z.e1);
+label.llft(btex $F_1$ etex, z.f1);
+
+label.ulft(btex $M$ etex, z.m1);
+label.urt(btex $N$ etex, z.n1);
+label.rt(btex $P$ etex, z.p1);
+label.lrt(btex $Q$ etex, z.q1);
+label.llft(btex $R$ etex, z.r1);
+label.lft(btex $S$ etex, z.s1);
+
+whitelabel.ulft(btex $O$ etex, z.o);
+endfig;
+
+beginfig(222);
+save u,v;
+u:=1cm;
+
+z.o=origin;
+
+z.e=(0,2)*u;
+z.a=z.e rotated 72;
+z.b=z.a rotated 72;
+z.c=z.b rotated 72;
+z.d=z.c rotated 72;
+
+z.k=.5[z.b,z.c];
+z.m=.5[z.a,z.e];
+z.n=.5[z.d,z.e];
+
+draw circle(z.o,z.a);
+draw circle(z.o,z.m);
+
+draw z.a--z.b--z.c--z.d--z.e--cycle;
+draw z.a--z.o--z.n;
+draw z.d--z.o--z.m;
+draw z.o--z.k;
+
+label.lft(btex $A$ etex, z.a);
+label.llft(btex $B$ etex, z.b+(0,-1));
+label.lrt(btex $C$ etex, z.c);
+label.rt(btex $D$ etex, z.d);
+label.top(btex $E$ etex, z.e);
+
+whitelabel.bot(btex $K$ etex, z.k);
+whitelabel.ulft(btex $M$ etex, z.m);
+whitelabel.urt(btex $N$ etex, z.n);
+
+label.bot(btex $O$ etex, z.o);
+endfig;
+
+beginfig(223);
+save u,k;
+u:=.6cm;
+k:=.7;
+
+z.S=(5.5,0)*u;
+
+z.o=origin;
+
+z.f=(-2,0)*u;
+z.a=z.f rotated 60;
+z.b=z.a rotated 60;
+z.c=z.b rotated 60;
+z.d=z.c rotated 60;
+z.e=z.d rotated 60;
+z.m=.5[z.a,z.b];
+
+z.a1=k*z.a+z.S;
+z.b1=k*z.b+z.S;
+z.c1=k*z.c+z.S;
+z.d1=k*z.d+z.S;
+z.e1=k*z.e+z.S;
+z.f1=k*z.f+z.S;
+z.m1=k*z.m+z.S;
+z.o1=k*z.o+z.S;
+
+draw z.a--z.b--z.c--z.d--z.e--z.f--cycle;
+draw z.a--z.o--z.b;
+draw z.o--z.m;
+
+draw z.a1--z.b1--z.c1--z.d1--z.e1--z.f1--cycle;
+draw z.a1--z.o1--z.b1;
+draw z.o1--z.m1;
+
+dOt z.o,z.o1;
+
+label.llft(btex $A$ etex, z.a);
+label.lrt(btex $B$ etex, z.b+(0,-1));
+label.rt(btex $C$ etex, z.c);
+label.urt(btex $D$ etex, z.d);
+label.ulft(btex $E$ etex, z.e);
+label.lft(btex $F$ etex, z.f);
+label.bot(btex $M$ etex, z.m);
+label.top(btex $O$ etex, z.o);
+
+label.llft(btex $A_1$ etex, z.a1);
+label.lrt(btex $B_1$ etex, z.b1);
+label.rt(btex $C_1$ etex, z.c1);
+label.urt(btex $D_1$ etex, z.d1);
+label.ulft(btex $E_1$ etex, z.e1);
+label.llft(btex $F_1$ etex, z.f1);
+label.bot(btex $M_1$ etex, z.m1);
+label.top(btex $O_1$ etex, z.o1);
+endfig;
+
+beginfig(224);
+save u,k;
+u:=.7cm;
+
+z.o=origin;
+z.d=(0,-2)*u;
+z.a=z.d rotated -90;
+z.b=z.a rotated -90;
+z.c=z.b rotated -90;
+
+draw circle(z.o,z.d);
+draw z.a--z.b--z.c--z.d--cycle;
+draw z.a--z.c;
+draw z.b--z.d;
+
+dOt z.o;
+
+label.lft(btex $A$ etex, z.a);
+label.top(btex $B$ etex, z.b);
+label.rt(btex $C$ etex, z.c);
+label.bot(btex $D$ etex, z.d);
+label.urt(btex $O$ etex, z.o);
+endfig;
+
+beginfig(225);
+save u,k;
+u:=.7cm;
+
+z.o=origin;
+z.f=(-2,0)*u;
+z.a=z.f rotated 60;
+z.b=z.a rotated 60;
+z.c=z.b rotated 60;
+z.d=z.c rotated 60;
+z.e=z.d rotated 60;
+
+draw circle(z.o,z.f);
+
+draw z.o--z.a--z.b--cycle;;
+
+kisDotAng(z.c, z.o, 0);
+kisDotAng(z.d, z.o, 0);
+kisDotAng(z.e, z.o, 0);
+kisDotAng(z.f, z.o, 0);
+
+label.llft(btex $A$ etex, z.a);
+label.lrt(btex $B$ etex, z.b);
+label.top(btex $O$ etex, z.o);
+label.bot(btex $60\degree$ etex, z.o+(0,-9));
+endfig;
+
+beginfig(226);
+save u,k;
+u:=.7cm;
+
+z.o=origin;
+z.d=(0,-2)*u;
+z.a=z.d rotated -60;
+z.b=z.a rotated -120;
+z.c=z.b rotated -120;
+z.ab=z.a rotated -60;
+z.bc=z.b rotated -60;
+
+draw circle(z.o,z.d);
+
+draw z.c--z.a--z.b--cycle;
+draw z.b--z.d--z.a;
+
+kisDotAng(z.ab, z.o, 0);
+kisDotAng(z.bc, z.o, 0);
+
+dOt z.o;
+
+label.llft(btex $A$ etex, z.a);
+label.top(btex $B$ etex, z.b);
+label.lrt(btex $C$ etex, z.c);
+label.bot(btex $D$ etex, z.d);
+label.rt(btex $O$ etex, z.o);
+endfig;
+
+beginfig(227);
+save u,k;
+u:=1cm;
+
+z.o=origin;
+z.t=(0,2)*u;
+z.a=z.t rotated 18;
+z.b=z.t rotated -18;
+z.c=(sqrt(5)-1)*.5*z.b;
+
+arcs(z.b,z.o,z.a,9);
+arcs(z.o,z.a,z.c,9);
+arcs(z.b,z.a,z.c,7);
+arcs2(z.c,z.b,z.a,8);
+arcs2(z.b,z.c,z.a,8);
+
+draw circle(z.o,z.a);
+draw z.o--z.a--z.b--cycle;
+draw z.a--z.c;
+
+label.ulft(btex $A$ etex, z.a);
+label.urt(btex $B$ etex, z.b);
+label.lrt(btex $C$ etex, z.c);
+label.bot(btex $O$ etex, z.o);
+endfig;
+
+beginfig(228);
+save u;
+u:=1cm;
+
+z.o=origin;
+z.a=(-2,0)*u;
+z.a1=z.a rotated (1*36);
+z.a2=z.a rotated (2*36);
+z.a3=z.a rotated (3*36);
+z.a4=z.a rotated (4*36);
+z.a5=z.a rotated (5*36);
+z.a6=z.a rotated (6*36);
+z.a7=z.a rotated (7*36);
+z.a8=z.a rotated (8*36);
+z.a9=z.a rotated (9*36);
+
+z.k=z.a zscaled (0,-.5);
+z.ak=z.a+abs(z.a1-z.a)*unitvector(z.k-z.a);
+
+draw circle(z.o,z.a);
+draw circle(z.k,z.ak-z.k);
+draw z.a9..z.ak..z.a1;
+draw z.a--z.a1--z.a2--z.a3--z.a4--z.a5--z.a6--z.a7--z.a8--z.a9--cycle;
+draw z.a--z.a5;
+draw (z.a rotated 90)--(z.a rotated -90);
+
+dOt z.o;
+
+label.lft(btex $A$ etex, z.a);
+label.lrt(btex $O$ etex, z.o);
+endfig;
+
+beginfig(229);
+save u;
+u:=.7cm;
+
+z.o=origin;
+z.a=(0,2)*u;
+z.a1=z.a rotated (1*36);
+z.a2=z.a rotated (2*36);
+z.a3=z.a rotated (3*36);
+z.a4=z.a rotated (4*36);
+z.a5=z.a rotated (5*36);
+z.a6=z.a rotated (6*36);
+z.a7=z.a rotated (7*36);
+z.a8=z.a rotated (8*36);
+z.a9=z.a rotated (9*36);
+
+
+draw circle(z.o,z.a);
+draw z.a--z.a4--z.a8--z.a2--z.a6--cycle penbold;
+
+kisDotAng(z.a1, z.o, 0);
+kisDotAng(z.a3, z.o, 0);
+kisDotAng(z.a5, z.o, 0);
+kisDotAng(z.a7, z.o, 0);
+kisDotAng(z.a9, z.o, 0);
+endfig;
+
+beginfig(230);
+save u;
+u:=1cm;
+
+z.o=origin;
+z.c=(0,2)*u;
+z.a=z.c rotated 36;
+z.b=z.a reflectedabout(z.o,z.c);
+z.d=altitude(z.o,z.a,z.c);
+
+draw ddarc(z.a,z.c,z.b)(50,50);
+draw z.b--z.a--z.c--z.o--z.a;
+
+dOt z.o;
+
+label.ulft(btex $A$ etex, z.a);
+label.urt(btex $B$ etex, z.b);
+label.top(btex $C$ etex, z.c);
+label.lrt(btex $D$ etex, z.d);
+label.rt(btex $O$ etex, z.o);
+endfig;
+
+beginfig(231);
+save u;
+u:=1cm;
+
+z.a=origin;
+z.e=(.5,2)*u;
+z.f=(2,1.5)*u;
+z.g=(3,2)*u;
+z.d=(3.5,0)*u;
+
+z.h=.6[z.e,z.f];
+z.k=.5[z.g,z.d];
+z.b=.6[z.a,z.h];
+z.c=.7[z.b,z.k];
+
+draw z.a--z.e--z.f--z.g--z.d--cycle;
+draw z.a--z.h;
+draw z.b--z.k;
+draw z.c--z.d;
+
+dOt z.a,z.d;
+
+label.lft(btex $A$ etex, z.a);
+label.ulft(btex $B$ etex, z.b);
+label.top(btex $C$ etex, z.c);
+label.rt(btex $D$ etex, z.d);
+label.ulft(btex $E$ etex, z.e);
+label.top(btex $F$ etex, z.f);
+label.top(btex $G$ etex, z.g);
+label.urt(btex $H$ etex, z.h);
+label.rt(btex $K$ etex, z.k);
+
+endfig;
+
+beginfig(232);
+save u;
+u:=1cm;
+
+z.a=origin;
+z.e=(.5,2)*u;
+z.f=(2,1.5)*u;
+z.g=(3,2)*u;
+z.d=(3.5,0)*u;
+
+z.b1=(1,1.5)*u;
+z.b2=(1.5,.5)*u;
+z.b3=(1.6,1.5)*u;
+z.b4=(2,.5)*u;
+z.b5=(2.5,1.5)*u;
+
+draw z.a--z.e--z.f--z.g--z.d--cycle;
+draw z.a--z.b1--z.b2--z.b3--z.b4--z.b5--z.d;
+
+dOt z.a,z.d;
+
+endfig;
+
+beginfig(233);
+save u;
+u:=1cm;
+
+z.l=origin;
+z.m=(0,2)*u;
+z.n=(1,2.5)*u;
+z.p=(2,2.3)*u;
+z.q=(3,3)*u;
+z.r=(2.5,0)*u;
+
+z.s=.4[z.l,z.r];
+z.t=.7[z.l,z.m];
+z.a=.3[z.t,z.s];
+z.d=.7[z.t,z.s];
+z.b=(1.2,1.7)*u;
+z.c=(2.3,1.4)*u;
+
+draw z.l--z.m--z.n--z.p--z.q--z.r--cycle;
+draw z.t--z.s;
+draw z.a--z.b--z.c--z.d;
+
+label.llft(btex $A$ etex, z.a);
+label.top(btex $B$ etex, z.b);
+label.top(btex $C$ etex, z.c);
+label.llft(btex $D$ etex, z.d);
+
+label.llft(btex $L$ etex, z.l);
+label.ulft(btex $M$ etex, z.m);
+label.top(btex $N$ etex, z.n);
+label.top(btex $P$ etex, z.p);
+label.top(btex $Q$ etex, z.q);
+label.lrt(btex $R$ etex, z.r);
+
+label.bot(btex $S$ etex, z.s);
+label.lft(btex $T$ etex, z.t);
+endfig;
+
+beginfig(234);
+save u;
+u:=.65cm;
+
+z.o=origin;
+z.a=(-2,0)*u;
+z.a1=z.a rotated 60;
+z.a2=z.a1 rotated 60;
+z.a3=z.a2 rotated 60;
+z.a4=z.a3 rotated 60;
+z.a5=z.a4 rotated 60;
+
+z.b1=z.a1 rotated -30;
+z.b2=z.a2 rotated -30;
+z.b3=z.a3 rotated -30;
+z.b4=z.a4 rotated -30;
+z.b5=z.a5 rotated -30;
+z.b6=z.a rotated -30;
+
+draw circle(z.o,z.a);
+
+draw z.a--z.a1--z.a2--z.a3--z.a4--z.a5--cycle;
+draw z.a--z.b1--z.a1--z.b2--z.a2--z.b3--z.a3--z.b4--z.a4--z.b5--z.a5--z.b6--cycle penhair;
+%draw z.a--z.a3;
+%draw z.a1--z.a4;
+%draw z.a2--z.a5;
+endfig;
+
+beginfig(235);
+save u;
+u:=.65cm;
+
+z.o=origin;
+z.a=(2,0)*u;
+z.a6=z.a rotated 60;
+z.a12=z.a rotated 30;
+z.a24=z.a rotated 15;
+
+z.p1=z.o+(6*abs(z.a-z.a6),0);
+z.p2=z.o+(12*abs(z.a-z.a12),0);
+z.p3=z.o+(24*abs(z.a-z.a24),0);
+z.x=2*3.1415926535*z.a;
+
+z.m=(-.1)[z.o,z.x];
+z.n=(1.1)[z.o,z.x];
+
+draw z.m--z.n;
+kisDot(z.o,z.p1);
+kisDot(z.p1,z.o);
+kisDot(z.p2,z.o);
+%kisDot(z.p3,z.o);
+kisDot(z.x,z.o);
+
+label.bot(btex $P_1$ etex, z.p1+(-3,0));
+label.bot(btex $P_2$ etex, z.p2+(-1,0));
+%label.bot(btex $P_3$ etex, z.p3);
+label.top(btex $x$ etex, z.x+(2,0));
+
+label.lft(btex $M$ etex, z.m);
+label.rt(btex $N$ etex, z.n);
+label.bot(btex $O$ etex, z.o);
+endfig;
+
+beginfig(236);
+save u,k;
+u:=1cm;
+k:=55;
+
+z.o=origin;
+z.c=(0,2)*u;
+
+z.a=z.c rotated k;
+z.d=z.c rotated (.5*k);
+z.e=z.c rotated (-.5*k);
+z.b=z.c rotated (-k);
+
+draw arc(z.a,z.c,z.b);
+draw z.a--z.d--z.c--z.e--z.b penhair;
+draw z.a--z.c--z.b--cycle;
+
+dOt z.a,z.b;
+
+label.lft(btex $A$ etex, z.a);
+label.rt(btex $B$ etex, z.b);
+label.top(btex $C$ etex, z.c);
+label.ulft(btex $D$ etex, z.d);
+label.urt(btex $E$ etex, z.e);
+endfig;
+
+beginfig(237);
+save u,k;
+u:=1cm;
+k:=55;
+
+z.o=origin;
+z.r=(0,2)*u;
+
+z.a=z.r rotated k;
+z.b=z.r rotated (-k);
+z.m=z.r rotated (k/5);
+z.n=z.r rotated (-k/3);
+
+z.c1=.5[z.a,z.m];
+z.c=(abs(z.r)**2/(abs(z.c1)**2))*z.c1;
+
+z.d1=.5[z.n,z.m];
+z.d=(abs(z.r)**2/(abs(z.d1)**2))*z.d1;
+
+z.e1=.5[z.n,z.b];
+z.e=(abs(z.r)**2/(abs(z.e1)**2))*z.e1;
+
+draw arc(z.a,z.r,z.b);
+draw z.a--z.c--z.d--z.e--z.b;
+
+dOt z.a,z.b;
+
+label.lft(btex $A$ etex, z.a);
+label.rt(btex $B$ etex, z.b);
+label.ulft(btex $C$ etex, z.c);
+label.top(btex $D$ etex, z.d);
+label.urt(btex $E$ etex, z.e);
+endfig;
+
+beginfig(238);
+save u,k;
+u:=1cm;
+k:=55;
+
+z.o=origin;
+z.r=(0,2)*u;
+
+z.a=z.r rotated k;
+z.b=z.r rotated (-k);
+
+z.c1=.5[z.a,z.b];
+z.c=(abs(z.r)**2/(abs(z.c1)**2))*z.c1;
+
+z.m=.3[z.c,z.a];
+z.n=.3[z.c,z.b];
+
+draw arc(z.a,z.r,z.b);
+draw z.a--z.c--z.b;
+draw z.m--z.n;
+
+dOt z.a,z.b;
+
+label.lft(btex $A$ etex, z.a);
+label.rt(btex $B$ etex, z.b);
+label.top(btex $C$ etex, z.c);
+label.ulft(btex $m$ etex, z.m);
+label.urt(btex $n$ etex, z.n);
+endfig;
+
+beginfig(239);
+save u;
+u:=1cm;
+
+z1=(0,0)*u;
+z2=(1,0)*u;
+z3=(2.3,0)*u;
+z4=(3.5,0)*u;
+z5=(3.5,1)*u;
+z56=.4[z5,z6];
+z6=(2,2)*u;
+z7=(.5,1.5)*u;
+
+draw z1--z2--z3--z4--z5--z6--z7--cycle;
+draw z2--z7;
+draw z3--z56;
+
+label(btex $M$ etex, (1/3)*(z1+z2+z7));
+label(btex $N$ etex, (z2+z3+z56+z6+z7)/5);
+label(btex $P$ etex, (z3+z4+z5+z56)/4);
+endfig;
+
+beginfig(240);
+save u;
+u:=1cm;
+
+z.shift=(1,0)*u;
+
+z.a1=origin;
+z.a2=(1,0)*u;
+z.a4=z.a2 zscaled (0,2);
+z.a3=z.a2+z.a4;
+
+z.b1=z.a2+0.7*z.shift;
+z.b2=z.b1+z.a2-z.a1;
+z.b3=z.b1+z.a3-z.a1;
+z.b4=z.b2+z.b3-z.b1;
+
+z.c1=z.b2+z.shift;
+z.c2=z.c1+z.a2-z.a1;
+z.c3=z.c1+z.a3-z.a1;
+z.c4=2*z.c2-z.c1;
+
+draw z.a1--z.a2--z.a3--z.a4--cycle;
+draw z.a2--z.a4;
+
+draw z.b1--z.b2--z.b4--z.b3--cycle;
+draw z.b2--z.b3;
+
+draw z.c1--z.c4--z.c3--cycle;
+draw z.c2--z.c3;
+
+label(btex $A$ etex, (1/3)*(z.a1+z.a2+z.a4));
+label(btex $B$ etex, (1/3)*(z.a2+z.a3+z.a4));
+
+label(btex $A$ etex, (1/3)*(z.b1+z.b2+z.b3));
+label(btex $B$ etex, (1/3)*(z.b2+z.b3+z.b4));
+
+label(btex $A$ etex, (1/3)*(z.c1+z.c2+z.c3));
+label(btex $B$ etex, (1/3)*(z.c2+z.c3+z.c4));
+endfig;
+
+beginfig(241);
+save u;
+u:=.4cm;
+
+draw (0,0)*u--(12,0)*u--(12,5)*u--(9,5)*u--(9,3)*u--(4,3)*u--(4,6)*u--(0,6)*u--cycle penbold;
+
+draw (0,1)*u--(12,1)*u penhair;
+draw (0,2)*u--(12,2)*u penhair;
+draw (0,3)*u--(4,3)*u penhair;
+draw (0,4)*u--(4,4)*u penhair;
+draw (0,5)*u--(4,5)*u penhair;
+
+draw (9,3)*u--(12,3)*u penhair;
+draw (9,4)*u--(12,4)*u penhair;
+
+draw (1,0)*u--(1,6)*u penhair;
+draw (2,0)*u--(2,6)*u penhair;
+draw (3,0)*u--(3,6)*u penhair;
+draw (4,0)*u--(4,3)*u penhair;
+draw (4,0)*u--(4,3)*u penhair;
+draw (5,0)*u--(5,3)*u penhair;
+draw (6,0)*u--(6,3)*u penhair;
+draw (7,0)*u--(7,3)*u penhair;
+draw (8,0)*u--(8,3)*u penhair;
+draw (9,0)*u--(9,3)*u penhair;
+draw (10,0)*u--(10,5)*u penhair;
+draw (11,0)*u--(11,5)*u penhair;
+endfig;
+
+beginfig(242);
+save u;
+u:=.5cm;
+
+draw (0,0)*u--(5,0)*u--(5,6)*u--(0,6)*u--cycle penbold;
+
+draw (0,1)*u--(5,1)*u penhair;
+draw (0,2)*u--(5,2)*u penhair;
+draw (0,3)*u--(5,3)*u penhair;
+draw (0,4)*u--(5,4)*u penhair;
+draw (0,5)*u--(5,5)*u penhair;
+
+draw (1,0)*u--(1,6)*u penhair;
+draw (2,0)*u--(2,6)*u penhair;
+draw (3,0)*u--(3,6)*u penhair;
+draw (4,0)*u--(4,6)*u penhair;
+
+hatchfill (1,1)*u--(2,1)*u--(2,2)*u--(1,2)*u--cycle  withcolor (50, .7mm, -.5bp);
+
+whitelabel(btex $K$ etex, (1.5,1.4)*u);
+
+label.lft(btex $h$ etex, (0,3)*u);
+label.bot(btex $b$ etex, (2.5,0)*u);
+endfig;
+
+beginfig(243);
+save u;
+u:=.7cm;
+
+z.a=origin;
+z.b=(3.3,0)*u;
+z.b1=(3,0)*u;
+z.b2=(4,0)*u;
+
+z.d=(0,4.6)*u;
+z.d1=(0,4)*u;
+z.d2=(0,5)*u;
+
+z.c=(x.b,y.d);
+z.c1=(x.b1,y.d1);
+z.c2=(x.b2,y.d2);
+
+arrowmark(z.a, z.b, btex $\alpha$ etex, (-30));
+arrowmark(z.a, z.d, btex $\beta$ etex, 30);
+
+draw z.a--z.b1--z.c1--z.d1--cycle;
+draw z.a--z.b2--z.c2--z.d2--cycle;
+draw z.a--z.b--z.c--z.d--cycle penbold;
+
+kisDot((1,0)*u,z.a);
+kisDot((2,0)*u,z.a);
+kisDot((3,0)*u,z.a);
+kisDot((0,1)*u,z.a);
+kisDot((0,2)*u,z.a);
+kisDot((0,3)*u,z.a);
+kisDot((0,4)*u,z.a);
+
+label.llft(btex $A$ etex, z.a);
+label.bot(btex $B$ etex, z.b);
+label.rt(btex $C$ etex, z.c);
+label.lft(btex $D$ etex, z.d);
+
+label.ulft(btex $B_1$ etex, z.b1);
+label.llft(btex $C_1$ etex, z.c1);
+label.lrt(btex $D_1$ etex, z.d1);
+
+label.rt(btex $B_2$ etex, z.b2);
+label.urt(btex $C_2$ etex, z.c2);
+label.top(btex $D_2$ etex, z.d2);
+
+endfig;
+
+beginfig(244);
+save u;
+u:=1cm;
+
+z.a=origin;
+z.d=(2,0)*u;
+z.e=(0,2.5)*u;
+z.f=z.d+z.e;
+
+arrowmark(z.a, z.d, btex $b$ etex, -15);
+arrowmark(z.a, z.e, btex $h$ etex, 15);
+
+z.b=(2.5*u,y.e);
+z.c=z.b+z.d;
+
+hatchfill z.a--z.b--z.c--z.d--cycle  withcolor (50, 1mm, -.5bp);
+hatchfill z.a--z.e--z.f--z.d--cycle  withcolor (140, 1mm, -.5bp);
+
+draw z.a--z.b--z.c--z.d--cycle;
+draw z.a--z.e--z.f--z.d--cycle;
+draw z.f--z.b penhair;
+
+label.llft(btex $A$ etex, z.a);
+label.top(btex $B$ etex, z.b);
+label.top(btex $C$ etex, z.c);
+label.lrt(btex $D$ etex, z.d);
+label.top(btex $E$ etex, z.e);
+label.top(btex $F$ etex, z.f);
+endfig;
+
+beginfig(245);
+save u;
+u:=1cm;
+
+z.a=origin;
+z.d=(2,0)*u;
+z.e=(0,2.5)*u;
+z.f=z.d+z.e;
+
+z.b=(1*u,y.e);
+z.c=z.b+z.d;
+
+arrowmark(z.a, z.d, btex $b$ etex, -15);
+arrowmark(z.a, z.e, btex $h$ etex, 15);
+
+hatchfill z.a--z.b--z.c--z.d--cycle  withcolor (50, 1mm, -.5bp);
+hatchfill z.a--z.e--z.f--z.d--cycle  withcolor (140, 1mm, -.5bp);
+
+draw z.a--z.b--z.c--z.d--cycle;
+draw z.a--z.e--z.f--z.d--cycle;
+draw z.f--z.b penhair;
+
+
+label.llft(btex $A$ etex, z.a);
+label.top(btex $B$ etex, z.b);
+label.top(btex $C$ etex, z.c);
+label.lrt(btex $D$ etex, z.d);
+label.top(btex $E$ etex, z.e);
+label.top(btex $F$ etex, z.f);
+endfig;
+
+beginfig(246);
+save u;
+u:=1cm;
+
+z.a=origin;
+z.b=(2,3)*u;
+z.c=(3,0)*u;
+z.e=z.b-z.c;
+z.d=altitude(z.a,z.b,z.c);
+
+hatchfill z.a--z.b--z.c--cycle  withcolor (50, 1mm, -.5bp);
+draw z.a--z.b--z.c--cycle penbold;
+draw z.a--z.e--z.b--z.d;
+
+label.lft(btex $A$ etex, z.a);
+label.top(btex $B$ etex, z.b);
+label.rt(btex $C$ etex, z.c);
+label.top(btex $E$ etex, z.e);
+
+label.bot(btex $b$ etex, .5[z.a,z.c]);
+whitelabel.lft(btex $h$ etex, .5[z.b,z.d]);
+endfig;
+
+beginfig(247);
+save u;
+u:=1cm;
+
+z.a=origin;
+z.b=(2,3)*u;
+z.c=(3,0)*u;
+
+z.d=.5[z.a,z.b];
+z.e=.5[z.c,z.b];
+z.b1=altitude(z.e,z.b,z.d);
+z.k=altitude(z.e,z.a,z.d);
+z.l=altitude(z.e,z.c,z.d);
+
+z.l1=z.l rotatedabout(z.e,20);
+z.l2=z.l rotatedabout(z.e,45);
+z.l3=z.l rotatedabout(z.e,90);
+
+z.k1=z.k rotatedabout(z.d,-20);
+z.k2=z.k rotatedabout(z.d,-45);
+z.k3=z.k rotatedabout(z.d,-110);
+
+hatchfill z.a--z.d--z.e--z.c--cycle  withcolor (10, 1mm, -.5bp);
+hatchfill z.a--z.k--z.b1--z.b--cycle  withcolor (70, 1mm, -.5bp);
+hatchfill z.c--z.l--z.b1--z.b--cycle  withcolor (130, 1mm, -.5bp);
+
+draw z.a--z.b--z.c--cycle penbold;
+draw z.a--z.k--z.l--z.c penbold;
+draw z.b--z.b1 penbold;
+drawarrow z.l3..z.l2..z.l1;
+drawarrow z.k3..z.k2..z.k1;
+
+
+label.lft(btex $A$ etex, z.a);
+label.top(btex $B$ etex, z.b);
+label.rt(btex $C$ etex, z.c);
+endfig;
+
+beginfig(248);
+save u;
+u:=.7cm;
+
+z.a=origin;
+z.b=(2,3)*u;
+z.c=(3,0)*u;
+z.b1=z.a+z.b-z.c;
+z.b4=z.b+z.c-z.a;
+z.b2=.3[z.b1,z.b4];
+z.b3=.8[z.b1,z.b4];
+
+hatchfill z.a--z.b--z.c--cycle  withcolor (10, 1mm, -.5bp);
+draw z.a--z.b--z.c--cycle penbold;
+draw ddline(z.b1,z.b4)(.05,.05) dashed evenly;
+
+draw z.a--z.b1--z.c;
+draw z.a--z.b2--z.c;
+draw z.a--z.b3--z.c;
+draw z.a--z.b4--z.c;
+
+label.lft(btex $A$ etex, z.a);
+label.top(btex $B$ etex, z.b);
+label.rt(btex $C$ etex, z.c);
+endfig;
+
+beginfig(249);
+save u;
+u:=1cm;
+
+z.o=origin;
+z.a=(-1.5,0)*u;
+z.b=(0,1)*u;
+z.c=-z.a;
+z.d=-z.b;
+
+draw z.a--z.b--z.c--z.d--cycle penbold;
+draw z.a--z.c;
+draw z.b--z.d;
+
+
+label.lft(btex $A$ etex, z.a);
+label.top(btex $B$ etex, z.b);
+label.rt(btex $C$ etex, z.c);
+label.bot(btex $D$ etex, z.d);
+label.urt(btex $O$ etex, z.o);
+endfig;
+
+beginfig(250);
+save u;
+u:=1cm;
+
+z.a=origin;
+z.b=(1,2)*u;
+z.d=z.a+(4,0)*u;
+z.c=z.b+(2.5,0)*u;
+z.m=.5[z.a,z.b];
+z.n=.5[z.c,z.d];
+z.c1=altitude(z.a,z.c,z.d);
+z.a1=altitude(z.b,z.a,z.c);
+
+hatchfill z.a--z.b--z.c--z.d--cycle  withcolor (10, 1mm, -.5bp);
+draw z.a--z.b--z.c--z.d--cycle penbold;
+draw z.a--z.c penbold;
+draw z.a--z.a1--z.b;
+draw z.c--z.c1;
+
+label.lft(btex $A$ etex, z.a);
+label.top(btex $B$ etex, z.b);
+label.top(btex $C$ etex, z.c);
+label.rt(btex $D$ etex, z.d);
+label.lft(btex $h$ etex, .5[z.a,z.a1]);
+whitelabel.lft(btex $h$ etex, .5[z.c,z.c1]);
+
+
+endfig;
+
+beginfig(251);
+save u;
+u:=1cm;
+
+z.a=origin;
+z.b=(1,2)*u;
+z.d=z.a+(4,0)*u;
+z.c=z.b+(2.5,0)*u;
+z.m=.5[z.a,z.b];
+z.n=.5[z.c,z.d];
+z.m1=altitude(z.a,z.m,z.d);
+z.m2=altitude(z.b,z.m,z.c);
+z.n1=altitude(z.a,z.n,z.d);
+z.n2=altitude(z.b,z.n,z.c);
+
+z.d1=.7[z.n,z.d] rotatedabout(z.n,20);
+z.d2=z.d1 rotatedabout(z.n,80);
+z.d3=z.d1 rotatedabout(z.n,120);
+
+drawarrow z.d1..z.d2..z.d3;
+
+z.a1=.7[z.m,z.a] rotatedabout(z.m,-20);
+z.a2=z.a1 rotatedabout(z.m,-80);
+z.a3=z.a1 rotatedabout(z.m,-120);
+
+drawarrow z.a1..z.a2..z.a3;
+
+hatchfill z.a--z.b--z.c--z.d--cycle  withcolor (10, 1mm, -.5bp);
+draw z.a--z.b--z.c--z.d--cycle penbold;
+draw z.m1--z.m2--z.b;
+draw z.n1--z.n2--z.c;
+draw z.m--z.n penbold;
+
+label.lft(btex $A$ etex, z.a);
+label.top(btex $B$ etex, z.b);
+label.top(btex $C$ etex, z.c);
+label.rt(btex $D$ etex, z.d);
+label.lft(btex $M$ etex, z.m);
+label.rt(btex $N$ etex, z.n);
+endfig;
+
+beginfig(251);
+save u;
+u:=1cm;
+
+z.o=origin;
+z.ea=(0,-1)*u;
+z.x=(1,1)*u;
+%z.ab=z.ea rotated -60;
+%z.bc=z.ea rotated -100;
+%z.cd=z.ea rotated 150;
+%z.de=z.ea rotated 70;
+
+z.a=inversion(z.o,abs(z.o-z.ae))(z.x);
 endfig;
 end
 
