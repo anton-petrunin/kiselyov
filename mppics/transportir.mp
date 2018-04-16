@@ -4,14 +4,15 @@ input macros
 input hatching
 verbatimtex
 %&latex
-\documentclass{article}
+\documentclass[oneside]{book}
+\usepackage{../book}
 \begin{document}
 etex
 
 filenametemplate "%j-%1c.mps";
 prologues:=3;
 linecap:=butt;
-linejoin:=mitered;
+
 
 color Greencolor, Bluecolor, Lilacolor, Orangecolor, Pinkcolor;
 
@@ -117,6 +118,12 @@ draw p1 pensemibold;
 draw p4 pensemibold;
 draw p2; draw p3;
 
+label.bot(btex $A$ etex, -.7*z.e);
+label.bot(btex $B$ etex, .7*z.e);
+label.ulft(btex $C$ etex, z.o);
+label.urt(btex $D$ etex, z.d);
+label.rt(btex $E$ etex, z.e);
+label.urt(btex $55\degree$ etex, z.o+(7,0));
 endfig;
 
 
