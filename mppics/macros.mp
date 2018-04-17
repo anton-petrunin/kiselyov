@@ -1812,8 +1812,8 @@ enddef;
 vardef arrowmark(expr a, b, c, d) =
 	save s; pair s;
 	2s=unitvector((b-a) rotated 90)*d;
-	drawarrow (.6[a,b]+s)--(b+s);
-	drawarrow (.4[a,b]+s)--(a+s);
+	drawarrow (.5[a,b]+.6*abs((llcorner c)-(lrcorner c))*unitvector(b-a)+s)--(b+s);
+	drawarrow (.5[a,b]-.6*abs((llcorner c)-(lrcorner c))*unitvector(b-a)+s)--(a+s);
 	kisDot(a+s,b+s);
 	kisDot(b+s,a+s);
 	label(c rotated angle(b-a),.5[a+s,b+s]+2*unitvector(d*s));

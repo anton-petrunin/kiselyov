@@ -1240,7 +1240,7 @@ endfig;
 
 beginfig(48)
 save u;
-u:=1cm;
+u:=.8cm;
 
 z.a=origin;
 z.b=z.a+(1.5,1.5)*u;
@@ -1325,7 +1325,7 @@ endfig;
 
 beginfig(52)
 save u;
-u:=1cm;
+u:=.8cm;
 
 z.a=origin;
 z.b=z.a+(2.5,2)*u;
@@ -1407,7 +1407,7 @@ endfig;
 
 beginfig(56)
 save u;
-u:=1cm;
+u:=.7cm;
 
 z.a=origin;
 z.b=z.a+(.5,1)*u;
@@ -1826,7 +1826,7 @@ endfig;
 
 beginfig(70)
 save u;
-u:=1cm;
+u:=.8cm;
 
 z.a=origin;
 z.b=z.a+(3,0)*u;
