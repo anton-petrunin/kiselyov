@@ -17,6 +17,23 @@ linecap:=butt;
 
 %outputformat := "svg";
 
+vardef next expr pa = 
+    numeric s, k; s = 10; k=2+.5*normaldeviate;
+    point 0 of pa shifted ((k+.5*normaldeviate)*(unitvector(direction arctime(0) of pa of pa) rotated 90))
+    for a = s step s until arclength(pa):
+        .. point arctime(a) of pa of pa 
+           shifted ((k+.2*normaldeviate+sind(a))*(unitvector(direction arctime(a) of pa of pa) rotated 90))
+    endfor
+enddef;
+
+vardef woody =
+picture wood;
+ wood:=image(  for i=0 upto 10:
+        p:= next p;
+            draw p withpen pencircle xscaled (.2+.1*normaldeviate) yscaled (.2+.1*normaldeviate) rotated (5*normaldeviate);
+    endfor)
+enddef;
+
 beginfig(1)
 save u;
 u:=1cm;
@@ -741,14 +758,73 @@ endfig;
 
 %27 > ../geogebra/ugolnik.png
 
+beginfig(27)
+save u,k;
+u:=1.4cm;
+k:=.4;
+
+z.c=origin;
+z.cb=(1,0)*u;
+z.e=2*(z.c rotatedabout(z.cb,-60))-z.cb;
+z.ce=bisector(z.c,z.cb,z.e);
+z.i=bisector(z.ce,z.c,z.cb);
+z.c1=k[z.i,z.c];
+z.cb1=k[z.i,z.cb];
+z.e1=k[z.i,z.e];
+z.a=-1.2*z.cb;
+z.b=-z.a;
+z.a1=z.a+(0,-(1-k)*y.i);
+z.b1=z.b+(0,y.a1);
+z.d=.7[z.c,z.e];
+
+Dot z.d;
+fill z.c--z.c1--z.e1--z.e--cycle withcolor white;
+
+path p;
+p:=z.a--2[z.a,z.b];
+woody;
+clip wood to z.c--z.cb--z.cb1--z.c1--cycle; 
+draw wood;
+
+p:=2[z.b1,z.a1]--2[z.a1,z.b1];
+woody;
+clip wood to z.a--z.b--z.b1--z.a1--cycle; 
+draw wood;
+
+p:=2[z.c,z.e]--2[z.e,z.c];
+woody;
+clip wood to z.c--z.c1--z.e1--z.e--cycle; 
+draw wood;
+
+p:=2[z.e,z.cb]--2[z.cb,z.e];
+woody;
+clip wood to z.e--z.e1--z.cb1--z.cb--cycle; 
+draw wood;
+
+draw z.a--z.a1--z.b1--z.b penhair;
+draw z.c1--z.cb1--z.e1--cycle penhair;
+draw z.e--z.cb--z.c penhair;
+draw z.e--z.c ;
+draw ddline(z.a,z.c)(.2,0) ;
+draw ddline(z.cb,z.b)(0,.7) ;
+
+
+
+label.ulft(btex $A$ etex, z.a);
+label.urt(btex $B$ etex, z.b);
+label.ulft(btex $C$ etex, z.c);
+label.lft(btex $D$ etex, z.d);
+label.top(btex $E$ etex, z.e);
+endfig;
+
 beginfig(28)
 save u;
-u:=.7cm;
+u:=1cm;
 
 z.o=origin;
-z.a=(-1,2)*u;
+z.a=(-1.8,.9)*u;
 z.b=-z.a;
-z.c=(-1.5,-2)*u;
+z.c=(-1.5,-1)*u;
 z.d=-z.c;
 
 draw z.a--z.b;
@@ -758,7 +834,7 @@ label.top(btex $A$ etex, z.a);
 label.bot(btex $B$ etex, z.b);
 label.bot(btex $C$ etex, z.c);
 label.top(btex $D$ etex, z.d);
-label.lft(btex $O$ etex, z.o);
+label.top(btex $O$ etex, z.o);
 endfig;
 
 beginfig(29)
@@ -1471,7 +1547,7 @@ z.c=origin;
 z.b=z.c+(1,0)*u;
 z.a=z.c+(1,3)*u;
 z.m=-1[z.c,z.b];
-z.n=3.2[z.c,z.b];
+z.n=2.2[z.c,z.b];
 
 draw z.m--z.n;
 draw z.c--z.a--z.b;
@@ -2075,6 +2151,77 @@ endfig;
 
 %??? 76 --- угольник
 
+beginfig(76)
+save u,k;
+u:=1.4cm;
+k=.4;
+
+z.x=origin;
+z.y=(2,0)*u;
+z.z=(.5*z.y) rotated -60;
+z.xy=bisector(z.x,z.z,z.y);
+z.i=bisector(z.xy,z.x,z.z);
+
+z.x1=k[z.i,z.x];
+z.y1=k[z.i,z.y];
+z.z1=k[z.i,z.z];
+
+z.s=.6*(z.y-z.z);
+z.xs=z.x+z.s;
+z.ys=z.y+z.s;
+z.zs=z.z+z.s;
+z.x1s=z.x1+z.s;
+z.y1s=z.y1+z.s;
+z.z1s=z.z1+z.s;
+
+z.m=.6[z.ys,z.xs];
+
+z.u=2[z.z,z.y];
+z.v=(-.3)[z.z,z.y];
+z.u1=z.u-y.x1*(unitvector(z.u-z.v) rotated -90);
+z.v1=z.u1+z.v-z.u;
+
+path p;
+p:=2[z.v,z.u]--2[z.u,z.v];
+woody;
+clip wood to z.u--z.v--z.v1--z.u1--cycle; 
+draw wood;
+
+p:=2[z.u,z.v]--2[z.v,z.u];
+woody;
+clip wood to z.y--z.y1--z.z1--z.z--cycle; 
+draw wood;
+
+p:=2[z.z,z.x]--2[z.x,z.z];
+woody;
+clip wood to z.z--z.z1--z.x1--z.x--cycle; 
+draw wood;
+
+p:=2[z.x,z.y]--2[z.y,z.x];
+woody;
+clip wood to z.y--z.y1--z.x1--z.x--cycle; 
+draw wood;
+
+labelarcsprof(z.x, z.y, z.z, 20, 8, btex \small{$1$} etex);
+labelarcsprof(z.xs, z.ys, z.zs, 20, 8, btex \small{$2$} etex);
+
+draw z.x1--z.y1--z.z1--cycle penhair;
+draw z.z--z.x--z.y penhair;
+draw z.x1s--z.y1s--z.z1s--cycle dashed evenly;
+draw z.zs--z.xs--z.ys penhair dashed evenly;
+draw z.u--z.u1--z.v1--z.v--cycle penhair;
+
+z.a=1.2[z.y,z.x];
+draw z.y--z.a;
+z.b=1.6[z.x,z.y];
+draw cross(z.x--z.y,z.u1--z.v1)--z.b;
+
+dOt z.m;
+label.top(btex $M$ etex, z.m);
+label.lft(btex $A$ etex, z.a);
+label.rt(btex $B$ etex, z.b);
+endfig;
+
 beginfig(77)
 save u;
 u:=1cm;
@@ -2102,7 +2249,7 @@ endfig;
 
 beginfig(78)
 save u;
-u:=1cm;
+u:=.8cm;
 
 z.c=origin;
 z.c1=z.c+(2.5,0)*u;
@@ -2194,8 +2341,8 @@ endfig;
 
 beginfig(81)
 save u;
-u:=1cm;
-w:=3*u;
+u:=.8cm;
+w:=3.2*u;
 
 z.a=origin;
 z.c=z.a+(1.5,0)*u;
@@ -2317,7 +2464,7 @@ endfig;
 
 beginfig(85);
 save u;
-u:=1cm;
+u:=.75cm;
 
 z.w=(.6,.8);
 
@@ -2358,7 +2505,7 @@ endfig;
 
 beginfig(86);
 save u;
-u:=1cm;
+u:=.8cm;
 
 z.a=origin;
 z.b=(1.5,2)*u;
@@ -2791,7 +2938,7 @@ endfig;
 
 beginfig(103);
 save u;
-u:=1cm;
+u:=.9cm;
 a:=70;
 
 z.a=origin;
@@ -3491,7 +3638,7 @@ endfig;
 
 beginfig(127);
 save u;
-u:=1cm;
+u:=.9cm;
 
 z.o=origin;
 z.m=(0,-1)*u;
@@ -3520,7 +3667,7 @@ endfig;
 
 beginfig(128);
 save u;
-u:=1cm;
+u:=.9cm;
 
 z.o=origin;
 z.d=(1,0)*u;
@@ -4612,16 +4759,8 @@ kisDot(z.a1,z.a0);
 kisDot(z.b0,z.b1);
 kisDot(z.b1,z.b0);
 
-kisDot(z.a0+z.s,z.a1+z.s);
-kisDot(z.a1+z.s,z.a0+z.s);
-kisDot(z.b0+z.s,z.b1+z.s);
-kisDot(z.b1+z.s,z.b0+z.s);
-
-drawdblarrow z.a1+z.s--z.a0+z.s;
-drawdblarrow z.b1+z.s--z.b0+z.s;
-
-whitelabel(btex $A$ etex, .5[z.a1+z.s,z.a0+z.s]);
-whitelabel(btex $B$ etex, .5[z.b1+z.s,z.b0+z.s]);
+arrowmark(z.a0, z.a1, btex $A$ etex, 18);
+arrowmark(z.b0, z.b1, btex $B$ etex, 18);
 endfig;
 
 beginfig(164);
@@ -4669,21 +4808,12 @@ kisDotAngSize(z.b1,z.b0,90,7);
 
 draw z.b0--z.b1 penbold;
 
-kisDot(z.a0+z.s,z.a1+z.s);
-kisDot(z.a1+z.s,z.a0+z.s);
-kisDot(z.b0+z.s,z.b1+z.s);
-kisDot(z.b1+z.s,z.b0+z.s);
 kisDot(z.a0+15*z.m-z.s,z.a1-z.s);
 kisDot(z.a1-z.s,z.a0+15*z.m-z.s);
 
-drawdblarrow z.a1+z.s--z.a0+z.s;
-drawdblarrow z.b1+z.s--z.b0+z.s;
-drawarrow z.a1-z.s+(8,0)--z.a1-z.s;
-drawarrow z.a0+15*z.m-z.s-(8,0)--z.a0+15*z.m-z.s;
-
-whitelabel(btex $A$ etex, .5[z.a1+z.s,z.a0+z.s]);
-whitelabel(btex $B$ etex, .5[z.b1+z.s,z.b0+z.s]);
-whitelabel(btex $R$ etex, .5[z.a1-z.s,z.a0+15*z.m-z.s]+(-1,-2));
+arrowmark(z.a0, z.a1, btex $A$ etex, 18);
+arrowmark(z.b0, z.b1, btex $B$ etex, 18);
+arrowmark(z.a0+15*z.m, z.a1, btex $R$ etex, -18);
 
 endfig;
 
@@ -4794,14 +4924,8 @@ kisDot(z.b0+2*z.m,z.b1);
 kisDot(z.b0+3*z.m,z.b1);
 kisDot(z.b1,z.b0);
 
-kisDot(z.a0+z.s,z.a1+z.s);
-kisDot(z.a1+z.s,z.a0+z.s);
-kisDot(z.b0+z.s,z.b1+z.s);
-kisDot(z.b1+z.s,z.b0+z.s);
-drawdblarrow z.a1+z.s--z.a0+z.s;
-drawdblarrow z.b1+z.s--z.b0+z.s;
-whitelabel(btex $A$ etex, .5[z.a1+z.s,z.a0+z.s]);
-whitelabel(btex $B$ etex, .5[z.b1+z.s,z.b0+z.s]);
+arrowmark(z.a0, z.a1, btex $A$ etex, 18);
+arrowmark(z.b0, z.b1, btex $B$ etex, 18);
 endfig;
 
 beginfig(168);
@@ -4849,31 +4973,16 @@ kisDot(z.b0+8*z.m,z.b0);
 kisDot(z.b0+9*z.m,z.b0);
 kisDot(z.b1,z.b0);
 
-kisDot(z.a0+z.s,z.a1+.4*z.m+z.s);
-kisDot(z.a1+.4*z.m+z.s,z.a0+z.s);
-drawdblarrow z.a1+.4*z.m+z.s--z.a0+z.s;
-whitelabel(btex $A$ etex, .5[z.a1+.4*z.m+z.s,z.a0+z.s]);
-
-kisDot(z.b0+z.s,z.b1+z.s);
-kisDot(z.b1+z.s,z.b0+z.s);
-drawdblarrow z.b1+z.s--z.b0+z.s;
-whitelabel(btex $B$ etex, .5[z.b1+z.s,z.b0+z.s]);
-
-kisDot(z.a0-z.s,z.a1-z.s);
-kisDot(z.a1-z.s,z.a0-z.s);
-drawdblarrow z.a1-z.s--z.a0-z.s;
-whitelabel(btex $A_1$ etex, .5[z.a1-z.s,z.a0-z.s]);
-
-kisDot(z.a0-2*z.s,z.a2-2*z.s);
-kisDot(z.a2-2*z.s,z.a0-2*z.s);
-drawdblarrow z.a2-2*z.s--z.a0-2*z.s;
-whitelabel(btex $A_2$ etex, .5[z.a2-2*z.s,z.a0-2*z.s]);
+arrowmark(z.a0, z.a1+.4*z.m, btex $A$ etex, 18);
+arrowmark(z.a0, z.a1, btex $A_1$ etex, -18);
+arrowmark(z.a0, z.a2, btex $A_2$ etex, -36);
+arrowmark(z.b0, z.b1, btex $B$ etex, 18);
 
 endfig;
 
 beginfig(169);
 save u;
-u:=.8cm;
+u:=.7cm;
 
 z.s=(0,8);
 
@@ -4934,7 +5043,7 @@ endfig;
 
 beginfig(170);
 save u;
-u:=.8cm;
+u:=.7cm;
 
 z.s=(0,8);
 
@@ -6505,7 +6614,7 @@ endfig;
 
 beginfig(211);
 save u;
-u:=1.2cm;
+u:=1.1cm;
 
 z.b=origin;
 z.a=(3.5,0)*u;
@@ -6783,7 +6892,7 @@ endfig;
 
 beginfig(220);
 save u,v;
-u:=1cm;
+u:=.7cm;
 
 z.o=origin;
 
@@ -6823,7 +6932,7 @@ endfig;
 
 beginfig(221);
 save u,v;
-u:=1cm;
+u:=.7cm;
 
 z.o=origin;
 
@@ -6893,7 +7002,7 @@ endfig;
 
 beginfig(222);
 save u,v;
-u:=1cm;
+u:=.7cm;
 
 z.o=origin;
 
@@ -6930,7 +7039,7 @@ endfig;
 
 beginfig(223);
 save u,k;
-u:=.6cm;
+u:=.7cm;
 k:=.7;
 
 z.S=(5.5,0)*u;
@@ -7229,7 +7338,7 @@ endfig;
 
 beginfig(233);
 save u;
-u:=1cm;
+u:=.8cm;
 
 z.l=origin;
 z.m=(0,2)*u;
@@ -7249,7 +7358,7 @@ draw z.l--z.m--z.n--z.p--z.q--z.r--cycle;
 draw z.t--z.s;
 draw z.a--z.b--z.c--z.d;
 
-label.llft(btex $A$ etex, z.a);
+label.llft(btex $A$ etex, z.a+(2,1));
 label.top(btex $B$ etex, z.b);
 label.top(btex $C$ etex, z.c);
 label.llft(btex $D$ etex, z.d);
@@ -7258,7 +7367,7 @@ label.llft(btex $L$ etex, z.l);
 label.ulft(btex $M$ etex, z.m);
 label.top(btex $N$ etex, z.n);
 label.top(btex $P$ etex, z.p);
-label.top(btex $Q$ etex, z.q);
+label.rt(btex $Q$ etex, z.q);
 label.lrt(btex $R$ etex, z.r);
 
 label.bot(btex $S$ etex, z.s);
@@ -7511,7 +7620,7 @@ endfig;
 
 beginfig(242);
 save u;
-u:=.5cm;
+u:=.45cm;
 
 draw (0,0)*u--(5,0)*u--(5,6)*u--(0,6)*u--cycle penbold;
 
@@ -8190,6 +8299,18 @@ whitelabel.rt(btex $h$ etex, .5[z.m,z.ss]);
 label.bot(btex $b$ etex, z.m-(2/3)*(z.ss-z.m));
 label.lft(btex $\tfrac23 h$ etex,z.a-(1/3)*(z.ss-z.m));
 endfig;
+
+prologues := 3;
+
+vardef wavy expr pa = 
+point 0 of pa
+    for a = 10 step 10 until arclength(pa):
+        .. point arctime(a) of pa of pa 
+           shifted (sind(a+normaldeviate)*up+unitvector(direction arctime(a) of pa of pa) 
+                   rotated 90 scaled ((1/8)*normaldeviate))
+    endfor 
+enddef;
+
 end
 
 

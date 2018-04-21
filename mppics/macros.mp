@@ -1810,11 +1810,14 @@ enddef;
 
 % отметка стрелкой
 vardef arrowmark(expr a, b, c, d) =
-	save s; pair s;
+	save s, k; pair s; numeric k;
 	2s=unitvector((b-a) rotated 90)*d;
-	drawarrow (.5[a,b]+.6*abs((llcorner c)-(lrcorner c))*unitvector(b-a)+s)--(b+s);
-	drawarrow (.5[a,b]-.6*abs((llcorner c)-(lrcorner c))*unitvector(b-a)+s)--(a+s);
+if (abs(a-b)>abs((llcorner c)-(lrcorner c))+10): k=.6*abs((llcorner c)-(lrcorner c)); else: k=.5*abs(a-b)+5;
+fi;
+	drawarrow (.5[a,b]+k*unitvector(b-a)+s)--(b+s);
+	drawarrow (.5[a,b]-k*unitvector(b-a)+s)--(a+s);
 	kisDot(a+s,b+s);
 	kisDot(b+s,a+s);
 	label(c rotated angle(b-a),.5[a+s,b+s]+2*unitvector(d*s));
 enddef;
+
