@@ -330,10 +330,9 @@ z.o=origin;
 z.a=z.o+(5, 4)*u;
 z.b=z.o+(6, 0)*u;
 
-draw z.o--z.a penbold;
-draw z.o--z.b penbold;
-
 hatchfill z.b--z.o--z.a..(1.05[z.o, 0.5[z.a, z.b]])..cycle  withcolor (127, 2mm, -.5bp);
+
+draw z.a--z.o--z.b penbold;
 
 label.llft(btex $O$ etex, z.o);
 label.bot(btex $A$ etex, z.b);
@@ -344,10 +343,7 @@ z.o1=z.o+z.v;
 z.a1=z.a+z.v;
 z.b1=z.b+z.v;
 
-
-
-draw z.o1--z.a1 penbold;
-draw z.o1--z.b1 penbold;
+draw z.a1--z.o1--z.b1 penbold;
 
 hatchfill z.b1--z.o1--z.a1{dir 110}..(1.2[z.b1, 0.6[z.o1, z.a1]])..(1.2[0.5[z.a1, z.b1], z.o1])..(1.2[z.a1, 0.5[z.o1, z.b1]])..{dir 90}cycle withcolor (127, 2mm, -.5bp);
 
@@ -1954,7 +1950,7 @@ z.s7ad=z.d+ z.s zscaled (0,1);
 z.s6ad=z.d+z.s zscaled (-1,2);
 z.s5ad=.5[z.a,z.d]+z.s zscaled (1,3);
 
-labelarcs(z.b, z.a, z.c, ar2, btex $a$ etex);
+labelarcs(z.b, z.a, z.c, ar2, btex $\alpha$ etex);
 
 draw z.s1ad..z.s2ad..z.s3ad..z.s4ad penhair;
 draw z.s4ad..z.s5ad..z.s6ad..z.s7ad penhair;
@@ -1977,7 +1973,7 @@ z.c2=z.a2+(abs(z.a-z.c),0);
 z.a3=z.a2+(0,.5*u);
 z.d3=z.a3+(abs(z.a-z.d),0);
 
-labelarcs(z.b1, z.a1, z.c1, ar2, btex $a$ etex);
+labelarcs(z.b1, z.a1, z.c1, ar2, btex $\alpha$ etex);
 
 draw z.a2--z.c2 penbold;
 draw z.a3--z.d3 penbold;
@@ -3061,7 +3057,7 @@ endfig;
 
 beginfig(107);
 save u;
-u:=1cm;
+u:=.8cm;
 
 z.a=origin;
 z.b=(2,2)*u;
