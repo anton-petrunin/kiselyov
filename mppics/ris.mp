@@ -6254,7 +6254,7 @@ endfig;
 
 beginfig(199);
 save u,w;
-u:=1cm;
+u:=.7cm;
 w:=.8;
 
 z.d=origin;
@@ -6275,8 +6275,8 @@ endfig;
 
 beginfig(200);
 save u,w;
-u:=1cm;
-w.=.5;
+u:=.9cm;
+w:=.7;
 
 z.b=origin;
 z.a=(-2,0)*u;
@@ -6298,8 +6298,8 @@ endfig;
 
 beginfig(201);
 save u,w;
-u:=1cm;
-w.=.5;
+u:=.9cm;
+w:=.7;
 
 z.a=origin;
 z.b=(2,0)*u;
