@@ -1765,7 +1765,7 @@ label.rt(btex $B$ etex, z.b);
 label.top(btex $M$ etex, z.m);
 label.bot(btex $N$ etex, z.n);
 label.urt(btex $O$ etex, z.o);
-label.urt(btex $K$ etex, z.k);
+label.top(btex $K$ etex, z.k);
 endfig;
 
 beginfig(64)
@@ -1815,7 +1815,7 @@ label.lft(btex $C$ etex, z.c);
 label.rt(btex $D$ etex, z.d);
 label.bot(btex $M$ etex, z.m);
 label.top(btex $O$ etex, z.o);
-label.lrt(btex $K$ etex, z.k);
+label.bot(btex $K$ etex, z.k);
 endfig;
 
 beginfig(65)
