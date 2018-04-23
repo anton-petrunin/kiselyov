@@ -1200,7 +1200,7 @@ endfig;
 
 beginfig(45)
 save u;
-u:=1cm;
+u:=.8cm;
 save w;
 w:=3*u;
 
@@ -1234,7 +1234,7 @@ endfig;
 
 beginfig(46)
 save u;
-u:=1cm;
+u:=.8cm;
 save w;
 w:=3*u;
 
@@ -1269,16 +1269,16 @@ endfig;
 beginfig(47)
 save u;
 u:=1cm;
-save w;
-w:=4*u;
+
+z.w=(0,-3*u);
 
 z.a=origin;
 z.c=z.a+(2.5,0)*u;
 z.b=z.a+(1.5,2)*u;
 
-z.b1=z.b shifted (w,0);
-z.c1=z.c shifted (w,0);
-z.a1=z.a shifted (w,0);
+z.b1=z.b shifted z.w;
+z.c1=z.c shifted z.w;
+z.a1=z.a shifted z.w;
 z.b2=z.b1 reflectedabout (z.c1,z.a1);
 
 labelarcsprof(z.c1, z.b1, z.b2, 20, 7, btex \small{$1$} etex);
@@ -1308,6 +1308,77 @@ label.top(btex $B_1$ etex, z.b1);
 label.rt(btex $C_1$ etex, z.c1);
 label.bot(btex $B_2$ etex, z.b2);
 
+endfig;
+
+beginfig(471)
+save u;
+u:=1cm;
+
+z.w=(0,-3*u);
+
+z.a=origin;
+z.c=z.a+(1.5,0)*u;
+z.b=z.a+(2,2)*u;
+
+z.b1=z.b shifted z.w;
+z.c1=z.c shifted z.w;
+z.a1=z.a shifted z.w;
+z.b2=z.b1 reflectedabout (z.c1,z.a1);
+
+labelarcsprof(z.c1, z.b1, z.b2, 23, 7, btex  etex);
+labelarcsprof(z.c1, z.b2, z.b1, 23, 7, btex  etex);
+labelarcsprof2(z.a1, z.b1, z.b2, 17, 5, btex  etex);
+labelarcsprof2(z.a1, z.b2, z.b1, 17, 5, btex  etex);
+
+
+
+draw z.b1--z.c1--z.a1--cycle;
+draw z.c1--z.b2--z.a1;
+draw z.b1--z.b2;
+
+
+rimmark2(z.b1--z.a1);
+rimmark2(z.b2--z.a1);
+rimmark(z.c1--z.b1);
+rimmark(z.c1--z.b2);
+
+
+label.lft(btex $A_1$ etex, z.a1);
+label.top(btex $B_1$ etex, z.b1);
+label.ulft(btex $C_1$ etex, z.c1);
+label.bot(btex $B_2$ etex, z.b2);
+
+endfig;
+
+beginfig(472)
+save u;
+u:=1cm;
+
+z.w=(0,-3*u);
+
+z.a=origin;
+z.c=z.a+(2,0)*u;
+z.b=z.a+(2,2)*u;
+
+z.b1=z.b shifted z.w;
+z.c1=z.c shifted z.w;
+z.a1=z.a shifted z.w;
+z.b2=z.b1 reflectedabout (z.c1,z.a1);
+
+labelarcsprof2(z.a1, z.b1, z.b2, 17, 5, btex etex);
+labelarcsprof2(z.a1, z.b2, z.b1, 17, 5, btex  etex);
+
+draw z.b1--z.c1--z.a1--cycle;
+draw z.c1--z.b2--z.a1;
+draw z.b1--z.b2;
+
+rimmark2(z.b1--z.a1);
+rimmark2(z.b2--z.a1);
+
+label.lft(btex $A_1$ etex, z.a1);
+label.top(btex $B_1$ etex, z.b1);
+label.rt(btex $C_1$ etex, z.c1);
+label.bot(btex $B_2$ etex, z.b2);
 endfig;
 
 beginfig(48)
@@ -1675,6 +1746,28 @@ label.urt(btex $O$ etex, z.o);
 label.urt(btex $K$ etex, z.k);
 endfig;
 
+beginfig(631)
+save u;
+u:=1cm;
+
+z.m=origin;
+z.n=z.m+(0,-3)*u;
+z.k=z.m+(-.5,-1)*u;
+z.a=z.m+(-1.5,-2.5)*u;
+z.b=z.a reflectedabout(z.m,z.n);
+z.o=altitude(z.n,z.a,z.m);
+
+draw z.m--z.n;
+draw z.a--z.b--z.k--cycle;
+
+label.lft(btex $A$ etex, z.a);
+label.rt(btex $B$ etex, z.b);
+label.top(btex $M$ etex, z.m);
+label.bot(btex $N$ etex, z.n);
+label.urt(btex $O$ etex, z.o);
+label.urt(btex $K$ etex, z.k);
+endfig;
+
 beginfig(64)
 save u;
 u:=1cm;
@@ -1686,6 +1779,31 @@ z.k=0.75[z.o,z.m];
 z.c=altitude(z.a,z.k,z.o);
 z.d=z.c reflectedabout(z.o,z.m);
 z.b=z.a reflectedabout(z.o,z.m);
+
+draw z.c--z.k--z.d;
+draw z.a--z.o--z.b;
+draw z.o--z.m;
+
+label.bot(btex $A$ etex, z.a);
+label.bot(btex $B$ etex, z.b);
+label.lft(btex $C$ etex, z.c);
+label.rt(btex $D$ etex, z.d);
+label.bot(btex $M$ etex, z.m);
+label.top(btex $O$ etex, z.o);
+label.lrt(btex $K$ etex, z.k);
+endfig;
+
+beginfig(641)
+save u;
+u:=1cm;
+
+z.o=origin;
+z.m=z.o+(0,-3)*u;
+z.a=z.o+(-1.5,-3)*u;
+z.k=0.75[z.o,z.m]+(-.5,0)*u;
+z.c=altitude(z.a,z.k,z.o);
+z.b=z.a reflectedabout(z.o,z.m);
+z.d=altitude(z.b,z.k,z.o);
 
 draw z.c--z.k--z.d;
 draw z.a--z.o--z.b;
@@ -1940,21 +2058,13 @@ z.w=z.v reflectedabout(z.c,z.d);
 z.e=z.b reflectedabout(z.c,z.d);
 
 z.s=5*unitvector(z.d-z.a);
-z.s1ad=z.a+ z.s zscaled (0,1);
-z.s2ad=z.a+z.s zscaled (1,2);
-z.s3ad=.5[z.a,z.d]+z.s zscaled (-1,3);
-z.s4ad=.5[z.a,z.d]+z.s zscaled (0,4);
 
+z.s4ad=.5[z.a,z.d]+z.s zscaled (0,3);
 
-z.s7ad=z.d+ z.s zscaled (0,1);
-z.s6ad=z.d+z.s zscaled (-1,2);
-z.s5ad=.5[z.a,z.d]+z.s zscaled (1,3);
 
 labelarcs(z.b, z.a, z.c, ar2, btex $\alpha$ etex);
 
-draw z.s1ad..z.s2ad..z.s3ad..z.s4ad penhair;
-draw z.s4ad..z.s5ad..z.s6ad..z.s7ad penhair;
-
+draw z.a..z.s4ad..z.d dashed evenly;
 
 draw ddarc(z.v,z.v rotatedabout(z.c,-1),z.w)(10,10);
 draw ddarc(z.v,z.v rotatedabout(z.d,1),z.w)(10,10);
@@ -2062,7 +2172,7 @@ endfig;
 
 beginfig(74)
 save u;
-u:=1cm;
+u:=1.2cm;
 
 z.m=(2,3)*u;
 z.n=(1,0)*u;
@@ -3891,7 +4001,7 @@ z.x=(1.5,0)*u;
 z.o1=.3[z.o,z.x];
 
 draw circle(z.o,z.x) penbold;
-draw circle(z.o1,1*u) penbold;
+draw circle(z.o1,.9*u) penbold;
 draw (-z.x)--z.x dashed linedot;
 
 z.o2=z.o+(w,0);
