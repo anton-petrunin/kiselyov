@@ -34,6 +34,7 @@ picture wood;
     endfor)
 enddef;
 
+
 beginfig(1)
 save u;
 u:=1cm;
@@ -536,38 +537,46 @@ label.llft(btex $O$ etex, z.o);
 endfig;
 
 beginfig(18)
-save u;
-u:=1cm;
-w:=6;
+save u,w;
+u:=2cm;
+w:=1/90;
 
 z.o=origin;
 
 save p; path p[];
 p0=circle(z.o, 2.5u);
 z.d=z.o+(3,0)*u;
-z.1=z.d rotatedaround (z.o, w);
-z.2=z.d rotatedaround (z.o, 2*w);
-z.3=z.d rotatedaround (z.o, 3*w);
-z.4=z.d rotatedaround (z.o, 4*w);
-z.5=z.d rotatedaround (z.o, 5*w);
-z.6=z.d rotatedaround (z.o, 6*w);
-z.7=z.d rotatedaround (z.o, 7*w);
-z.c=(2.5/3)*z.7;
-
+z.e=point 20.57*w of p0;
 z.s=point 0 of p0;
-z.e=z.s rotatedaround (z.o, 7*w);
+z.c=z.e;
 
 draw ddline(z.o, z.d)(0, 0.13);
-draw ddline(z.o, z.7)(0, 0.13);
-draw z.o--z.1;
-draw z.o--z.2;
-draw z.o--z.3;
-draw z.o--z.4;
-draw z.o--z.5;
-draw z.o--z.6;
+draw ddline(z.o, z.e)(0, 0.13);
+
 draw cutcircle(p0, z.s, z.e);
 
-label.urt(btex $A$ etex, 1.13*z.7);
+kisDotAngSize(point w of p0,z.o,0,3);
+kisDotAngSize(point 2*w of p0,z.o,0,3);
+kisDotAngSize(point 3*w of p0,z.o,0,3);
+kisDotAngSize(point 4*w of p0,z.o,0,3);
+kisDotAngSize(point 5*w of p0,z.o,0,3);
+kisDotAngSize(point 6*w of p0,z.o,0,3);
+kisDotAngSize(point 7*w of p0,z.o,0,3);
+kisDotAngSize(point 8*w of p0,z.o,0,3);
+kisDotAngSize(point 9*w of p0,z.o,0,3);
+kisDotAngSize(point 10*w of p0,z.o,0,3);
+kisDotAngSize(point 11*w of p0,z.o,0,3);
+kisDotAngSize(point 12*w of p0,z.o,0,3);
+kisDotAngSize(point 13*w of p0,z.o,0,3);
+kisDotAngSize(point 14*w of p0,z.o,0,3);
+kisDotAngSize(point 15*w of p0,z.o,0,3);
+kisDotAngSize(point 16*w of p0,z.o,0,3);
+kisDotAngSize(point 17*w of p0,z.o,0,3);
+kisDotAngSize(point 18*w of p0,z.o,0,3);
+kisDotAngSize(point 19*w of p0,z.o,0,3);
+kisDotAngSize(point 20*w of p0,z.o,0,3);
+
+label.urt(btex $A$ etex, 1.13*z.e);
 label.rt(btex $B$ etex, 1.13*z.d);
 label.ulft(btex $C$ etex, z.c);
 label.bot(btex $D$ etex, (2.5/3)*z.d);
@@ -2460,10 +2469,10 @@ z.c1=z.c+(w,0);
 z.b1=z.a1+(.3,1.5)*u;
 z.d1=z.c1+(.7,1.5)*u;
 
-labelarcsprof(z.b, z.a, z.c, 15, 1, btex $a$ etex);
-labelarcsprof(z.a, z.c, z.d, 15, 1, btex $b$ etex);
-labelarcsprof(z.b1, z.a1, z.c1, 15, 1, btex $a$ etex);
-labelarcsprof(z.a1, z.c1, z.d1, 15, 1, btex $b$ etex);
+labelarcsprof(z.b, z.a, z.c, 15, 1, btex $\alpha$ etex);
+labelarcsprof(z.a, z.c, z.d, 15, 1, btex $\beta$ etex);
+labelarcsprof(z.b1, z.a1, z.c1, 15, 1, btex $\alpha$ etex);
+labelarcsprof(z.a1, z.c1, z.d1, 15, 1, btex $\beta$ etex);
 
 draw ddline(z.a,z.c)(.4,.4);
 draw ddline(z.a,z.b)(0,.4) dashed evenly;
@@ -4166,7 +4175,7 @@ z.m4=z.m rotatedabout(z.o,60);
 
 hatchfill z.a--z.b..z.m..cycle  withcolor (35, 1.5mm, -.5bp);
 
-labelarcsprof(z.a, z.m2, z.b, 12, 1, btex $a$ etex);
+labelarcsprof(z.a, z.m2, z.b, 12, 1, btex $\alpha$ etex);
 
 
 draw circle(z.o,z.a-z.o) penbold;
@@ -4535,10 +4544,11 @@ z.d= altitude(z.a,z.o,z.b);
 z.c=z.n rotatedabout(z.o,185);
 z.m=z.n rotatedabout(z.o,120);
 
-labelarcsprof(z.e, z.a, z.b, 13, 1, btex $a$ etex);
-labelarcsprof(z.a, z.c, z.b, 13, 1, btex $a$ etex);
-
 draw circle(z.o,z.n-z.o);
+
+labelarcsprof(z.e, z.a, z.b, 13, 1, btex $\alpha$ etex);
+labelarcsprof(z.a, z.c, z.b, 13, 1, btex $\alpha$ etex);
+draw circle(z.o,z.n-z.o) penhair;
 draw z.a--z.b--z.c--cycle;
 draw z.d--z.o--z.a--z.e;
 
@@ -4957,8 +4967,8 @@ kisDot(z.a1,z.a0);
 kisDot(z.b0,z.b1);
 kisDot(z.b1,z.b0);
 
-arrowmark(z.a0, z.a1, btex $A$ etex, 18);
-arrowmark(z.b0, z.b1, btex $B$ etex, 18);
+arrowmark(z.a0, z.a1, btex $a$ etex, 18);
+arrowmark(z.b0, z.b1, btex $b$ etex, 18);
 endfig;
 
 beginfig(164);
@@ -5009,9 +5019,9 @@ draw z.b0--z.b1 penbold;
 kisDot(z.a0+15*z.m-z.s,z.a1-z.s);
 kisDot(z.a1-z.s,z.a0+15*z.m-z.s);
 
-arrowmark(z.a0, z.a1, btex $A$ etex, 18);
-arrowmark(z.b0, z.b1, btex $B$ etex, 18);
-arrowmark(z.a0+15*z.m, z.a1, btex $R$ etex, -18);
+arrowmark(z.a0, z.a1, btex $a$ etex, 18);
+arrowmark(z.b0, z.b1, btex $b$ etex, 18);
+arrowmark(z.a0+15*z.m, z.a1, btex $r$ etex, -18);
 
 endfig;
 
@@ -5171,10 +5181,10 @@ kisDot(z.b0+8*z.m,z.b0);
 kisDot(z.b0+9*z.m,z.b0);
 kisDot(z.b1,z.b0);
 
-arrowmark(z.a0, z.a1+.4*z.m, btex $A$ etex, 18);
-arrowmark(z.a0, z.a1, btex $A_1$ etex, -18);
-arrowmark(z.a0, z.a2, btex $A_2$ etex, -36);
-arrowmark(z.b0, z.b1, btex $B$ etex, 18);
+arrowmark(z.a0, z.a1+.4*z.m, btex $a$ etex, 18);
+arrowmark(z.a0, z.a1, btex $a_1$ etex, -18);
+arrowmark(z.a0, z.a2, btex $a_2$ etex, -36);
+arrowmark(z.b0, z.b1, btex $b$ etex, 18);
 
 endfig;
 
