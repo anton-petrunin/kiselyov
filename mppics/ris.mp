@@ -4862,11 +4862,11 @@ draw z.c--z.f;
 rimmark(z.c1--z.b, z.b--z.a1,z.a--z.c);
 
 label.llft(btex $A$ etex, z.a);
-label.rt(btex $A_1$ etex, z.a1);
+label.top(btex $A_1$ etex, z.a1);
 label.top(btex $B$ etex, z.b);
 label.bot(btex $B_1$ etex, z.b1);
 label.lrt(btex $C$ etex, z.c);
-label.lft(btex $C_1$ etex, z.c1);
+label.top(btex $C_1$ etex, z.c1);
 label.rt(btex $D$ etex, z.d);
 label.ulft(btex $E$ etex, z.e);
 whitelabel.lft(btex $F$ etex, z.f+(0,1));
@@ -6777,7 +6777,7 @@ endfig;
 
 beginfig(210);
 save u;
-u:=1cm;
+u:=.7cm;
 
 z.o=origin;
 z.c=(x.o,2*u);
@@ -7603,6 +7603,7 @@ z.b6=z.a rotated -30;
 
 draw circle(z.o,z.a);
 
+draw z.a--z.a2--z.a4--cycle;
 draw z.a--z.a1--z.a2--z.a3--z.a4--z.a5--cycle;
 draw z.a--z.b1--z.a1--z.b2--z.a2--z.b3--z.a3--z.b4--z.a4--z.b5--z.a5--z.b6--cycle penhair;
 %draw z.a--z.a3;
@@ -7616,10 +7617,12 @@ u:=.65cm;
 
 z.o=origin;
 z.a=(2,0)*u;
+z.a3=z.a rotated 120;
 z.a6=z.a rotated 60;
 z.a12=z.a rotated 30;
 z.a24=z.a rotated 15;
 
+z.p0=z.o+(3*abs(z.a-z.a3),0);
 z.p1=z.o+(6*abs(z.a-z.a6),0);
 z.p2=z.o+(12*abs(z.a-z.a12),0);
 z.p3=z.o+(24*abs(z.a-z.a24),0);
@@ -7630,13 +7633,15 @@ z.n=(1.1)[z.o,z.x];
 
 draw z.m--z.n;
 kisDot(z.o,z.p1);
+kisDot(z.p0,z.o);
 kisDot(z.p1,z.o);
 kisDot(z.p2,z.o);
 %kisDot(z.p3,z.o);
 kisDot(z.x,z.o);
 
-label.bot(btex $P_1$ etex, z.p1+(-3,0));
-label.bot(btex $P_2$ etex, z.p2+(-1,0));
+label.bot(btex $P_1$ etex, z.p0);
+label.bot(btex $P_2$ etex, z.p1+(-3,0));
+label.bot(btex $P_3$ etex, z.p2+(-1,0));
 %label.bot(btex $P_3$ etex, z.p3);
 label.top(btex $x$ etex, z.x+(2,0));
 
@@ -8180,7 +8185,7 @@ endfig;
 
 beginfig(253);
 save u;
-u:=1cm;
+u:=.7cm;
 
 z.f=origin;
 z.a=(1,0)*u;
