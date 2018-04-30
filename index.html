@@ -1,0 +1,130 @@
+<html><head>
+<title>Геометрия по Киселёву</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head> 
+<body link="#CCCCCC" text="#CCDDCC" bgcolor="#999999"> 
+
+<h1>Геометрия по Киселёву</h1>
+
+<p style="width: 700px;">
+Цель проекта — создать учебник по геометрии со свободной лицензией на основе <a href="https://ru.wikipedia.org/wiki/Элементарная_геометрия_(Киселёв)">«Элементарной геометрии» Килелёва</a>.
+Мы используем лицензию CC0 (то есть отказываемся от авторских прав).
+В частности, любой желающий может использовать любую часть этого учебника для написания своего (под любой лицензией, включая самую злую).
+</p>
+
+<p style="width: 700px;">
+Пока закончена только первая книга «Планиметрия», в случае, если она окажется востребованной, мы сделаем и вторую — «Стереометрию». 
+</p>
+
+<h3>Об этом издании</h3>
+
+<p style="width: 700px;">
+В нашем распоряжении было 4 издания учебника: <a href="https://ru.wikisource.org/wiki/Индекс:А._П._Киселёв._Элементарная_геометрия_(1892).djvu">первое (1892)</a>, <a href="https://ru.wikisource.org/wiki/Индекс:А._П._Киселёв._Элементарная_геометрия_(1914).djvu">23-е (1914)</a>, раширенное издание 1931 года для учителей и издание 1938 года под редакцией Глагольева. 
+(Если кто-то располагает другими изданиями, мы очень хотели бы получить их сканы.)
+В нескольких местах мы использовали материал из <a href="https://commons.wikimedia.org/wiki/File:Геометрия_(Давидов).djvu?uselang=ru">«Элементарной геометрии» Давидова (1878)</a>, учебника, на основе которого (очевидно) Киселёв написал свой.
+
+</p>
+
+<p style="width: 700px;">
+За основу взято издание 1938 года, но в некоторых случаях мы откатили изменения к 1931 и к 1914 году.
+Например, мы убрали устаревший материал по черчению и при этом вернули несколько теорем из изданий 1914 и 1931 годов, в частности, <a href="https://ru.wikipedia.org/wiki/Неравенство_Птолемея">Неравенство Птолемея</a> и <a href="https://ru.wikipedia.org/wiki/Окружность_Аполлония">Окружность Аполлония</a>.
+Издание 1914-го показалось наиболее целостным.
+</p>
+
+<p style="width: 700px;">
+Заменены анахронизмы и устаревшие термины.
+Например, «окружность центра O» ↦ «окружность с центром O», «расстояние точки от прямой» ↦ «расстояние от точки до прямой», «привидение к нелепости» ↦ «привидение к противоречию» и ещё много тому подобного.
+</p>
+
+<p style="width: 700px;">
+Теперь на чертежах прямые углы помечены квадратиком, а параллельные прямые стрелочками.
+</p>
+
+<p style="width: 700px;">
+Мы исправили около сотни опечаток (и, конечно, добавили сотню своих).
+Более подробно об изменениях можно узнать в <a href="https://github.com/anton-petrunin/kiselyov-2D/commits/master">истории версий</a>.
+</p>
+
+<p style="width: 700px;"> Все чертежи сделаны, используя <a href="https://ru.wikipedia.org/wiki/MetaPost">MetaPost</a>.
+</p>
+
+<h3>Благодарности</h3>
+<p style="width: 700px;"> 
+Спасибо <a href="https://github.com/thruston">Тоби Тёрстону</a> за <a href="https://tex.stackexchange.com/q/423335/630">ловкий код в MetaPost</a> и <a href="https://github.com/hcodes">Денису Селезнёву</a> за его <a href="https://github.com/hcodes/eyo">ёфикатор</a>.
+
+</p>
+
+<h3>Как собрать книгу</h3>
+
+<p style="width: 700px;"> 
+Потребуется LaTeX+MetaPost (мы пользовались последним дистрибутивом <a href="http://www.tug.org/texlive/">TeX Live</a>). Желательно также использовать Git.
+</p>
+
+<p style="width: 700px;"> 
+Следующая команда создаст локальную копию исходных файлов вместе с историей версий.
+<br>
+<br>
+<font size="4" face="monospace">git clone https://github.com/anton-petrunin/kiselyov-2D.git</font>
+</p>
+
+<p style="width: 700px;">  Эти файлы можно также получить <a href="https://github.com/anton-petrunin/birkhoff"> на странице проекта</a>, пройдя по ссылке "Clone or Download" и "Download ZIP". В этом случае Git не нужен.
+</p>
+
+<p style="width: 700px;"> 
+Далее, перейти в полученную папку 
+<br>
+<br>
+<font size="4" face="monospace">cd kiselyov-2D</font>
+<br>
+<br>
+Для создания рисунков сделать следующее:
+<br>
+<br>
+<font size="4" face="monospace">
+cd mppics/
+<br>
+mpost ris.mp
+<br>
+mpost ris-1914.mp
+<br>
+mpost ris-1931.mp 
+<br>
+mpost transportir.mp
+</font>
+</p>
+
+<p style="width: 700px;"> 
+Далее перейти в основную папку (<font size="4" face="monospace"> cd ..</font>) и сказать следующее
+<br>
+<br>
+<font size="4" face="monospace">
+pdflatex kiselyov-2D.tex
+<br>
+makeindex kiselyov-2D
+<br>
+pdflatex kiselyov-2D.tex
+</font>
+</p>
+Если всё прошло правильно, должны получить файл <font size="4" face="monospace">kiselyov-2D.pdf</font>.
+
+</p>
+
+
+<h3>Лицензия</h3>
+
+<footer>
+<hr>
+<p style="width: 700px;">
+<a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/deed.ru">
+<img 
+alt="Creative Commons License" 
+style="border-width:0" 
+src="https://licensebuttons.net/l/publicdomain/88x31.png" />
+</a>
+<br />
+Вы можете копировать, изменять, распространять и исполнять данное произведение, даже в коммерческих целях, всё не спрашивая разрешения.
+</p>
+</footer>
+</body></html>
+
+
