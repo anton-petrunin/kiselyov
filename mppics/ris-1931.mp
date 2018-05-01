@@ -28,8 +28,13 @@ z.a=z.m+(-1.5,-2.5)*u;
 z.b=z.a reflectedabout(z.m,z.n);
 z.o=altitude(z.n,z.a,z.m);
 
+mark_rt_angle(z.a,z.o,z.m);
+rimmark(z.a--z.o,z.b--z.o);
+
 draw z.m--z.n;
 draw z.a--z.b--z.k--cycle;
+
+dOt z.k;
 
 label.lft(btex $A$ etex, z.a);
 label.rt(btex $B$ etex, z.b);
@@ -51,9 +56,17 @@ z.c=altitude(z.a,z.k,z.o);
 z.b=z.a reflectedabout(z.o,z.m);
 z.d=altitude(z.b,z.k,z.o);
 
+mark_rt_angle(z.k,z.c,z.o);
+mark_rt_angle(z.k,z.d,z.o);
+
+arcs(z.m,z.o,z.c,9);
+arcs(z.m,z.o,z.d,11);
+
 draw z.c--z.k--z.d;
 draw z.a--z.o--z.b;
 draw z.o--z.m;
+
+dOt z.k;
 
 label.bot(btex $A$ etex, z.a);
 label.bot(btex $B$ etex, z.b);
@@ -85,6 +98,8 @@ draw 1.6[z.a,z.d]--z.a--1.6[z.a,z.e];
 
 smallarc(z.o,z.b);
 smallarc(z.o,z.c);
+
+dOt z.o,z.a;
 
 label.rt(btex $A$ etex, z.a);
 label.top(btex $B$ etex, z.b);

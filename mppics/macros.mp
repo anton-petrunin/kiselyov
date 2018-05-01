@@ -163,7 +163,8 @@ def mark_rt_angle (expr a,b,c) =
 	pair m,n;
 	r:=angle_radius*2/3;
 	m=unitvector(a-b); n=unitvector(c-b);
-	draw (m--(m+n)--n) scaled r shifted b
+	fill ((m--(m+n)--n--(0,0)--cycle) scaled r shifted b) withcolor white;
+	draw (m--(m+n)--n) scaled r shifted b;
 enddef;
 
 % Квадратик, помечающий прямой угол с заданным размером

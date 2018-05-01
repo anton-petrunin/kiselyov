@@ -602,6 +602,8 @@ z.x1=point 0 of p1;
 z.w1=point .7 of p1;
 z.x2=point 0 of p2;
 
+mark_rt_angle(z.x0,z.o,point 1 of p0);
+
 z.y0=point 1 of p0;
 z.y1=point 1 of p1;
 z.y2=point 1 of p2;
@@ -621,7 +623,7 @@ draw ddline(z.o2, z.y2)(0, 0.13);
 label.lrt(btex прямой etex, z.o);
 label.lrt(btex острый etex, z.o1);
 label.lrt(btex тупой etex, z.o2);
-label.urt(btex $90\degree$ etex, z.o);
+label.urt(btex $90\degree$ etex, z.o+(4,4));
 
 endfig;
 
@@ -679,6 +681,8 @@ p0=circle(z.o, u);
 z.a=z.o+(1,0)*u;
 z.b=z.o+(0,1)*u;
 
+mark_rt_angle(z.a,z.o,z.b);
+
 draw ddline(z.o, z.a)(1.13, .13);
 draw ddline(z.o, z.b)(1.13, .13);
 draw p0;
@@ -722,6 +726,8 @@ z.o=origin;
 z.a=z.o-(2,0)*u;
 z.b=z.o+(0,1.5)*u;
 z.c=z.o+(2,0)*u;
+
+mark_rt_angle(z.a,z.o,z.b);
 
 draw z.a--z.c;
 draw z.o--z.b;
@@ -1075,6 +1081,9 @@ z.e1=.5[z.a1, z.c1];
 save p; path p[];
 p0=z.a--z.b--z.c--cycle;
 p1=z.a1--z.b1--z.c1--cycle;
+
+mark_rt_angle(z.b,z.d,z.c);
+mark_rt_angle(z.b1,z.d1,z.c1);
 
 draw p0 penbold;
 draw z.b--z.f;
@@ -1449,6 +1458,8 @@ z.a=origin;
 z.b=z.a+(1.5,2)*u;
 z.c=z.a+(1.5,0)*u;
 
+mark_rt_angle(z.a,z.c,z.b);
+
 draw ddline(z.a, z.c)(0, .4);
 draw z.a--z.b--z.c--cycle penbold;
 
@@ -1625,6 +1636,8 @@ z.a=z.c+(1,3)*u;
 z.m=-1[z.c,z.b];
 z.n=2.2[z.c,z.b];
 
+mark_rt_angle(z.c,z.b,z.a);
+
 draw z.m--z.n;
 draw z.c--z.a--z.b;
 
@@ -1647,6 +1660,8 @@ z.m=-1[z.c,z.b];
 z.n=3.6[z.c,z.b];
 z.d=2[z.c,z.b];
 z.e=3[z.c,z.b];
+
+mark_rt_angle(z.c,z.b,z.a);
 
 draw z.m--z.n;
 draw z.c--z.a--z.b;
@@ -1677,6 +1692,9 @@ z.c1=z.c+(w,0);
 z.c2=0.75[z.a1,z.c1];
 z.c3=1.25[z.a1,z.c1];
 
+mark_rt_angle(z.a,z.c,z.b);
+mark_rt_angle(z.a1,z.c1,z.b1);
+
 arcs(z.c, z.a, z.b, ar2);
 arcs(z.c1, z.a1, z.b1, ar2);
 
@@ -1705,6 +1723,8 @@ z.a=origin;
 z.b=z.a+(2,2.5)*u;
 z.c=z.a+(2,0)*u;
 
+mark_rt_angle(z.a,z.c,z.b);
+
 draw z.a--z.b--z.c--cycle;
 
 label.lft(btex $A$ etex, z.a);
@@ -1721,6 +1741,8 @@ z.b1=z.a1+(2,2.5)*u;
 z.c1=z.a1+(2,0)*u;
 z.a2=1.25[z.c1,z.a1];
 z.a3=.75[z.c1,z.a1];
+
+mark_rt_angle(z.a1,z.c1,z.b1);
 
 draw z.a2--z.b1--z.c1--cycle;
 draw z.a1--z.b1--z.a3;
@@ -1744,8 +1766,13 @@ z.a=z.m+(-1.5,-2.5)*u;
 z.b=z.a reflectedabout(z.m,z.n);
 z.o=altitude(z.n,z.a,z.m);
 
+mark_rt_angle(z.a,z.o,z.m);
+rimmark(z.a--z.o,z.b--z.o);
+
 draw z.m--z.n;
 draw z.a--z.b--z.k--cycle;
+
+dOt z.k;
 
 label.lft(btex $A$ etex, z.a);
 label.rt(btex $B$ etex, z.b);
@@ -1767,9 +1794,17 @@ z.c=altitude(z.a,z.k,z.o);
 z.d=z.c reflectedabout(z.o,z.m);
 z.b=z.a reflectedabout(z.o,z.m);
 
+mark_rt_angle(z.k,z.c,z.o);
+mark_rt_angle(z.k,z.d,z.o);
+
+arcs(z.k,z.o,z.c,9);
+arcs(z.k,z.o,z.d,11);
+
 draw z.c--z.k--z.d;
 draw z.a--z.o--z.b;
 draw z.o--z.m;
+
+dOt z.k;
 
 label.bot(btex $A$ etex, z.a);
 label.bot(btex $B$ etex, z.b);
@@ -2079,6 +2114,9 @@ z.n=(2.7,0)*u;
 z.a=(1,1.5)*u;
 z.c=(2,1.5)*u;
 z.p=(1.5,3)*u;
+
+mark_rt_angle(z.n,z.b,z.a);
+mark_rt_angle(z.n,z.d,z.c);
 
 draw z.m--z.n;
 draw z.a--z.b;
@@ -2487,6 +2525,9 @@ z.a=z.f+(.5,1.5)*u;
 z.d=altitude(z.f,z.c,z.g);
 z.b=altitude(z.f,z.a,z.e);
 
+mark_rt_angle(z.f,z.b,z.a);
+mark_rt_angle(z.f,z.d,z.c);
+
 draw z.e--z.f--z.g;
 draw z.c--z.d;
 draw z.a--2[z.a,z.b];
@@ -2548,20 +2589,22 @@ z.y2=z.x+((z.y1-z.x) zscaled(z.w));
 z.y3=2*z.x-z.y1;
 z.y4=2*z.x-z.y2;
 
-labelarcsprof(z.c, z.b, z.a, 16, 3, btex \small{$1$} etex);
+
 labelarcsprof(z.y1, z.x, z.y2, 16, 3, btex \small{$2$} etex);
 labelarcsprof(z.y1, z.x, z.y4, 14, 1, btex \small{$3$} etex);
 labelarcsprof(z.y4, z.x, z.y3, 16, 3, btex \small{$4$} etex);
 labelarcsprof(z.y3, z.x, z.y2, 14, 1, btex \small{$5$} etex);
-labelarcsprof(z.e, z.b, z.d, 16, 3, btex \small{$6$} etex);
+
+labelarcsprof(z.c, z.b, z.a, 26, 11, btex \small{$1$} etex);
+labelarcsprof(z.e, z.b, z.d, 26, 11, btex \small{$6$} etex);
 
 draw z.a--z.b--z.c;
 draw z.d--z.b--z.e;
 draw z.y1--z.y3;
 draw z.y2--z.y4;
 
-mark_angle(z.d, z.b, z.c, 25);
-mark_angle(z.e, z.b, z.a, 29);
+mark_rt_angle_withsize(z.d, z.b, z.c,5);
+mark_rt_angle_withsize(z.e, z.b, z.a,8);
 
 label.urt(btex $A$ etex, z.a);
 label.lft(btex $B$ etex, z.b);
@@ -2864,13 +2907,15 @@ z.m=k[z.d,z.c];
 z.p=k[z.a,z.b];
 z.n=k[z.c,z.d];
 
+mark_rt_angle(z.b,z.p,z.m);
+mark_rt_angle(z.b,z.q,z.n);
 
 draw z.m--z.p;
 draw z.n--z.q;
 draw z.a--z.b;
 draw z.c--z.d;
 
-dOt z.m,z.n,z.p,z.q;
+dOt z.m,z.n;
 
 label.lft(btex $A$ etex, z.a);
 label.rt(btex $B$ etex, z.b);
@@ -2939,6 +2984,8 @@ draw z.a--z.b--z.c--z.d--cycle;
 draw z.a--z.c;
 draw z.b--z.d;
 draw z.p--z.q;
+
+dOt z.p,z.q;
 
 label.llft(btex $A$ etex, z.a);
 label.ulft(btex $B$ etex, z.b);
@@ -4705,10 +4752,10 @@ endfig;
 
 beginfig(160);
 save u;
-u:=1.3cm;
+u:=1.1cm;
 
 z.a=(0,0)*u;
-z.b=(1.6,1)*u;
+z.b=(1.6,1.5)*u;
 z.c=(2,0)*u;
 
 z.a1=z.b+z.c-z.a;
@@ -4718,6 +4765,10 @@ z.c1=z.a+z.b-z.c;
 z.d=altitude(z.c,z.a,z.b);
 z.e=altitude(z.a,z.b,z.c);
 z.f=altitude(z.b,z.c,z.a);
+
+mark_rt_angle(z.a,z.d,z.b);
+mark_rt_angle(z.c,z.f,z.a);
+mark_rt_angle(z.b,z.e,z.c);
 
 draw z.a1--z.b1--z.c1--cycle;
 draw z.a--z.b--z.c--cycle penbold;
@@ -6316,6 +6367,8 @@ z.a=(0,2)*u;
 z.b=z.a zscaled(0,w);
 z.c=z.a zscaled(0,-1/w);
 
+mark_rt_angle(z.a,z.d,z.b);
+
 labelarcsprof(z.b, z.a, z.d, 17, 5, btex \small{$1$} etex);
 labelarcsprof(z.d, z.a, z.c, 17, 5, btex \small{$2$} etex);
 labelarcsprof(z.c, z.b, z.a, 17, 5, btex \small{$3$} etex);
@@ -6340,6 +6393,8 @@ z.a=(0,2)*u;
 z.b=z.a zscaled(0,w);
 z.c=z.a zscaled(0,-1/w);
 
+mark_rt_angle(z.a,z.d,z.b);
+
 draw z.a--z.b--z.c--cycle;
 draw z.a--z.d;
 draw arc(z.b,z.a,z.c);
@@ -6360,6 +6415,8 @@ z.b=origin;
 z.a=(-2,0)*u;
 z.c=(-w*w*x.a,0);
 z.d=(0,-w*x.a);
+
+mark_rt_angle(z.d,z.b,z.c);
 
 draw z.a--z.c;
 draw z.b--z.d;
@@ -6384,6 +6441,8 @@ z.b=(2,0)*u;
 z.c=(w*w*x.b,0);
 z.d=(x.c,(sqrt(1/(w*w)-1))*x.c);
 
+mark_rt_angle(z.d,z.c,z.b);
+
 draw z.a--z.b;
 draw z.a--z.d;
 draw z.c--z.d;
@@ -6407,6 +6466,8 @@ z.d=origin;
 z.a=(0,2)*u;
 z.b=z.a zscaled(0,w);
 z.c=z.a zscaled(0,-1/w);
+
+mark_rt_angle(z.a,z.d,z.c);
 
 draw z.a--z.b--z.c--cycle;
 draw z.a--z.d;
@@ -6433,6 +6494,8 @@ z.d=origin;
 z.a=(-2,0)*u;
 z.b=(0,2.3)*u;
 z.c=(1,0)*u;
+
+mark_rt_angle(z.b,z.d,z.c);
 
 arcs(z.c,z.a,z.b,10);
 
@@ -6462,6 +6525,8 @@ z.b=(1,2.3)*u;
 z.c=(0,0)*u;
 z.d=altitude(z.c,z.b,z.a);
 
+mark_rt_angle(z.b,z.d,z.c);
+
 arcs(z.c,z.a,z.b,10);
 
 draw z.a--z.b--z.d--cycle;
@@ -6489,6 +6554,8 @@ z.a=(2,0)*u;
 z.b=(-1,2.3)*u;
 z.c=(0,0)*u;
 z.d=altitude(z.c,z.b,z.a);
+
+mark_rt_angle(z.b,z.d,z.c);
 
 arcs(z.a,z.c,z.b,10);
 
@@ -6523,6 +6590,9 @@ z.e=altitude(z.a,z.b,z.d);
 
 hatchfill z.a--z.b--z.d--cycle  withcolor (43, 1mm, -.5bp);
 hatchfill z.a--z.c--z.d--cycle  withcolor (0, 1mm, -.5bp);
+
+mark_rt_angle(z.d,z.f,z.c);
+mark_rt_angle(z.a,z.e,z.b);
 
 arcs(z.d,z.a,z.b,10);
 arcs(z.c,z.d,z.f,10);
@@ -6865,6 +6935,8 @@ z.d=z.c zscaled(0,-1);
 z.e=z.d+abs(z.c)*unitvector(z.a-z.d);
 z.g=z.a+(abs(z.a-z.e),0);
 
+mark_rt_angle(z.a,z.b,z.d);
+
 draw z.a--z.b--z.d--cycle;
 kisDot(z.c,z.b);
 
@@ -7176,6 +7248,8 @@ z.a=z.d rotated -90;
 z.b=z.a rotated -90;
 z.c=z.b rotated -90;
 
+mark_rt_angle(z.a,z.o,z.b);
+
 draw circle(z.o,z.d);
 draw z.a--z.b--z.c--z.d--cycle;
 draw z.a--z.c;
@@ -7296,9 +7370,10 @@ draw circle(z.k,z.ak-z.k);
 draw z.a9..z.ak..z.a1;
 draw z.a--z.a1--z.a2--z.a3--z.a4--z.a5--z.a6--z.a7--z.a8--z.a9--cycle;
 draw z.a--z.a5;
+draw z.a--z.k;
 draw (z.a rotated 90)--(z.a rotated -90);
 
-dOt z.o;
+dOt z.o,z.k;
 
 label.lft(btex $A$ etex, z.a);
 label.lrt(btex $O$ etex, z.o);
@@ -7340,6 +7415,8 @@ z.c=(0,2)*u;
 z.a=z.c rotated 36;
 z.b=z.a reflectedabout(z.o,z.c);
 z.d=altitude(z.o,z.a,z.c);
+
+mark_rt_angle(z.a,z.d,z.o);
 
 draw ddarc(z.a,z.c,z.b)(50,50);
 draw z.b--z.a--z.c--z.o--z.a;
@@ -7841,6 +7918,9 @@ z.e=z.b-z.c;
 z.d=altitude(z.a,z.b,z.c);
 
 hatchfill z.a--z.b--z.c--cycle  withcolor (50, 1mm, -.5bp);
+
+mark_rt_angle(z.a,z.d,z.b);
+
 draw z.a--z.b--z.c--cycle penbold;
 draw z.a--z.e--z.b--z.d;
 
@@ -8091,6 +8171,8 @@ z.b=(-1,0)*u;
 z.a=(0,2.3)*u;
 z.c=(2,0)*u;
 
+mark_rt_angle(z.c,z.d,z.a);
+
 draw z.b--z.a--z.c--cycle;
 draw z.a--z.d;
 
@@ -8176,6 +8258,8 @@ z.f=k[z.d,z.a];
 z.g=k[z.d,z.b];
 z.e=k[z.d,z.c];
 
+mark_rt_angle(z.c,z.b,z.d);
+
 draw z.d--z.a--z.c--cycle;
 draw z.d--z.b;
 draw z.f--z.e;
@@ -8208,6 +8292,9 @@ z.d1=altitude(z.a1,z.b1,z.c1);
 
 hatchfill z.a--z.b--z.d--cycle  withcolor (30, 1mm, -.5bp);
 hatchfill z.a1--z.b1--z.d1--cycle  withcolor (30, 1mm, -.5bp);
+
+mark_rt_angle(z.a,z.d,z.b);
+mark_rt_angle(z.a1,z.d1,z.b1);
 
 arcs(z.c,z.a,z.b,10);
 arcs(z.c1,z.a1,z.b1,10);
