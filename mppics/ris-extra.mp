@@ -47,4 +47,20 @@ draw (0,a)--(k*u,a);
 endfor 
 endfig;
 
+beginfig(3)
+save u;
+u:=1cm;
+
+z.a=(2,1)*u;
+z.b=(-.5,1)*u;
+
+parallel_mark1(origin--z.a);
+parallel_mark1(z.b--(z.a+z.b));
+
+draw origin--z.a;
+draw z.b--(z.a+z.b);
+
+endfig;
+
+
 end

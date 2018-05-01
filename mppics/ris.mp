@@ -2624,6 +2624,9 @@ z.c=(2,0)*u;
 z.e=z.b+z.c;
 z.d=2*z.c;
 
+parallel_mark1(z.a--z.b);
+parallel_mark1(z.c--z.e);
+
 arcs(z.b, z.a, z.c, 10);
 arcs2(z.c, z.b, z.a, 10);
 arcs3(z.a, z.c, z.b, 10);
@@ -2846,6 +2849,11 @@ z.q=k[z.b,z.c];
 z.p=k[z.c,z.b];
 z.s=k[z.a,z.d];
 
+parallel_mark1(z.a--z.b);
+parallel_mark1(z.d--z.c);
+parallel_mark2(z.a--z.d);
+parallel_mark2(z.b--z.c);
+
 draw z.k--z.l;
 draw z.m--z.n;
 draw z.p--z.q;
@@ -2909,6 +2917,9 @@ z.n=k[z.c,z.d];
 
 mark_rt_angle(z.b,z.p,z.m);
 mark_rt_angle(z.b,z.q,z.n);
+
+parallel_mark1(z.p--z.q);
+parallel_mark1(z.m--z.n);
 
 draw z.m--z.p;
 draw z.n--z.q;
@@ -3149,6 +3160,10 @@ z.l=z.e+k*z.m;
 hatchfill z.d--z.k--z.e--cycle withcolor (87, 1mm, -.5bp);
 hatchfill z.e--z.l--z.f--cycle withcolor (87, 1mm, -.5bp);
 
+parallel_mark1(z.b--z.m);
+parallel_mark1(z.d--z.k);
+parallel_mark1(z.e--z.l);
+
 arcs(z.k,z.d,z.e,10);
 arcs(z.l,z.e,z.f,10);
 arcs2(z.k,z.e,z.d,10);
@@ -3205,6 +3220,9 @@ z.a=origin;
 z.b=(.5,2)*u;
 z.d=(3,0)*u;
 z.c=z.b+.7z.d;
+
+parallel_mark1(z.b--z.c);
+parallel_mark1(z.a--z.d);
 
 draw z.a--z.b--z.c--z.d--cycle penbold;
 
@@ -3797,6 +3815,9 @@ z.f=2*z.d-z.e;
 z.a=z.e+z.c-z.d;
 z.b=2[z.a,z.c];
 
+parallel_mark1(z.d--z.e);
+parallel_mark1(z.c--z.a);
+
 draw circle(z.o,z.d);
 draw z.o--z.c;
 draw z.e--z.f;
@@ -4282,6 +4303,9 @@ z.o1=z.b+z.c-z.a;
 z.a1= z.a reflectedabout(z.o,z.o1);
 z.b1= z.b reflectedabout(z.o,z.o1);
 
+parallel_mark1(z.o1--z.c);
+parallel_mark1(z.b--z.a);
+
 draw ddline(z.a,z.b)(.2,.2);
 draw ddline(z.a1,z.b1)(.2,.15);
 draw z.a--z.o--z.o1--z.b dashed evenly;
@@ -4316,6 +4340,9 @@ z.b=z.o1+z.a-z.c;
 z.b1=z.b reflectedabout(z.o,z.o1);
 z.a1=z.a reflectedabout(z.o,z.o1);
 
+parallel_mark1(z.o1--z.c);
+parallel_mark1(z.b--z.a);
+
 draw ddline(z.a,z.b)(.2,.2);
 draw ddline(z.a1,z.b1)(.2,.15);
 draw z.c--z.o dashed evenly;
@@ -4330,7 +4357,7 @@ dOt z.o,z.o1;
 label.top(btex $A$ etex, z.a+(-1,2));
 label.bot(btex $A_1$ etex, z.a1);
 label.llft(btex $B$ etex, z.b);
-label.ulft(btex $B_1$ etex, z.b1);
+label.top(btex $B_1$ etex, z.b1+(-1,1));
 label.urt(btex $C$ etex, z.c);
 label.lft(btex $O$ etex, z.o);
 label.rt(btex $O_1$ etex, z.o1);
