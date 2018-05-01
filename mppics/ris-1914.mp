@@ -18,6 +18,115 @@ linecap:=butt;
 
 %outputformat := "svg";
 
+beginfig(113)
+save u;
+u:=.5cm;
+
+z.a=(-.5,.5)*u;
+z.b=(2.5,-.5)*u;
+
+path p;
+p=circle(origin,2*u);
+
+z.x=cross.rt(p,z.a--z.b);
+z.y=point .1 of p;
+z.z=point 3.2 of p;
+
+draw p penbold;
+draw z.a--z.b penhair;
+draw z.a..z.y..z.b penhair;
+draw z.a..z.z..z.b penhair;
+
+\dOt z.a,z.b,z.x,z.y,z.z;
+
+label.lft(btex $A$ etex, z.a);
+label.rt(btex $B$ etex, z.b);
+label.llft(btex $X$ etex, z.x);
+label.urt(btex $Y$ etex, z.y);
+label.top(btex $Z$ etex, z.z);
+
+endfig;
+
+beginfig(134)
+save u, k;
+u:=1cm;
+k:=2.6;
+
+z.a=(-2,-.5)*u;
+z.am=(-1,.5)*u;
+z.m=origin;
+z.b=(1,1)*u;
+
+path p;
+p=z.a..z.am..{dir 0}z.m..{dir 90}z.b;
+
+z.tl=(x.a-.5*u,0);
+z.tr=(x.b+.5u,0);
+z.p=point k of p;
+y.pml1=y.a;
+x.pmr1=x.tr;
+z.pml1=whatever[z.m,z.p];
+z.pmr1=whatever[z.m,z.p];
+
+z.p2=point 2.15 of p;
+x.pml2=x.tl;
+x.pmr2=x.tr;
+z.pml2=whatever[z.m,z.p2];
+z.pmr2=whatever[z.m,z.p2];
+
+z.p3=point 2.05 of p;
+x.pml3=x.tl;
+x.pmr3=x.tr;
+z.pml3=whatever[z.m,z.p3];
+z.pmr3=whatever[z.m,z.p3];
+
+draw p;
+draw  z.tl--z.tr penbold;
+draw z.pml1--z.pmr1 penhair;
+draw z.pml2--z.pmr2 penhair;
+draw z.pml3--z.pmr3 penhair;
+
+dOt z.m, z.p;
+
+label.ulft(btex $P$ etex, z.p);
+label.bot(btex $M$ etex, z.m);
+label.bot(btex $T$ etex, 1.2[(x.a,0),(x.b,0)]);
+endfig;
+
+beginfig(147);
+save u, f;
+u:=2cm;
+f:=.5*(sqrt(5)-1);
+
+z.c=origin;
+z.a=(-2,0)*u;
+z.b=(z.a rotated -36) scaled f; 
+z.d=z.a scaled f*f;
+z.e=z.b scaled f*f;
+z.f=z.d scaled f*f;
+
+arcs(z.c,z.a,z.b,10);
+arcs(z.a,z.c,z.b,10);
+arcs(z.d,z.b,z.c,10);
+arcs2(z.a,z.b,z.d,10);
+arcs2(z.a,z.d,z.b,10);
+
+draw z.a--z.b--z.c--cycle;
+draw z.b--z.d--z.e--z.f;
+
+rimmark(z.a--z.b,z.a--z.d);
+rimmark2(z.b--z.d,z.b--z.e);
+rimmark3(z.d--z.e,z.d--z.f);
+
+label.lft(btex $A$ etex, z.a);
+label.top(btex $B$ etex, z.b+(0,2));
+label.rt(btex $C$ etex, z.c);
+label.bot(btex $D$ etex, z.d);
+label.urt(btex $E$ etex, z.e);
+label.bot(btex $F$ etex, z.f);
+endfig;
+
+
 beginfig(209)
 save u;
 u:=1.4cm;

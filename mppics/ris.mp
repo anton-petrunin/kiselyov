@@ -1755,28 +1755,6 @@ label.urt(btex $O$ etex, z.o);
 label.urt(btex $K$ etex, z.k);
 endfig;
 
-beginfig(631)
-save u;
-u:=1cm;
-
-z.m=origin;
-z.n=z.m+(0,-3)*u;
-z.k=z.m+(-.5,-1)*u;
-z.a=z.m+(-1.5,-2.5)*u;
-z.b=z.a reflectedabout(z.m,z.n);
-z.o=altitude(z.n,z.a,z.m);
-
-draw z.m--z.n;
-draw z.a--z.b--z.k--cycle;
-
-label.lft(btex $A$ etex, z.a);
-label.rt(btex $B$ etex, z.b);
-label.top(btex $M$ etex, z.m);
-label.bot(btex $N$ etex, z.n);
-label.urt(btex $O$ etex, z.o);
-label.top(btex $K$ etex, z.k);
-endfig;
-
 beginfig(64)
 save u;
 u:=1cm;
@@ -1800,31 +1778,6 @@ label.rt(btex $D$ etex, z.d);
 label.bot(btex $M$ etex, z.m);
 label.top(btex $O$ etex, z.o);
 label.lrt(btex $K$ etex, z.k);
-endfig;
-
-beginfig(641)
-save u;
-u:=1cm;
-
-z.o=origin;
-z.m=z.o+(0,-3)*u;
-z.a=z.o+(-1.5,-3)*u;
-z.k=0.75[z.o,z.m]+(-.5,0)*u;
-z.c=altitude(z.a,z.k,z.o);
-z.b=z.a reflectedabout(z.o,z.m);
-z.d=altitude(z.b,z.k,z.o);
-
-draw z.c--z.k--z.d;
-draw z.a--z.o--z.b;
-draw z.o--z.m;
-
-label.bot(btex $A$ etex, z.a);
-label.bot(btex $B$ etex, z.b);
-label.lft(btex $C$ etex, z.c);
-label.rt(btex $D$ etex, z.d);
-label.bot(btex $M$ etex, z.m);
-label.top(btex $O$ etex, z.o);
-label.bot(btex $K$ etex, z.k);
 endfig;
 
 beginfig(65)
@@ -3644,35 +3597,6 @@ label.lrt(btex $D$ etex, z.d);
 label.urt(btex $O$ etex, z.o);
 endfig;
 
-beginfig(302)
-save u;
-u:=.5cm;
-
-z.a=(-.5,.5)*u;
-z.b=(2.5,-.5)*u;
-
-path p;
-p=circle(origin,2*u);
-
-z.x=cross.rt(p,z.a--z.b);
-z.y=point .1 of p;
-z.z=point 3.2 of p;
-
-draw p penbold;
-draw z.a--z.b penhair;
-draw z.a..z.y..z.b penhair;
-draw z.a..z.z..z.b penhair;
-
-\dOt z.a,z.b,z.x,z.y,z.z;
-
-label.lft(btex $A$ etex, z.a);
-label.rt(btex $B$ etex, z.b);
-label.llft(btex $X$ etex, z.x);
-label.urt(btex $Y$ etex, z.y);
-label.top(btex $Z$ etex, z.z);
-
-endfig;
-
 beginfig(123);
 save u,v,h;
 u:=1cm;
@@ -3756,31 +3680,6 @@ label.rt(btex $B$ etex, z.b);
 label.top(btex $C$ etex, z.c);
 label.bot(btex $O$ etex, z.o);
 endfig;
-
-beginfig(301)
-save u, k;
-u:=1cm;
-k:=2.6;
-
-z.a=(-2,-.5)*u;
-z.am=(-1,.5)*u;
-z.m=origin;
-z.b=(1,1)*u;
-
-path p;
-p=z.a..z.am..{dir 0}z.m..{dir 90}z.b;
-
-draw p;
-draw  ddline((x.a,0),(x.b,0))(.2,.2) penbold;
-draw ddline(z.m, point k of p)(1.3,1) penhair;
-draw ddline(z.m, point 2.1 of p)(16,8) penhair;
-dOt z.m, point 2.6 of p;
-
-label.ulft(btex $P$ etex, point k of p);
-label.bot(btex $M$ etex, z.m);
-label.bot(btex $T$ etex, 1.2[(x.a,0),(x.b,0)]);
-endfig;
-
 
 beginfig(126);
 save u;
@@ -4415,39 +4314,6 @@ label.top(btex $B$ etex, z.b+(0,2));
 label.lrt(btex $C$ etex, z.c);
 label.ulft(btex $D$ etex, z.d);
 label.urt(btex $E$ etex, z.e);
-endfig;
-
-beginfig(491);
-save u, f;
-u:=2cm;
-f:=.5*(sqrt(5)-1);
-
-z.c=origin;
-z.a=(-2,0)*u;
-z.b=(z.a rotated -36) scaled f; 
-z.d=z.a scaled f*f;
-z.e=z.b scaled f*f;
-z.f=z.d scaled f*f;
-
-arcs(z.c,z.a,z.b,10);
-arcs(z.a,z.c,z.b,10);
-arcs(z.d,z.b,z.c,10);
-arcs2(z.a,z.b,z.d,10);
-arcs2(z.a,z.d,z.b,10);
-
-draw z.a--z.b--z.c--cycle;
-draw z.b--z.d--z.e--z.f;
-
-rimmark(z.a--z.b,z.a--z.d);
-rimmark2(z.b--z.d,z.b--z.e);
-rimmark3(z.d--z.e,z.d--z.f);
-
-label.lft(btex $A$ etex, z.a);
-label.top(btex $B$ etex, z.b+(0,2));
-label.rt(btex $C$ etex, z.c);
-label.bot(btex $D$ etex, z.d);
-label.urt(btex $E$ etex, z.e);
-label.bot(btex $F$ etex, z.f);
 endfig;
 
 beginfig(149);

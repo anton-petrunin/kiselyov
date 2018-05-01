@@ -17,6 +17,54 @@ linecap:=butt;
 
 %outputformat := "svg";
 
+beginfig(62)
+save u;
+u:=1cm;
+
+z.m=origin;
+z.n=z.m+(0,-3)*u;
+z.k=z.m+(-.5,-1)*u;
+z.a=z.m+(-1.5,-2.5)*u;
+z.b=z.a reflectedabout(z.m,z.n);
+z.o=altitude(z.n,z.a,z.m);
+
+draw z.m--z.n;
+draw z.a--z.b--z.k--cycle;
+
+label.lft(btex $A$ etex, z.a);
+label.rt(btex $B$ etex, z.b);
+label.top(btex $M$ etex, z.m);
+label.bot(btex $N$ etex, z.n);
+label.urt(btex $O$ etex, z.o);
+label.top(btex $K$ etex, z.k);
+endfig;
+
+beginfig(63)
+save u;
+u:=1cm;
+
+z.o=origin;
+z.m=z.o+(0,-3)*u;
+z.a=z.o+(-1.5,-3)*u;
+z.k=0.75[z.o,z.m]+(-.5,0)*u;
+z.c=altitude(z.a,z.k,z.o);
+z.b=z.a reflectedabout(z.o,z.m);
+z.d=altitude(z.b,z.k,z.o);
+
+draw z.c--z.k--z.d;
+draw z.a--z.o--z.b;
+draw z.o--z.m;
+
+label.bot(btex $A$ etex, z.a);
+label.bot(btex $B$ etex, z.b);
+label.lft(btex $C$ etex, z.c);
+label.rt(btex $D$ etex, z.d);
+label.bot(btex $M$ etex, z.m);
+label.top(btex $O$ etex, z.o);
+label.bot(btex $K$ etex, z.k);
+endfig;
+
+
 beginfig(124)
 save u,k;
 u:=1cm;
