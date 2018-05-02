@@ -101,9 +101,13 @@ mpost ris.mp
 <br>
 mpost ris-1914.mp
 <br>
-mpost ris-1931.mp 
+mpost ris-1931.mp
+<br>
+mpost ris-ru.mp
 <br>
 mpost ris-extra.mp
+<br>
+mpost ris-wood.mp
 <br>
 mpost transportir.mp
 <br>
@@ -122,9 +126,19 @@ texindy -L russian -C utf8 kiselyov-2D.idx
 <br>
 pdflatex kiselyov-2D.tex
 </font>
+<br>
+<br>
 Если всё прошло удачно, то вы получили файл <font size="4" face="monospace">kiselyov-2D.pdf</font>.
-Если приходит сообщение об ошибке от рисунов, следует повторить <font size="4" face="monospace">mpost ris.mp</font> в <font size="4" face="monospace">mppics</font> (там используются случайные числа и иногда они зашкаливают).
-
+Файл <font size="4" face="monospace">ris-ru.mp</font> содержит картинки с русскими буквочками,
+а файл <font size="4" face="monospace">ris-wood.mp</font>  — картинки с линейкой и угольником.
+В последнем использовались случайные числа и они иногда зашакливают.
+Пэтому, если приходит сообщение об ошибке от рисунов, типа
+<br>
+<font size="4" face="monospace">
+./mppics/ris-wood-76.mps:1635:Dimension too large ...0029 0.07253 0.99998 0 0] concat stroke
+</font>,
+<br>
+то следует повторить <font size="4" face="monospace">mpost ris-wood.mp</font> в папке <font size="4" face="monospace">mppics</font>.
 </p>
 
 <footer>
