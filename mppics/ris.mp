@@ -1328,77 +1328,6 @@ label.bot(btex $B_2$ etex, z.b2);
 
 endfig;
 
-beginfig(471)
-save u;
-u:=1cm;
-
-z.w=(0,-3*u);
-
-z.a=origin;
-z.c=z.a+(1.5,0)*u;
-z.b=z.a+(2,2)*u;
-
-z.b1=z.b shifted z.w;
-z.c1=z.c shifted z.w;
-z.a1=z.a shifted z.w;
-z.b2=z.b1 reflectedabout (z.c1,z.a1);
-
-labelarcsprof(z.c1, z.b1, z.b2, 23, 7, btex  etex);
-labelarcsprof(z.c1, z.b2, z.b1, 23, 7, btex  etex);
-labelarcsprof2(z.a1, z.b1, z.b2, 17, 5, btex  etex);
-labelarcsprof2(z.a1, z.b2, z.b1, 17, 5, btex  etex);
-
-
-
-draw z.b1--z.c1--z.a1--cycle;
-draw z.c1--z.b2--z.a1;
-draw z.b1--z.b2;
-
-
-rimmark2(z.b1--z.a1);
-rimmark2(z.b2--z.a1);
-rimmark(z.c1--z.b1);
-rimmark(z.c1--z.b2);
-
-
-label.lft(btex $A_1$ etex, z.a1);
-label.top(btex $B_1$ etex, z.b1);
-label.ulft(btex $C_1$ etex, z.c1);
-label.bot(btex $B_2$ etex, z.b2);
-
-endfig;
-
-beginfig(472)
-save u;
-u:=1cm;
-
-z.w=(0,-3*u);
-
-z.a=origin;
-z.c=z.a+(2,0)*u;
-z.b=z.a+(2,2)*u;
-
-z.b1=z.b shifted z.w;
-z.c1=z.c shifted z.w;
-z.a1=z.a shifted z.w;
-z.b2=z.b1 reflectedabout (z.c1,z.a1);
-
-labelarcsprof2(z.a1, z.b1, z.b2, 17, 5, btex etex);
-labelarcsprof2(z.a1, z.b2, z.b1, 17, 5, btex  etex);
-
-draw z.b1--z.c1--z.a1--cycle;
-draw z.c1--z.b2--z.a1;
-draw z.b1--z.b2;
-
-rimmark2(z.b1--z.a1);
-rimmark2(z.b2--z.a1);
-
-label.lft(btex $A_1$ etex, z.a1);
-label.top(btex $B_1$ etex, z.b1);
-label.rt(btex $C_1$ etex, z.c1);
-label.bot(btex $B_2$ etex, z.b2);
-endfig;
-
 beginfig(48)
 save u;
 u:=.8cm;
@@ -3283,6 +3212,10 @@ z.b=3*z.m;
 z.e=2*z.d;
 z.f=3*z.d;
 z.c=3.6*z.d;
+
+parallel_mark1(z.d--z.m);
+parallel_mark1(z.e--z.n);
+parallel_mark1(z.f--z.b);
 
 draw z.c--z.a--z.b--z.f;
 draw z.e--z.n;
@@ -7554,7 +7487,7 @@ endfig;
 
 beginfig(234);
 save u;
-u:=.65cm;
+u:=.6cm;
 
 z.o=origin;
 z.a=(-2,0)*u;
@@ -7583,7 +7516,7 @@ endfig;
 
 beginfig(235);
 save u;
-u:=.65cm;
+u:=.6cm;
 
 z.o=origin;
 z.a=(2,0)*u;
@@ -7609,9 +7542,9 @@ kisDot(z.p2,z.o);
 %kisDot(z.p3,z.o);
 kisDot(z.x,z.o);
 
-label.bot(btex $P_1$ etex, z.p0);
-label.bot(btex $P_2$ etex, z.p1+(-3,0));
-label.bot(btex $P_3$ etex, z.p2+(-1,0));
+label.bot(btex \small{$P_1$} etex, z.p0);
+label.top(btex \small{$P_2$} etex, z.p1+(-2,0));
+label.bot(btex \small{$P_3$} etex, z.p2+(0,0));
 %label.bot(btex $P_3$ etex, z.p3);
 label.top(btex $x$ etex, z.x+(2,0));
 
