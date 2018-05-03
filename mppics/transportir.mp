@@ -46,7 +46,7 @@ enddef;
 
 beginfig(19)
 save u;
-u:=1cm;
+u:=.9cm;
 
 path p[];
 z.o=origin;

@@ -423,6 +423,8 @@ draw z.d--z.a;
 draw z.o--z.b;
 draw z.o--z.c;
 
+dOt z.o;
+
 label.rt(btex $A$ etex, z.a);
 label.rt(btex $B$ etex, z.b);
 label.lft(btex $C$ etex, z.c);
@@ -445,6 +447,8 @@ draw z.b--z.o--z.a;
 draw z.o--z.c;
 draw z.o--z.d;
 draw z.o--z.e;
+
+dOt z.o;
 
 label.rt(btex $A$ etex, z.a);
 label.top(btex $B$ etex, z.b);
@@ -469,6 +473,8 @@ z.b=point 3.3 of p0;
 
 draw p0;
 draw z.a--z.o--z.b;
+
+dOt z.o;
 
 label.llft(btex $A$ etex, z.a);
 label.lrt(btex $B$ etex, z.b);
@@ -497,6 +503,8 @@ draw p0;
 drawarrow  reverse cutcircle(p1, z.y, z.x);
 draw z.a--z.o--z.b;
 draw z.c--z.o--z.d;
+
+dOt z.o;
 
 label.top(btex $A$ etex, z.a);
 label.urt(btex $B$ etex, z.b);
@@ -777,6 +785,8 @@ draw z.o--z.c;
 draw z.o--z.d;
 draw z.o--z.e;
 
+dOt z.o;
+
 label.lft(btex $A$ etex, z.a);
 label.lft(btex $B$ etex, z.b);
 label.top(btex $C$ etex, z.c);
@@ -801,6 +811,8 @@ draw z.o--z.b;
 draw z.o--z.c;
 draw z.o--z.d;
 draw z.o--z.e;
+
+dOt z.o;
 
 label.lft(btex $A$ etex, z.a);
 label.lft(btex $B$ etex, z.b);
@@ -992,7 +1004,7 @@ draw z.d0--z.d1;
 draw z.e0--z.e1;
 draw z.m--z.n dashed evenly scaled 2;
 
-Dot z.a0,z.a1,z.b0,z.b1,z.c0,z.c1,z.d0,z.d1,z.e0,z.e1,z.aa;
+dOt z.a0,z.a1,z.b0,z.b1,z.c0,z.c1,z.d0,z.d1,z.e0,z.e1,z.aa;
 
 label.top(btex $M$ etex, z.m);
 label.bot(btex $N$ etex, z.n);
@@ -1992,7 +2004,7 @@ endfig;
 
 beginfig(75)
 save u;
-u:=1cm;
+u:=.8cm;
 a:=25;
 
 z.e=origin;
@@ -2534,7 +2546,7 @@ endfig;
 
 beginfig(96);
 save u;
-u:=1cm;
+u:=.8cm;
 k:=1.4;
 
 z.a=origin;
@@ -4509,9 +4521,9 @@ z.c=(3,0)*u;
 z.d=.5[z.c,z.a];
 z.e=.5[z.b,z.c];
 z.h=.5[z.a,z.b];
-z.o=centroid(z.a,z.b,z.c);
-z.g=.5[z.o,z.b];
-z.f=.5[z.o,z.a];
+z.z=centroid(z.a,z.b,z.c);
+z.g=.5[z.z,z.b];
+z.f=.5[z.z,z.a];
 
 arcs(z.d,z.g,z.f,8);
 arcs(z.e,z.d,z.g,8);
@@ -4524,8 +4536,8 @@ draw z.b--z.d;
 draw z.c--z.h;
 draw z.d--z.e--z.g--z.f--cycle;
 
-rimmark(z.a--z.f, z.f--z.o);
-rimmark2(z.b--z.g, z.g--z.o);
+rimmark(z.a--z.f, z.f--z.z);
+rimmark2(z.b--z.g, z.g--z.z);
 
 label.llft(btex $A$ etex, z.a);
 label.top(btex $B$ etex, z.b);
@@ -4535,7 +4547,7 @@ label.rt(btex $E$ etex, z.e);
 label.ulft(btex $F$ etex, z.f+(2,0));
 label.ulft(btex $G$ etex, z.g+(2,0));
 label.ulft(btex $H$ etex, z.h);
-whitelabel.ulft(btex $O$ etex, z.o);
+whitelabel.ulft(btex $Z$ etex, z.z);
 endfig;
 
 beginfig(162);
@@ -5102,10 +5114,10 @@ z.c1=z.a1+z.c-z.x;
 z.b1=z.a1+z.y-z.x;
 z.d1=altitude(z.a1,z.b1,z.c1);
 
-arcs(z.a,z.d,z.b,10);
-arcs(z.a1,z.d1,z.b1,10);
-arcs2(z.d,z.a,z.b,10);
-arcs2(z.d1,z.a1,z.b1,10);
+mark_rt_angle(z.a,z.d,z.b);
+mark_rt_angle(z.a1,z.d1,z.b1);
+arcs(z.d,z.a,z.b,10);
+arcs(z.d1,z.a1,z.b1,10);
 
 draw z.a--z.c--z.b--cycle penbold;
 draw z.a1--z.c1--z.b1--cycle penbold;
