@@ -400,4 +400,34 @@ label.urt(btex $b$ etex, .5[z.a,z.c]);
 label.rt(btex $c$ etex, .5[z.a,z.b]);
 label.lft(btex $h_a$ etex, .6[z.a,z.e]+(-1,0));
 endfig;
+
+beginfig(292)
+save u;
+u:=1.4cm;
+
+z.o=origin;
+z.a0=(1,0)*u;
+z.a1=z.a0 rotated 60;
+z.a2=z.a0 rotated 120;
+z.a3=z.a0 rotated 180;
+z.a4=z.a0 rotated -120;
+z.a5=z.a0 rotated -60;
+
+z.b0=altitude(z.a0,z.o,z.a1);
+z.b1=z.b0 rotated 60;
+z.b2=z.b0 rotated 120;
+z.b3=z.b0 rotated 180;
+z.b4=z.b0 rotated -120;
+z.b5=z.b0 rotated -60;
+
+z.h=altitude(z.b4,z.o,z.b3);
+
+draw circle(z.o,z.b0);
+draw z.a0--z.a1--z.a2--z.a3--z.a4--z.a5--cycle;
+draw z.b0--z.b1--z.b2--z.b3--z.b4--z.b5--cycle;
+draw z.b4--z.o--z.h;
+
+label.ulft(btex $a_n$ etex, .5[z.o,z.h]);
+label.rt(btex $R$ etex, .5[z.o,z.b4]);
+endfig;
 end

@@ -2368,10 +2368,11 @@ z.b=z.c rotatedabout(z.d,60);
 
 z.a=.5[z.d,z.c];
 
+mark_rt_angle(z.b,z.a,z.c);
 labelarcsprof(z.b, z.d, z.c, 9, 9, btex \small{$60\degree$} etex);
 labelarcsprof(z.d, z.c, z.b, 9, 9, btex \small{$60\degree$} etex);
-labelarcsprof(z.a, z.b, z.c, 9, 18, btex \small{$30\degree$} etex);
-labelarcsprof(z.a, z.b, z.d, 9, 18, btex \small{$30\degree$} etex);
+labelarcsprof(z.a, z.b, z.c, 19, 19, btex \small{$30\degree$} etex);
+labelarcsprof(z.a, z.b, z.d, 19, 19, btex \small{$30\degree$} etex);
 
 draw z.d--z.b--z.c--cycle;
 draw z.a--z.b;
@@ -3217,9 +3218,13 @@ z.e=-z.f;
 z.a=z.b reflectedabout(z.f,z.o);
 z.c=z.d reflectedabout(z.f,z.o);
 
+mark_rt_angle(z.a,.5[z.a,z.b],z.o);
+
 draw ddarc(z.a, z.e, z.b)(30, 30) penbold;
 draw ddline(z.e,z.o)(.3,0);
 draw z.a--z.b;
+
+dOt z.o;
 
 label.llft(btex $A$ etex, z.a);
 label.lrt(btex $B$ etex, z.b);
@@ -6980,6 +6985,8 @@ kisDotAng(z.d, z.o, 0);
 kisDotAng(z.e, z.o, 0);
 kisDotAng(z.f, z.o, 0);
 
+dOt z.o;
+
 label.llft(btex $A$ etex, z.a);
 label.lrt(btex $B$ etex, z.b);
 label.top(btex $O$ etex, z.o);
@@ -8110,6 +8117,8 @@ z.d=(0,-1)*u;
 z.a=z.d rotated -36;
 z.b= z.a reflectedabout(z.o,z.d);
 z.c=.5[z.a,z.b];
+
+mark_rt_angle(z.a,z.c,z.o);
 
 draw circle(z.o,z.d);
 draw z.a--z.o--z.b--cycle;

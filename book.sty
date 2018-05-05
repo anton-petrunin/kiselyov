@@ -17,6 +17,9 @@
 \usepackage{soulutf8}
 \usepackage{paracol}
 
+\usepackage[nobottomtitles*]{titlesec}
+\renewcommand{\bottomtitlespace}{.1\textheight}%определяет минимальную часть текста внизу страницы после заголовка
+
 
 \usepackage[top=22mm, bottom=22mm,inner=22mm, outer=20mm, paperwidth=145mm, paperheight=205mm]{geometry}%145*205
 
@@ -56,3 +59,5 @@ urlcolor=black%
 \usepackage{titlesec}
 \titleformat{\paragraph}[runin]{\normalfont\bfseries}{\theparagraph.}{\wordsep}{}
 \titlespacing{\paragraph}{\parindent}{3.25ex plus 1ex minus .2ex}{\wordsep}
+
+\def\arraystretch{1.5}
