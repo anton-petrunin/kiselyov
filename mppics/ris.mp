@@ -211,7 +211,7 @@ draw cutcircle(p0, z.c, z.d) penbold;
 draw cutcircle(p0, z.p, z.m) penbold;
 
 
-Dot z.o; 
+dOt z.o; 
 %z.a, z.b, z.c, z.d, z.p, z.m;
 kisDotAng(z.a, z.o, 0);
 kisDotAng(z.b, z.o, 0);
