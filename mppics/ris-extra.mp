@@ -134,5 +134,37 @@ arcs(z.o3 rotatedabout(z.a3,90),z.a3,z.o2 rotatedabout(z.a3,-90),6);
 draw z.a1..z.b1..z.a2--z.a2..z.b2..z.a3--z.a3..z.b3..z.a4--z.a4..z.b4..z.a1--cycle penbold;
 endfig;
 
+beginfig(6);
+save u;
+u:=1cm;
+
+z.b=origin;
+z.b1=(2,0)*u;
+z.o=z.b-(0,.5)*u;
+z.o1=z.b1-(0,.3)*u;
+
+z.a=z.b-(.8,0)*u;
+z.c=2*z.b-z.a;
+
+z.a1=z.b1-(.9,0)*u;
+z.c1=2*z.b1-z.a1;
+
+draw circle(z.o,z.b-z.o) dashed evenly;
+draw circle(z.o1,z.b1-z.o1) dashed evenly;
+draw circle(z.o,z.a-z.o);
+draw circle(z.o1,z.a1-z.o1);
+
+draw ddline(z.a,z.c1)(.1,.1);
+
+dOt z.o,z.o1;
+
+label.top(btex $a$ etex, z.b);
+label.top(btex $a_1$ etex, z.b1);
+
+whitelabel.lrt(btex $O$ etex, z.o);
+whitelabel.lrt(btex $O_1$ etex, z.o1);
+
+endfig;
+
 
 end

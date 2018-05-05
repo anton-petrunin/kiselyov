@@ -63,7 +63,7 @@ z.b=(3, 0)*u;
 draw z.a--z.b penbold;
 kisDot(z.a,z.b);
 
-label.top(btex $A$ etex, z.a);
+label.top(btex $E$ etex, z.a);
 endfig;
 
 
@@ -1002,7 +1002,7 @@ draw z.b0--z.b1;
 draw z.c0--z.c1;
 draw z.d0--z.d1;
 draw z.e0--z.e1;
-draw z.m--z.n dashed evenly scaled 2;
+draw z.m--z.n dashed linedot;
 
 dOt z.a0,z.a1,z.b0,z.b1,z.c0,z.c1,z.d0,z.d1,z.e0,z.e1,z.aa;
 
@@ -1030,7 +1030,7 @@ draw (1,0)*u{dir 135}..{dir 60a}(1,2)*u penbold;
 endfor
 z.b=(0,-.2);
 z.a=(0,2.2)*u;
-draw z.a--z.b dashed evenly scaled 2;
+draw z.a--z.b dashed linedot;
 
 label.top(btex $A$ etex, z.a);
 label.bot(btex $B$ etex, z.b);
@@ -5585,6 +5585,8 @@ draw circle(z.o1,z.m1-z.o1);
 draw z.m--z.o--z.s--(1.2*z.m);
 draw z.m1--z.o1;
 
+dOt z.o,z.o1;
+
 label.ulft(btex $M$ etex, z.m);
 label.ulft(btex $M_1$ etex, z.m1);
 
@@ -6870,6 +6872,8 @@ draw z.a--z.o--z.n;
 draw z.d--z.o--z.m;
 draw z.o--z.k;
 
+dOt z.o;
+
 label.lft(btex $A$ etex, z.a);
 label.llft(btex $B$ etex, z.b+(0,-1));
 label.lrt(btex $C$ etex, z.c);
@@ -6880,7 +6884,7 @@ whitelabel.bot(btex $K$ etex, z.k);
 whitelabel.ulft(btex $M$ etex, z.m);
 whitelabel.urt(btex $N$ etex, z.n);
 
-label.bot(btex $O$ etex, z.o);
+label.lrt(btex $O$ etex, z.o);
 endfig;
 
 beginfig(223);
