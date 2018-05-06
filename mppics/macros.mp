@@ -1801,7 +1801,7 @@ enddef;
 vardef rimmarkS(expr a, b) =
 	save s; pair s;
 	2s=unitvector(b-a);
-	draw (.5[a,b]+ s zscaled (6,3))..(.5[a,b]+ s zscaled (3,-3))..(.5[a,b]+ s zscaled (-3,3))..(.5[a,b]+ s zscaled (-6,-3));
+	draw (.5[a,b]+ s zscaled (6,-3))..(.5[a,b]+ s zscaled (3,3))..(.5[a,b]+ s zscaled (-3,-3))..(.5[a,b]+ s zscaled (-6,3));
 enddef;
 
 vardef smallarc(expr a, b) =
