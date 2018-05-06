@@ -6,7 +6,7 @@
 
 `git clone https://github.com/anton-petrunin/kiselyov-2D.git`
 
-Эти файлы можно также получить на странице проекта, пройдя по ссылке "Clone or Download" и "Download ZIP". В этом случае Git не нужен.
+Эти файлы можно также получить, пройдя по ссылке "Clone or Download" и "Download ZIP". В этом случае Git не нужен.
 
 Далее, перейти в полученную папку
 
