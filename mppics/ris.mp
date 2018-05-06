@@ -4414,9 +4414,9 @@ dOt z.oa,z.ob,z.oc;
 label.llft(btex $A$ etex, z.a+(-1,0));
 whitelabel.ulft(btex $B$ etex, z.b);
 label.lrt(btex $C$ etex, z.c+(1,0));
-label.urt(btex $O$ etex, z.oa);
-label.bot(btex $O_2$ etex, z.ob);
-label.ulft(btex $O_1$ etex, z.oc);
+label.urt(btex $O_a$ etex, z.oa);
+label.bot(btex $O_b$ etex, z.ob);
+label.ulft(btex $O_c$ etex, z.oc);
 endfig;
 
 beginfig(158);
