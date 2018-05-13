@@ -166,5 +166,60 @@ whitelabel.lrt(btex $O_1$ etex, z.o1);
 
 endfig;
 
+beginfig(7);
+save u, f;
+u:=2cm;
+f:=.5*(sqrt(5)-1);
 
+z.c=origin;
+z.a=(-2,0)*u;
+z.b=(z.a rotated -36) scaled f; 
+z.d=z.a scaled f*f;
+z.e=z.b scaled f*f;
+z.f=z.d scaled f*f;
+
+draw z.a--z.b--z.c--cycle;
+draw z.b--z.d--z.e--z.f;
+
+rimmark(z.a--z.b,z.a--z.d);
+rimmark2(z.b--z.d,z.b--z.e);
+rimmark3(z.d--z.e,z.d--z.f);
+
+label.lft(btex $A$ etex, z.a);
+label.top(btex $B$ etex, z.b+(0,2));
+label.rt(btex $C$ etex, z.c);
+label.bot(btex $D$ etex, z.d);
+label.urt(btex $E$ etex, z.e);
+label.bot(btex $F$ etex, z.f);
+endfig;
+
+beginfig(8);
+save u;
+u:=1.7cm;
+
+z.o=(0,0)*u;
+z.a=(-1,0)*u;
+z.b= z.a rotatedabout(z.o,-90);
+z.c= z.a rotatedabout(z.o,180);
+z.b1= z.a rotatedabout(z.o,90);
+
+z.e=bisector(z.b,z.a,z.c);
+z.d=altitude(z.a,z.e,z.c);
+z.f=2[z.b,z.e];
+
+rimmark(z.a--z.d,z.a--z.b);
+rimmark2(z.c--z.d,z.d--z.e, z.e--z.b, z.e--z.f);
+
+draw z.a--z.b--z.c--z.b1--cycle;
+draw z.a--z.c;
+draw z.d--z.b;
+draw z.d--z.e;
+draw z.d--z.f;
+
+label.lft(btex $A$ etex, z.a);
+label.top(btex $B$ etex, z.b);
+label.rt(btex $C$ etex, z.c);
+label.bot(btex $D$ etex, z.d);
+label.urt(btex $E$ etex, z.e);
+endfig;
 end

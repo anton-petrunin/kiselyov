@@ -1,0 +1,96 @@
+ 
+\documentclass[twoside]{book}
+\usepackage{book}
+
+
+\hypersetup{pdftitle={Геометрия по Киселёву: Планиметрия}}
+
+\makeindex
+
+\makeatletter
+\newcommand{\rindex}[2][\imki@jobname]{%
+  \index[#1]{\detokenize{#2}}%
+}
+\makeatother
+
+
+\begin{document}
+
+
+
+\frontmatter
+\title{Геометрия по Киселёву}
+\subtitle{Планиметрия}
+\author{Андрей Петрович Киселёв
+}
+\date{}
+\maketitle
+
+\thispagestyle{empty}
+
+Под редакцией Н. А. Ершова, А. М. Петрунина и С. Л. Табачниква.
+
+\vfill
+\noindent
+\includegraphics[scale=.25]{eps/Cc-public_domain_mark_white}\ \ 
+Это произведение находится в общественном достоянии.
+
+\mainmatter
+
+\input{predislovie.tex}
+\input{vvedenie.tex}
+
+%\part{Планиметрия}
+
+\chapter{Прямая линия}
+\input{ugly.tex}
+\input{mat-predlozheniya.tex}
+\input{treugi.tex}
+\input{zadachi-na-postr.tex}
+
+\chapter{Параллельные прямые}
+\input{parallelnye.tex}
+\input{parallelogrammy.tex}
+\input{postulat5.tex}
+\input{okruzhnost.tex}
+\input{dugi.tex}
+\input{raspolozheniya.tex}
+\input{vpisannye-ugly.tex}
+\input{vpis-opis-mnougi.tex}
+\input{zam-toch-trig.tex}
+
+\chapter{Измерение отрезков}
+\input{izmereniya.tex}
+\input{nesoimerimost.tex}
+
+\chapter{Подобные фигуры}
+\input{podobie-trig.tex}
+\input{podobie-fig.tex}
+\input{proportzii.tex}
+\input{teorema-pifagora.tex}
+\input{zadach-na-vych.tex}
+\input{proportzii-v-kruge.tex}
+\input{algebra-k-geomtrii.tex}
+
+\chapter[Правильные многоугольники]{Правильные многоугольники и длина окружности}
+\input{pravilnye-mnogougi.tex}
+\input{dlina-okr.tex}
+
+\chapter{Измерение площадей}
+\input{ponyatie-o-ploschadi.tex}
+\input{ploschadi-mnogugov.tex}
+\input{ploschad-kruga.tex}
+
+
+{\scriptsize
+\printindex
+}
+
+
+
+\tableofcontents
+
+
+%267--268(1996) другое определение длины окр.???
+%342--343(1914) построение корней???
+\end{document}

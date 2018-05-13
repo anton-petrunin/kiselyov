@@ -20,7 +20,7 @@ linecap:=butt;
 
 beginfig(40)
 save u;
-u:=1cm;
+u:=.8cm;
 
 z.w=(0,-3*u);
 
@@ -60,7 +60,7 @@ endfig;
 
 beginfig(41)
 save u;
-u:=1cm;
+u:=.8cm;
 
 z.w=(0,-3*u);
 
