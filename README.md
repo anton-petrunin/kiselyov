@@ -26,11 +26,11 @@
 
 Далее нужно создать индекс и получить конечный результат
 
-`pdflatex kiselyov-2D.tex`<br/>
-`texindy -L russian -C utf8 kiselyov-2D.idx`<br/>
-`pdflatex kiselyov-2D.tex`<br/>
+`pdflatex kiselyov.tex`<br/>
+`texindy -L russian -C utf8 kiselyov.idx`<br/>
+`pdflatex kiselyov.tex`<br/>
 
-Если всё прошло удачно, то вы получили файл `kiselyov-2D.pdf`.
+Если всё прошло удачно, то вы получили файл `kiselyov.pdf`.
 
 ## Замечания
 
