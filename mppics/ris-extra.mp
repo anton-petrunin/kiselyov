@@ -222,4 +222,29 @@ label.rt(btex $C$ etex, z.c);
 label.bot(btex $D$ etex, z.d);
 label.urt(btex $E$ etex, z.e);
 endfig;
+
+beginfig(9);
+save u,w;
+u:=.9cm;
+w:=1.4;
+
+z.d=origin;
+z.a=(0,2)*u;
+z.b=z.a zscaled(0,w);
+z.c=z.a zscaled(0,-1/w);
+
+mark_rt_angle(z.a,z.d,z.c);
+
+draw z.a--z.b--z.c--cycle;
+draw z.a--z.d;
+
+label.top(btex $A$ etex, z.a);
+label.lft(btex $B$ etex, z.b);
+label.rt(btex $C$ etex, z.c);
+label.ulft(btex $D$ etex, z.d);
+
+label.bot(btex $a$ etex, .5[z.b,z.c]);
+label.urt(btex $b$ etex, .5[z.a,z.c]);
+label.ulft(btex $c$ etex, .5[z.b,z.a]);
+endfig;
 end
