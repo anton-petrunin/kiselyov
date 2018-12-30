@@ -1,6 +1,7 @@
 input macros
 input hatching
 input mparrows
+input fiziko 
 
 verbatimtex
 %&latex
@@ -17,22 +18,7 @@ linecap:=butt;
 
 %outputformat := "svg";
 
-vardef next expr pa = 
-    numeric s, k; s = 10; k=2+.5*normaldeviate;
-    point 0 of pa shifted ((k+.5*normaldeviate)*(unitvector(direction arctime(0) of pa of pa) rotated 90))
-    for a = s step s until arclength(pa):
-        .. point arctime(a) of pa of pa 
-           shifted ((k+.2*normaldeviate+sind(a))*(unitvector(direction arctime(a) of pa of pa) rotated 90))
-    endfor
-enddef;
 
-vardef woody =
-picture wood;
- wood:=image(  for i=0 upto 10:
-        p:= next p;
-            draw p withpen pencircle xscaled (.2+.1*normaldeviate) yscaled (.2+.1*normaldeviate) rotated (5*normaldeviate);
-    endfor)
-enddef;
 
 beginfig(27)
 save u,k;
@@ -56,26 +42,10 @@ z.d=.7[z.c,z.e];
 Dot z.d;
 fill z.c--z.c1--z.e1--z.e--cycle withcolor white;
 
-path p;
-p:=z.a--2[z.a,z.b];
-woody;
-clip wood to z.c--z.cb--z.cb1--z.c1--cycle; 
-draw wood;
-
-p:=2[z.b1,z.a1]--2[z.a1,z.b1];
-woody;
-clip wood to z.a--z.b--z.b1--z.a1--cycle; 
-draw wood;
-
-p:=2[z.c,z.e]--2[z.e,z.c];
-woody;
-clip wood to z.c--z.c1--z.e1--z.e--cycle; 
-draw wood;
-
-p:=2[z.e,z.cb]--2[z.cb,z.e];
-woody;
-clip wood to z.e--z.e1--z.cb1--z.cb--cycle; 
-draw wood;
+draw woodenThing(z.c--z.cb--z.cb1--z.c1--cycle, angle(z.c-z.cb));
+draw woodenThing(z.a--z.b--z.b1--z.a1--cycle, angle(z.a-z.b));
+draw woodenThing(z.c--z.c1--z.e1--z.e--cycle, angle(z.e-z.c));
+draw woodenThing(z.e--z.e1--z.cb1--z.cb--cycle, angle(z.e-z.cb));
 
 draw z.a--z.a1--z.b1--z.b penhair;
 draw z.c1--z.cb1--z.e1--cycle penhair;
@@ -123,26 +93,13 @@ z.v=(-.3)[z.z,z.y];
 z.u1=z.u-y.x1*(unitvector(z.u-z.v) rotated -90);
 z.v1=z.u1+z.v-z.u;
 
-path p;
-p:=2[z.v,z.u]--2[z.u,z.v];
-woody;
-clip wood to z.u--z.v--z.v1--z.u1--cycle; 
-draw wood;
+draw woodenThing(z.u--z.v--z.v1--z.u1--cycle, angle(z.v-z.u));
 
-p:=2[z.u,z.v]--2[z.v,z.u];
-woody;
-clip wood to z.y--z.y1--z.z1--z.z--cycle; 
-draw wood;
+draw woodenThing(z.y--z.y1--z.z1--z.z--cycle, angle(z.y-z.z));
 
-p:=2[z.z,z.x]--2[z.x,z.z];
-woody;
-clip wood to z.z--z.z1--z.x1--z.x--cycle; 
-draw wood;
+draw woodenThing(z.z--z.z1--z.x1--z.x--cycle, angle(z.x-z.z));
 
-p:=2[z.x,z.y]--2[z.y,z.x];
-woody;
-clip wood to z.y--z.y1--z.x1--z.x--cycle; 
-draw wood;
+draw woodenThing(z.y--z.y1--z.x1--z.x--cycle, angle(z.y-z.x));
 
 labelarcsprof(z.x, z.y, z.z, 20, 8, btex \small{$1$} etex);
 labelarcsprof(z.xs, z.ys, z.zs, 20, 8, btex \small{$2$} etex);
@@ -164,4 +121,49 @@ label.lft(btex $A$ etex, z.a);
 label.rt(btex $B$ etex, z.b);
 endfig;
 
+
 end
+
+beginfig(27)
+pair A, B, C, D, E, F, C', E', F';
+numeric totalWidth, width, height, breadth, a[];
+path p[];
+save u;
+u:=.7cm;
+
+totalWidth := 5*u;
+width := sqrt(3)*u;
+height := 3*u;
+breadth := 2/5*u;
+A := (0, 0);
+B := (totalWidth, 0);
+C := (1/2totalWidth, 0);
+E := (xpart(C), height);
+D := 3/4[C, E];
+F := (xpart(E) + width, 0);
+C' = whatever[C shifted (0, breadth), F shifted (0, breadth)] 
+   = whatever[C shifted (breadth, 0), E shifted (breadth, 0)];
+E' = whatever[E shifted (breadth, 0), C shifted (breadth, 0)] 
+   = whatever[E shifted ((unitvector(E-F) scaled breadth) rotated 90), F shifted ((unitvector(E-F) scaled breadth) rotated 90)];
+F' = whatever[C shifted (0, breadth), F shifted (0, breadth)] 
+   = whatever[E shifted ((unitvector(E-F) scaled breadth) rotated 90), F shifted ((unitvector(E-F) scaled breadth) rotated 90)];
+p1 := A -- B -- B shifted (0, -breadth) -- A shifted (0, -breadth) -- cycle;
+a1 := 0;
+p2 := C -- E -- E' -- C' -- cycle;
+a2 := 90;
+p3 := E -- F -- F' -- E' -- cycle;
+a3 := angle (E-F);
+p4 := C -- F -- F' -- C' -- cycle;
+a4 := 0;
+for i := 1 step 1 until 4:
+    draw woodenThing(p[i], a[i]);
+    % draw p[i];
+endfor;
+draw ddline(A,B)(.1,.1);
+
+label.top(btex $A$ etex, (-.1)[A,B]);
+label.top(btex $B$ etex, (1.1)[A,B]);
+dotlabel.ulft(btex $C$ etex, C);
+dotlabel.lft(btex $D$ etex, D);
+label.ulft(btex $E$ etex, E);
+endfig;
