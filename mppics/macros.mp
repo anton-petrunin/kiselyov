@@ -1819,7 +1819,7 @@ fi;
 	drawarrow (.5[a,b]-k*unitvector(b-a)+s)--(a+s);
 	kisDot(a+s,b+s);
 	kisDot(b+s,a+s);
-	label(c rotated angle(b-a),.5[a+s,b+s]+2*unitvector(d*s));
+	label(c rotated angle(b-a),.5[a+s,b+s]+1.5*unitvector(d*s));
 enddef;
 
 % значки для параллельных прямых
