@@ -4467,6 +4467,8 @@ rimmark3(z.c--z.p);
 rimmark10(z.d--z.p);
 rimmark10(z.d--z.q);
 
+dOt z.m,z.n,z.p,z.q;
+
 label.llft(btex $A$ etex, z.a);
 label.ulft(btex $B$ etex, z.b);
 label.urt(btex $C$ etex, z.c);
