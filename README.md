@@ -24,6 +24,15 @@
 `mpost ris-extra.mp`<br/>
 `mpost ris-wood.mp`<br/>
 `mpost transportir.mp`<br/>
+`mpost s-ris.mp`<br/>
+`cd ..`
+
+## Asymptote
+
+Перейти в папку `asy`, создать рисунки и вернуться назад:
+
+`cd asy/`<br/>
+`asy schwarz.asy`<br/>
 `cd ..`
 
 ## LaTeX

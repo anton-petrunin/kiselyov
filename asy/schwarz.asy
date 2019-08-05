@@ -1,6 +1,6 @@
 settings.render=32;
 import three;
-size(4cm);
+size(4.2cm);
 currentprojection=orthographic(0,6,1.7);
 currentlight=light(10,10,3);
 

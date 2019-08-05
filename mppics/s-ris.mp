@@ -19,7 +19,7 @@ linecap:=butt;
 
 beginfig(501)
 save u, k;
-u:=.7cm;
+u:=.6cm;
 k:=4;
 
 save p; path p[];
