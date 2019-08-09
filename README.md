@@ -4,13 +4,13 @@
 
 Следующая команда создаст локальную копию исходных файлов вместе с историей версий.
 
-`git clone https://github.com/anton-petrunin/kiselyov-2D.git`
+`git clone https://github.com/anton-petrunin/kiselyov.git`
 
 Эти файлы можно также получить, пройдя по ссылке "Clone or Download" и "Download ZIP". В этом случае Git не нужен.
 
 Далее, перейти в полученную папку
 
-`cd kiselyov-2D`
+`cd kiselyov`
 
 ## MetaPost 
 
