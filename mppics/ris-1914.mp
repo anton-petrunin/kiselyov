@@ -33,8 +33,8 @@ z.c1=z.c shifted z.w;
 z.a1=z.a shifted z.w;
 z.b2=z.b1 reflectedabout (z.c1,z.a1);
 
-labelarcsprof(z.c1, z.b1, z.b2, 23, 7, btex  etex);
-labelarcsprof(z.c1, z.b2, z.b1, 23, 7, btex  etex);
+labelarcsprof(z.c1, z.b1, z.b2, 19, 7, btex  etex);
+labelarcsprof(z.c1, z.b2, z.b1, 19, 7, btex  etex);
 labelarcsprof2(z.a1, z.b1, z.b2, 17, 5, btex  etex);
 labelarcsprof2(z.a1, z.b2, z.b1, 17, 5, btex  etex);
 
