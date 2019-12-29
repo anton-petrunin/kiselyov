@@ -44,6 +44,8 @@ z.c=(2,0)*u;
 save p; path p[];
 p1=z.a--z.b--z.c--cycle;
 
+mark_rt_angle(z.a,z.c,z.b)
+
 draw p1 penbold;
 
 label.bot(btex катет etex, .5[z.a,z.c]);

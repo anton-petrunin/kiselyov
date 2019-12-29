@@ -2373,8 +2373,8 @@ z.a=.5[z.d,z.c];
 mark_rt_angle(z.b,z.a,z.c);
 labelarcsprof(z.b, z.d, z.c, 9, 9, btex \small{$60\degree$} etex);
 labelarcsprof(z.d, z.c, z.b, 9, 9, btex \small{$60\degree$} etex);
-labelarcsprof(z.a, z.b, z.c, 19, 19, btex \small{$30\degree$} etex);
-labelarcsprof(z.a, z.b, z.d, 19, 19, btex \small{$30\degree$} etex);
+labelarcsprof(z.a, z.b, z.c, 19, 21, btex \small{$30\degree$} etex);
+labelarcsprof(z.a, z.b, z.d, 19, 21, btex \small{$30\degree$} etex);
 
 draw z.d--z.b--z.c--cycle;
 draw z.a--z.b;
