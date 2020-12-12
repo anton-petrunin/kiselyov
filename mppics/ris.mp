@@ -440,10 +440,10 @@ u:=1cm;
 
 z.o=origin;
 z.a=(1.5, 0)*u;
-z.b=z.a rotatedaround (z.o, 72);
+z.b=z.a rotatedaround (z.o, 72) scaled .7;
 z.c=z.a rotatedaround (z.o, 145);
 z.d=z.a rotatedaround (z.o, 225);
-z.e=z.a rotatedaround (z.o, 265);
+z.e=z.a rotatedaround (z.o, 265) scaled .7;
 
 draw z.b--z.o--z.a;
 draw z.o--z.c;
@@ -1466,7 +1466,7 @@ endfig;
 
 beginfig(60)
 save u;
-u:=1cm;
+u:=.7cm;
 w:=3.5u;
 
 z.a=origin;
@@ -1499,13 +1499,13 @@ label.rt(btex $C$ etex, z.c);
 label.lft(btex $A_1$ etex, z.a1);
 label.top(btex $B_1$ etex, z.b1);
 label.bot(btex $C_1$ etex, z.c1);
-label.bot(btex $C_2$ etex, z.c2);
-label.bot(btex $C_3$ etex, z.c3);
+label.bot(btex $C_2$ etex, z.c2+(-2,0));
+label.bot(btex $C_3$ etex, z.c3+(1,0));
 endfig;
 
 beginfig(61)
 save u;
-u:=1cm;
+u:=.7cm;
 
 z.a=origin;
 z.b=z.a+(2,2.5)*u;
@@ -1522,7 +1522,7 @@ endfig;
 
 beginfig(62)
 save u;
-u:=1cm;
+u:=.7cm;
 
 z.a1=origin;
 z.b1=z.a1+(2,2.5)*u;
@@ -1539,8 +1539,8 @@ draw z.a1--z.b1--z.a3;
 label.bot(btex $A_1$ etex, z.a1);
 label.top(btex $B_1$ etex, z.b1);
 label.bot(btex $C_1$ etex, z.c1);
-label.bot(btex $A_2$ etex, z.a2);
-label.bot(btex $A_3$ etex, z.a3);
+label.bot(btex $A_2$ etex, z.a2+(-2,0));
+label.bot(btex $A_3$ etex, z.a3+(1,0));
 endfig;
 
 beginfig(63)
@@ -3378,6 +3378,8 @@ z.c=altitude(z.a,z.o,z.b);
 z.c1=.5[z.c,z.b];
 z.c2=.3[z.c,z.a];
 
+setbounds currentpicture to (-.5*h,v)--(.5*h,v)--(z.o-(0,1)*u)--cycle;
+
 draw circle(z.o,1*u);
 draw z.a--z.b;
 draw z.o--z.c;
@@ -3389,6 +3391,7 @@ label.lft(btex $A$ etex, z.a);
 label.rt(btex $B$ etex, z.b);
 label.top(btex $C$ etex, z.c);
 label.bot(btex $O$ etex, z.o);
+
 endfig;
 
 beginfig(124);
@@ -3404,6 +3407,8 @@ z.b=(.5*h,v);
 z.c=altitude(z.a,z.o,z.b);
 z.c1=.5[z.c,z.b];
 z.c2=.3[z.c,z.a];
+
+setbounds currentpicture to (-.5*h,v)--(.5*h,v)--(z.o-(0,1)*u)--cycle;
 
 z.d=.8[z.c,z.a];
 z.e=.8[z.c,z.b];
@@ -3446,6 +3451,8 @@ label.lft(btex $A$ etex, z.a);
 label.rt(btex $B$ etex, z.b);
 label.top(btex $C$ etex, z.c);
 label.bot(btex $O$ etex, z.o);
+
+setbounds currentpicture to (-.5*h,v)--(.5*h,v)--(z.o-(0,1)*u)--cycle;
 endfig;
 
 beginfig(126);

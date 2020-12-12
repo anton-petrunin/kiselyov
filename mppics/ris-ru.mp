@@ -19,7 +19,7 @@ linecap:=butt;
 
 beginfig(13)
 save u;
-u:=1cm;
+u:=.8cm;
 
 z.o=origin;
 z.a=z.o+(4,0)*u;
@@ -30,7 +30,7 @@ draw z.o--z.a;
 draw z.o--z.c;
 draw z.o--z.b penbold;
 
-label(btex биссектриса etex rotated angle(z.b), .5[z.o,z.b]+(unitvector(z.b) zscaled (0,5)));
+label(btex биссектриса etex rotated angle(z.b), .65[z.o,z.b]+(unitvector(z.b) zscaled (0,5)));
 endfig;
 
 beginfig(37)

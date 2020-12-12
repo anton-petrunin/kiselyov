@@ -64,10 +64,10 @@ endfig;
 
 beginfig(4);
 save u, k;
-u:=1cm;
+u:=.7cm;
 k:=.7;
 
-z.S=(2,0)*u;
+z.S=(1.4,0)*u;
 
 z.a=origin;
 z.b=(2,2)*u;

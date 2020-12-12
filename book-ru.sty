@@ -18,13 +18,14 @@
 \usepackage{paracol}
 
 
-
+\csname @openrightfalse\endcsname %главы могут начинаться с левой страницы 
 
 \usepackage[nobottomtitles*]{titlesec}
 \renewcommand{\bottomtitlespace}{.1\textheight}%определяет минимальную часть текста внизу страницы после заголовка
 \newcommand{\sectionbreak}{\clearpage}
 
 \usepackage[top=20mm, bottom=20mm,inner=20mm, outer=18mm, paperwidth=6in, paperheight=9in]{geometry}
+%\usepackage[top=0.9in, bottom=0.8in,inner=0.8in, outer=0.7in, paperwidth=6in, paperheight=9in]{geometry}
 
 \usepackage{titling}
 \newcommand{\subtitle}[1]{%

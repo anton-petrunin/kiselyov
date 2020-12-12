@@ -62,7 +62,7 @@ endfig;
 beginfig(502)
 
 save u,ang, k,phi;
-u:=.8cm;
+u:=.6cm;
 ang:=190;
 k:=.3;
 phi:=.5*(1+sqrt(5));
@@ -115,7 +115,7 @@ endfig;
 beginfig(503)
 
 save u,ang, k,phi,q;
-u:=.6cm;
+u:=.5cm;
 ang:=195;
 k:=.3;
 phi:=.5*(1+sqrt(5));
@@ -1901,8 +1901,8 @@ z.B=z.A+z.M;
 z.C=.2*z.x+.2*z.y;
 z.D=z.C+z.N;
 
-z.O=1*z.x+1.3*z.y;
-z.O1=1.4*z.x-.1*z.y;
+z.O=1.5*z.x+1.3*z.y;
+z.O1=3*z.x-.1*z.y;
 
 save p; path p[];
 
@@ -2383,7 +2383,7 @@ u:=1cm;
 
 z.x=(2,0)*u;
 z.y=(.5,1)*u;
-z.z=(-.7,2)*u;
+z.z=(-.7,1.5)*u;
 
 draw origin--z.x--z.x+z.z--z.z--cycle pensemibold;
 
@@ -2402,7 +2402,7 @@ u:=1cm;
 
 z.x=(2,0)*u;
 z.y=(.5,1)*u;
-z.z=(0,2)*u;
+z.z=(0,1.5)*u;
 
 mark_rt_angle(z.x,z.x+z.z,z.z);
 mark_rt_angle(z.x,z.x+z.z,z.x+z.y+z.z);
@@ -2464,7 +2464,7 @@ u:=1cm;
 z.A=origin;
 z.B=(.5,-1)*u;
 z.C=(2,0)*u;
-z.S=(1,2)*u;
+z.S=(1,1.3)*u;
 
 draw z.A--z.S--z.C--z.B--cycle pensemibold;
 draw z.A--z.C pensemibold dashed evenly;
@@ -4231,7 +4231,7 @@ endfig;
 
 beginfig(112)
 save u,ang, k;
-u:=.9cm;
+u:=.7cm;
 ang:=230;
 k:=.3;
 
@@ -4275,7 +4275,7 @@ endfig;
 
 beginfig(113)
 save u,ang, k;
-u:=.9cm;
+u:=.7cm;
 ang:=230;
 k:=.3;
 
