@@ -1,4 +1,4 @@
-book.sty
+book-ru.sty
 kiselyov.tex
 predislovie.tex
 eps/Cc-public_domain_mark_white.pdf
