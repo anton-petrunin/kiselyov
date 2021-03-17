@@ -5538,7 +5538,7 @@ u:=1cm;
 x.k=2.2;
 
 z.o=origin;
-z.a=(1.7,.3)*u;
+z.a=(1.8,.3)*u;
 z.m=(1.5,0.5)*u;
 z.n=(1,1)*u;
 z.p=(2,1)*u;
@@ -5562,13 +5562,14 @@ draw ddline(z.o,z.p1)(0,.2);
 draw ddline(z.o,z.q1)(0,.2);
 draw ddline(z.o,z.m)(0,.2);
 
-dOt z.m,z.n,z.p,z.q,z.m1,z.n1,z.p1,z.q1;
+dOt z.m,z.n,z.o,z.p,z.q,z.m1,z.n1,z.p1,z.q1;
 
 whitelabel(btex $A$ etex, z.a);
 whitelabel(btex $A_1$ etex, z.a1);
-
+label.llft(btex $O$ etex, z.o);
 whitelabel.lft(btex $M$ etex, z.m);
 label.lft(btex $N$ etex, z.n);
+
 label.top(btex $P$ etex, z.p);
 label.llft(btex $Q$ etex, z.q);
 
