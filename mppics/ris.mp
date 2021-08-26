@@ -7227,10 +7227,10 @@ draw z.l--z.m--z.n--z.p--z.q--z.r--cycle;
 draw z.t--z.s;
 draw z.a--z.b--z.c--z.d;
 
-label.llft(btex $A$ etex, z.a+(2,1));
+label.llft(btex $A$ etex, z.a+(3,0));
 label.top(btex $B$ etex, z.b);
 label.top(btex $C$ etex, z.c);
-label.llft(btex $D$ etex, z.d);
+label.llft(btex $D$ etex, z.d+(2,1));
 
 label.llft(btex $L$ etex, z.l);
 label.ulft(btex $M$ etex, z.m);
