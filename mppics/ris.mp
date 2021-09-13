@@ -5976,9 +5976,9 @@ label.urt(btex $B$ etex, z.b);
 label.rt(btex $C$ etex, z.c);
 label.urt(btex $D$ etex, z.d);
 label.urt(btex $E$ etex, z.e);
-label.urt(btex $F$ etex, z.f);
-label.urt(btex $G$ etex, z.g);
-label.urt(btex $H$ etex, z.h);
+label.urt(btex $F$ etex, z.f+(1,-1));
+label.urt(btex $G$ etex, z.g+(1,-1));
+label.urt(btex $H$ etex, z.h+(1,-1));
 
 label.top(btex $m$ etex, .5[z.n1,z.n2]-z.shift);
 label.top(btex $n$ etex, .5[z.n1,z.n2]);
