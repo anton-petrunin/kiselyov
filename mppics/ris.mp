@@ -401,7 +401,7 @@ label.rt(btex $A_1$ etex, z.a1);
 label.urt(btex $B_1$ etex, z.b1);
 label.llft(btex $O_1$ etex, z.o1);
 
-label.rt(btex $Q$ etex, z.m);
+label.rt(btex $M$ etex, z.m);
 label.urt(btex $P$ etex, z.p);
 label.llft(btex $N$ etex, z.n);
 label.urt(btex $Q$ etex, z.q);
