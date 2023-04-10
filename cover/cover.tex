@@ -1,3 +1,5 @@
+%Lualatex+needs P22UndergroundCYBook.ttf
+%Для lulu.com --- открыть pdf в gimp с разрешением 300px, и тут же сохранить его обратно.
 \documentclass[
 coverheight=9in,
 coverwidth=6in,
@@ -5,9 +7,15 @@ spinewidth=0.756in,
 bleedwidth=.125in,
 marklength=0in,
 markcolor=black]{bookcover}
-\usepackage[T1]{fontenc}
+%\usepackage[T1]{fontenc}
 \usepackage[russian]{babel}
 
+\usepackage{xcolor}
+\usepackage{background}
+\usepackage{blindtext}
+\usepackage{fontspec}
+
+\setmainfont{P22UndergroundCY-Heavy}
 
 \newbookcoverpart{pback}{
 \setpartposx{\marklength+\bleedwidth+10mm}
@@ -27,18 +35,19 @@ markcolor=black]{bookcover}
 \vskip-.125in
 \includegraphics[width=\textwidth]{kiselyov}
 \vfill
-\color{yellow!10}\fontsize{28}{48}\usefont{T2A}{cmr}{b}{n} ГЕОМЕТРИЯ ПО КИСЕЛЁВУ
+\selectfont
+\color{yellow!10}\fontsize{30}{48}\selectfont ГЕОМЕТРИЯ ПО КИСЕЛЁВУ
 \vskip10mm
 }
 
 \bookcovercomponent{center}{spine}
-{\rotatebox[origin=c]{90}{\color{yellow!10}\fontsize{20}{48}\usefont{T2A}{cmr}{b}{n}  ГЕОМЕТРИЯ ПО КИСЕЛЁВУ}}
+{\rotatebox[origin=c]{90}{\color{yellow!10}\fontsize{20}{48}\selectfont ГЕОМЕТРИЯ ПО КИСЕЛЁВУ}}
 
 
 \bookcovercomponent{center}{pback}{
 \begin{flushleft}
 \parbox{.7\textwidth}{
-\color{yellow!10}\fontsize{12}{10}\usefont{T2A}{cmr}{b}{n}Издание классического школьного учебника по геометрии. За основу взято издание 1938 года, но использовались также издания 1914 и 1931 годов.
+\color{yellow!10}\fontsize{12}{10}\selectfont Издание классического школьного учебника по геометрии. За основу взято издание 1938 года, но использовались также издания 1914 и 1931 годов.
 }
 \end{flushleft}
 \vfill
