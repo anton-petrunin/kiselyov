@@ -31,11 +31,12 @@ markcolor=black]{bookcover}
 \definecolor{mycolor}{HTML}{a2521d}
 \bookcovercomponent{color}{bg whole}{mycolor}
 
-\bookcovercomponent{center}{front}{
-\vskip-.125in
-\includegraphics[width=\textwidth]{kiselyov}
+\bookcovercomponent{normal}{front}{
+\vskip0in
+\includegraphics[width=6in]{kiselyov}
 \vfill
 \selectfont
+\centering
 \color{yellow!10}\fontsize{30}{48}\selectfont ГЕОМЕТРИЯ ПО КИСЕЛЁВУ
 \vskip10mm
 }
@@ -44,16 +45,16 @@ markcolor=black]{bookcover}
 {\rotatebox[origin=c]{90}{\color{yellow!10}\fontsize{20}{48}\selectfont ГЕОМЕТРИЯ ПО КИСЕЛЁВУ}}
 
 
-\bookcovercomponent{center}{pback}{
+\bookcovercomponent{normal}{pback}{
 \begin{flushleft}
-\parbox{.7\textwidth}{
+\parbox{.3\textwidth}{
 \color{yellow!10}\fontsize{12}{10}\selectfont Издание классического школьного учебника по геометрии. За основу взято издание 1938 года, но использовались также издания 1914 и 1931 годов.
 }
 \end{flushleft}
 \vfill
 {
 \color{yellow!10}\fontsize{14}{10}\texttt{anton-petrunin.github.io/kiselyov}}
-\hfill\includegraphics{978-1-68474-812-9}
+\hfill\ %\includegraphics{978-1-68474-812-9}
 }
 
 \end{bookcover}

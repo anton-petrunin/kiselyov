@@ -35,6 +35,7 @@
 
 `cd asy/`<br/>
 `asy schwarz.asy`<br/>
+`epstopdf --gsopt=-dCompatibilityLevel=1.3 schwarz.eps`<br/>
 `cd ..`
 
 ## LaTeX
