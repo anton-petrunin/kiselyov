@@ -2,6 +2,9 @@
 \documentclass[twoside]{book}
 \usepackage{book-ru}
 
+\newcommand{\spell}[2]{#1} %for text
+%\newcommand{\spell}[2]{#2} %for spelling
+
 
 \hypersetup{pdftitle={Геометрия по Киселёву}}
 
@@ -13,9 +16,10 @@
 }
 \makeatother
 
+\spell{}{\makeatletter\usepackage{environ}\RenewEnviron{figure}[1][]{ [РИС.] }\RenewEnviron{figure*}[1][]{ [РИС.] }\RenewEnviron{wrapfigure}[1][]{ [РИС.] }\usepackage{emptypage}\pagestyle{empty}\makeatother\usepackage[none]{hyphenat}\def\emph{\textit}\def\so{\textit}\renewcommand{\footnote}[1]{\textup{\ (#1)}}\renewcommand{\frac}[2]{(#1)/(#2)}\renewcommand{\tfrac}[2]{(#1)/(#2)}\everydisplay{\textstyle}}
 
 \begin{document}
-%\pagestyle{empty}\usepackage[draft]{graphicx}
+
 
 
 \cleardoublepage
@@ -29,7 +33,7 @@
 
 Под редакцией Н. А. Ершова, А. М. Петрунина и С. Л. Табачникова.
 
-На обложке: портрет  Андрея Петровича Киселёва написанный его дочерью Еленой Андреевной Киселёвой, 1906 год.
+На обложке: портрет  Андрея Петровича Киселёва, написанный его дочерью Еленой Андреевной Киселёвой, 1906 год.
 
 \vfill
 
