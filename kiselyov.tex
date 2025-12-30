@@ -18,6 +18,8 @@
 
 \spell{}{\makeatletter\usepackage{environ}\RenewEnviron{figure}[1][]{ [РИС.] }\RenewEnviron{figure*}[1][]{ [РИС.] }\RenewEnviron{wrapfigure}[1][]{ [РИС.] }\usepackage{emptypage}\pagestyle{empty}\makeatother\usepackage[none]{hyphenat}\def\emph{\textit}\def\so{\textit}\renewcommand{\footnote}[1]{\textup{\ (#1)}}\renewcommand{\frac}[2]{(#1)/(#2)}\renewcommand{\tfrac}[2]{(#1)/(#2)}\everydisplay{\textstyle}}
 
+%\overfullrule=100mm
+
 \begin{document}
 
 
@@ -110,7 +112,10 @@
 }
 
 
-
+\newpage
+\cleardoublepage
+\phantomsection
+\pdfbookmark[0]{\contentsname}{bm:toc}
 \tableofcontents
 
 

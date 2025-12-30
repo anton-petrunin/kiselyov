@@ -14,8 +14,29 @@
 \usepackage{graphicx}
 \usepackage{gensymb}
 \usepackage{epsfig,lpic,wrapfig}
-\usepackage{soulutf8}
+
 \usepackage{paracol}
+
+\usepackage{accsupp}
+\usepackage{soul}
+\sodef\an{}{.1em}{.5em plus.1em}{.5em plus.1em minus.1em}
+
+%\newcommand\ann[1]{%
+%    \BeginAccSupp{method=escape,ActualText={#1}}%
+%      \an{#1}%
+%    \EndAccSupp{}%
+%}
+
+\newcommand\ann[1]{%
+  \BeginAccSupp{
+    method=pdfstringdef,
+    ActualText={#1}%
+  }%
+    \an{#1}%  % letterspaced visible text
+  \EndAccSupp{}%
+}
+
+\def\so{\ann}
 
 
 \csname @openrightfalse\endcsname %главы могут начинаться с левой страницы 
