@@ -5,7 +5,7 @@ input mparrows
 verbatimtex
 %&latex
 \documentclass[oneside]{book}
-\usepackage{../book}
+\usepackage{../book-ru}
 \begin{document}
 etex
 
@@ -1158,9 +1158,9 @@ z.c1=z.c shifted z.w;
 z.a1=z.a shifted z.w;
 z.b2=z.b1 reflectedabout (z.c1,z.a1);
 
-labelarcsprof(z.c1, z.b1, z.b2, 20, 7, btex \small{$1$} etex);
-labelarcsprof2(z.a1, z.b1, z.b2, 20, 5, btex \small{$2$} etex);
-labelarcsprof2(z.a1, z.b2, z.b1, 20, 5, btex \small{$3$} etex);
+labelarcsprof(z.c1, z.b1, z.b2, 20, 7, btex \small{$3$} etex);
+labelarcsprof2(z.a1, z.b1, z.b2, 20, 5, btex \small{$1$} etex);
+labelarcsprof2(z.a1, z.b2, z.b1, 20, 5, btex \small{$2$} etex);
 labelarcsprof(z.c1, z.b2, z.b1, 20, 7, btex \small{$4$} etex);
 
 draw z.b--z.c--z.a--cycle;
