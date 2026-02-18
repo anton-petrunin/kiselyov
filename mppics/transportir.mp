@@ -5,7 +5,7 @@ input hatching
 verbatimtex
 %&latex
 \documentclass[oneside]{book}
-\usepackage{../book}
+\usepackage{../book-ru}
 \begin{document}
 etex
 
